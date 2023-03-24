@@ -1,13 +1,3 @@
----
-layout: home
-title: Just the Class
-nav_exclude: true
-permalink: /:path/
-seo:
-  type: Course
-  name: Just the Class
----
-
 # Instructions for building and serving website 
 
 ## install website on OSX
@@ -35,6 +25,10 @@ seo:
 ```
 bundle exec jekyll serve
 ```
+
+## deploy the website
+
+on the github repo, go to settings -> pages and enable the website
 
 # Website template
 
