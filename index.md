@@ -1,13 +1,13 @@
 ---
 layout: home
-title: MS&E 125
-description: MS&E 125 course homepage.
+title: MS&E 311 / CME 307
+description: MS&E 311 / CME 307 course homepage.
 nav_exclude: false
 has_toc: true
 nav_order: 1
 seo:
   type: Course
-  name: MS&E 125
+  name: MS&E 311 / CME 307
 
 ---
 
@@ -22,37 +22,24 @@ Management Science and Engineering, Stanford University
 
 ## Course description
 
-An increasing amount of data is now generated in a variety of disciplines, 
-ranging from finance and economics, to the natural and social sciences.
-Making use of this information requires both statistical tools and an
-understanding of how the substantive scientific questions should drive
-the analysis. In this hands-on course, we learn to explore and analyze
-real-world datasets. We cover techniques for summarizing and describing data,
-methods for statistical inference, and principles for effectively communicating 
-results.
+Applications, theories, and algorithms for finite-dimensional linear and nonlinear optimization problems with continuous and discrete variables. 
+Elements of convex analysis, first- and second-order optimality conditions, sensitivity and duality. 
+Algorithms for unconstrained optimization, and linearly and nonlinearly constrained problems. 
+Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics.
 
 ## Class schedule
 
-**Lecture:** MW 9:30-11:20am in McCullough 115, starting April 3 <br>
-**Office hours:** See calendar below for times and locations <br>
-**Discussion section:** optional; second half of lecture block on Wednesdays <br>
-
-<iframe src="https://calendar.google.com/calendar/embed?src=40e5f74055022787ef78ea9801448a896676e36465cf1cf8f5713de071303caf%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
-All zoom links require SUID login for security.
+**Lecture:** MW 1:30-2:50pm in Thornton 110, starting April 3 <br>
+**Office hours:** See contact page for times and locations <br>
+**Discussion section:** optional and occasional, F 1:30-2:50 in Thornton 110 <br>
 
 Use office hours to discuss topics directly related to the course
 and also anything else that's on your mind beyond the class: for example, 
-questions about career trajectories, 
-[research opportunities](https://sites.google.com/stanford.edu/msande-inclusion/diversity-in-research) in MS&E,
-and more.
+questions about career trajectories, research, and more.
 
 ## Acknowledgements
 {: .no_toc }
 
-The MS&E 125 materials build on course content developed by 
-[Sharad Goel](https://5harad.com/), 
-[Josh Grossman](http://www.jdgrossman.com), 
-[Peter Frazier](https://people.orie.cornell.edu/pfrazier/),
-and [the Data 8 team](http://www.data8.org/).
+The MS&E 311 materials build on course content developed by 
+[Yinyu Ye](https://web.stanford.edu/~yyye/) 
 

@@ -2,6 +2,7 @@
 layout: page
 title: Materials
 description: Course modules and dates
+nav_exclude: true
 ---
 
 | **Day** | **Lecture** | **Demo** | **Due** | **Reading** |
@@ -22,6 +23,6 @@ description: Course modules and dates
 | M May 22   | AutoML                                |      |     |         |
 | W May 24   | Forecasting                                | [forecasting](https://colab.research.com/github/stanford-mse-125/demos/blob/main/forecasting.ipynb) | hw7    |         |
 | M May 29   | Holiday                                       |      |     |         |
-| W May 31   | Causal inference I                            |      | hw8    |         |
-| M June 5   | Causal inference II                           |      |     |         |
-| W June 7   | Review                                        |      | hw9    |         |
+| W May 31   | Project presentations                           |      | hw8    |         |
+| M June 5   | Project presentations                           |      |     |         |
+| W June 7   | Project presentations                                        |      | hw9    |         |

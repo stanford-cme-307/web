@@ -18,51 +18,19 @@ description: >-
 
 ## Course description and prerequisites
 
-An increasing amount of data is now generated in a variety of disciplines, 
-ranging from finance and economics, to the natural and social sciences.
-Making use of this information requires both statistical tools and an
-understanding of how the substantive scientific questions should drive
-the analysis. In this hands-on course, we learn to explore and analyze
-real-world datasets. We cover techniques for summarizing and describing data,
-methods for statistical inference, and principles for effectively communicating 
-results.
+Applications, theories, and algorithms for finite-dimensional linear and nonlinear optimization problems with continuous and discrete variables. 
+Elements of convex analysis, first- and second-order optimality conditions, sensitivity and duality. 
+Algorithms for unconstrained optimization, and linearly and nonlinearly constrained problems. 
+Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics.
 
 Prerequisites:
-- MS&E 120 or equivalent
-- CS 106A or equivalent
+- Math 113 (linear algebra) and 115 (calculus), or equivalent
 
 ## Resources
 
-The following textbooks may be useful, and are available free of charge. 
-The treatment in the course draws mostly from All of Statistics and Computational and Inferential Thinking.
-
-[All of Statistics](http://www.stat.cmu.edu/~larry/all-of-statistics/), by Larry Wasserman
-
-[Computational and Inferential Thinking: The Foundations of Data Science](https://inferentialthinking.com/chapters/intro.html), 
-by Ani Adhikari, John DeNero, and David Wagner.
-
-[R for Data Science](http://r4ds.had.co.nz), by Garrett Grolemund and Hadley Wickham
-
-[Statistics](http://books.wwnorton.com/books/webad.aspx?id=11597), by David Freedman, Robert Pisani, and Roger Purves
-
-[Natural Experiments in the Social Sciences](http://www.cambridge.org/us/academic/subjects/politics-international-relations/research-methods-politics/natural-experiments-social-sciences-design-based-approach), by Thad Dunning
-
-While the books above are free, note that the MS&E department has an 
-[Opportunity Fund](https://forms.gle/QQKJArhELRVYeFnr7)
-through which students may request financial assistance to purchase any necessary course materials.
-
-## Study groups
-
-We encourage you to work together in groups to solidify your understanding of the course material. 
-If you would like assistance forming a study group, please complete [this form](https://forms.gle/1xfXRZ968Xh9XEMY8) 
-by Thursday, April 6 at 9pm PT. 
-Our goal is to form the study groups the following day, 
-so students can begin discussing the first homework assignment.
-
-## Computing environment
-
-Most course assignments will be completed in Jupyter notebooks in the Python programming language.
-We will demonstrate how to set up Google Colab as a computing environment for the class.
+The [following spreadsheet](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit#gid=0) 
+serves as our schedule and provides links to useful resources.
+It will also be used to coordinate project presentations.
 
 ## Access and accommodations
 

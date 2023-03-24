@@ -1,7 +1,7 @@
 ---
-name: Mike Van Ness
+name: Zach Frangella
 role: Teaching Assistant
 title: PhD candidate, Management Science and Engineering
-email: mvanness@stanford.edu
+email: zfran@stanford.edu
 website: 
 ---
