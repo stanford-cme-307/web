@@ -37,6 +37,12 @@ Use office hours to discuss topics directly related to the course
 and also anything else that's on your mind beyond the class: for example, 
 questions about career trajectories, research, and more.
 
+## Topics and resources
+
+The [following spreadsheet](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit#gid=0) 
+serves as our schedule and provides links to useful resources.
+It will also be used to coordinate project presentations.
+
 ## Acknowledgements
 {: .no_toc }
 

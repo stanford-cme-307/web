@@ -10,13 +10,8 @@ Staff information is stored in the `_staffers` directory and rendered according 
 
 ## Course communication 
 
-We use the [Ed platform](TK) to manage course questions and discussion.
+We use the [Ed platform](https://edstem.org/us/courses/38299) to manage course questions and discussion.
 Grades will be posted on Gradescope and should be discussed only real-time.
-
-Use our (anonymous) 
-[comment box](https://forms.gle/YgDbtuVuiyqknEu3A)
-to let us know which aspects of the class
-are going well and which could be improved.
 
 ## How to ask a question: Email? Office hours? Zoom?
 

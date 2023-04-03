@@ -26,11 +26,16 @@ Modern applications in data analysis, machine learning, engineering system desig
 Prerequisites:
 - Math 113 (linear algebra) and 115 (calculus), or equivalent
 
-## Resources
+## Computing environment
 
-The [following spreadsheet](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit#gid=0) 
-serves as our schedule and provides links to useful resources.
-It will also be used to coordinate project presentations.
+We will be using the Julia programming language via Pluto notebooks for in-class demos.
+Most optimization solvers are easy to access and swap out from within the Julia ecosystem,
+and Julia code is both simple to write and fast to run.
+Pluto notebooks allow for better interactivity and reactivity
+and are easy to install and use.
+[Learn how to install and use Pluto notebooks.](https://plutojl.org/)
+
+Students may use any language they wish (and that the course staff can read) to complete homework assignments and projects.
 
 ## Access and accommodations
 

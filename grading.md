@@ -75,16 +75,19 @@ The first project for the course will require you to implement an optimization a
 (from class, or another that you are interested in),
 try it out on a few problems, and write a report about your experience.
 You may implement in any language you like, although we recommend using Julia.
+The algorithm implementation must be completed individually by every student,
+following the same collaboration policy as for the homework.
 
 The second project may be a repeat of the first (using another algorithm), 
 or it can be a research project to be chosen in consultation with the course staff.
 The research project option is intended for PhD students to align your work on the class 
 with your longer term research objectives.
+The research project may be done as a small group (1-3 people).
 Come chat with any of the course staff during our office hours to clear your project with us.
 
-You will submit your project reports as a pdf or as a jupyter or pluto notebook
-by making a pull request on our (public) [projects repo](https://github.com/stanford-cme-307/projects-2023). 
-If you prefer to keep your project private, please speak with the course staff.
+You will submit your project reports as a pdf or as a jupyter or pluto notebook.
+We may share projects with other students enrolled in the class. 
+If you need to keep your project private, please speak with an instructor.
 
 Additionally, students submitting research projects will present on their work in class.
 [Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
