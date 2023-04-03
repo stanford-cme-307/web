@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Materials
+title: Calendar
 description: Course modules and dates
-nav_exclude: true
 ---
 
 | **Day** | **Lecture** | **Demo** | **Due** | **Reading** |
