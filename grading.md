@@ -92,6 +92,7 @@ If you need to keep your project private, please speak with an instructor.
 Additionally, students submitting research projects will present on their work in class.
 [Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
 on the project presentations tab, particularly if you plan to leave campus early.
+It is possible to present project remotely by prior permission of the instructor.
 
 ## Exams
 
@@ -108,3 +109,9 @@ with an academic accommodation letter from the Office of Accessible Education
 or in other such exceptional circumstances.
 Requests due to job interviews, other classes and assignments, and poor planning will not be considered.
 We suggest you save your slip days to insure against catastrophe.
+
+## Participation
+
+Students are expected to attend class and actively participate in discussion.
+We may fall back to more formal grading for participation to encourage attendance, 
+but expect to treat it informally in 2023.
