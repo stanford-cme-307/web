@@ -6,14 +6,15 @@ description: Course modules and dates
 
 | **Day** | **Lecture** | **Demo** | **Due** | **Reading** |
 | M April 3 | [Introduction (quadratic)](lectures/intro.pdf) |  |  | [Nesterov 1.1][Nesterov] |
-| M April 5 | [Introduction](lectures/intro.pdf) |  |  | [BV 1.1-4, 3.1][BV] |
-| M April 10 | [Numerical linear algebra](lectures/lsq.pdf) | [lsq](https://colab.research.google.com/github/stanford-cme-307/demos/blob/main/lsq.ipynb) |  | [NW ch5][NW04] |
-| W April 12 | [Gradient descent](lectures/gd.pdf) | [lsq](https://colab.research.google.com/github/stanford-cme-307/demos/blob/main/gradient-descent.ipynb) |  | [Bubeck 3.2, 3.4][Bubeck], [PL condition](https://arxiv.org/abs/1608.04636) |
-| M April 17 |||||
-| M May 29   | Holiday                                       |      |     |         |
-| W May 31   | Project presentations                           |      | hw8    |         |
+| M April 5 | [Introduction (finite and linear)](lectures/intro.pdf) |  |  |  |
+| M April 5 | [Introduction (conic and convex)](lectures/intro.pdf) |  |  | [BV 1.1-4, 3.1][BV] |
+| W April 12 | [Numerical linear algebra](lectures/lsq.pdf) | [lsq](https://colab.research.google.com/github/stanford-cme-307/demos/blob/main/lsq.ipynb) |  | [NW ch5][NW04] |
+| M April 17 | [Gradient descent](lectures/gd.pdf) | [lsq](https://colab.research.google.com/github/stanford-cme-307/demos/blob/main/gradient-descent.ipynb) |  | [Bubeck 3.2, 3.4][Bubeck], [PL condition](https://arxiv.org/abs/1608.04636) |
+| W April 19 |||||
+| M May 29   | Holiday                                         |      |     |         |
+| W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
-| W June 7   | Project presentations                                        |      | hw9    |         |
+| W June 7   | Project presentations                           |      |     |         |
 
 
 [JuliaOR]:	https://www.chkwon.net/julia/
@@ -28,3 +29,4 @@ description: Course modules and dates
 [LuenbergerYe]: https://warin.ca/ressources/books/2016_Book_LinearAndNonlinearProgramming.pdf
 [BauschkeCombettes]: https://link.springer.com/book/10.1007/978-3-319-48311-5
 [Beck]: [https://epubs.siam.org/doi/10.1137/1.9781611974997
+[WrightRecht]: [https://www.cambridge.org/core/books/optimization-for-data-analysis/C02C3708905D236AA354D1CE1739A6A2]
