@@ -10,8 +10,9 @@ description: Course modules and dates
 | M April 5 | [Introduction (conic and convex)](lectures/intro.pdf) |  |  | [BV 1.1-4, 3.1][BV] |
 | W April 12 | [Numerical linear algebra](lectures/lsq.pdf) | [lsq](https://github.com/stanford-cme-307/demos/blob/main/lsq.ipynb) |  | [NW ch5][NW04] |
 | M April 17 | [Gradient descent](lectures/gd.pdf) | [gradient-descent](https://github.com/stanford-cme-307/demos/blob/main/gradient-descent.ipynb) |  | [Bubeck 3.2, 3.4][Bubeck], [PL condition](https://arxiv.org/abs/1608.04636) |
-| W April 19 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
-| F April 21 |||[hw1](https://github.com/stanford-cme-307/homework/blob/main/hw1.pdf)
+| W April 19 | [SGD](lectures/sgd.pdf) | |||
+| F April 21 |||[hw1](https://github.com/stanford-cme-307/materials/blob/main/homework/hw1.pdf)
+| M April 24 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
