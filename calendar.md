@@ -12,7 +12,7 @@ description: Course modules and dates
 | M April 17 | [Gradient descent](lectures/gd.pdf) | [gradient-descent](https://github.com/stanford-cme-307/demos/blob/main/gradient-descent.ipynb) |  | [Bubeck 3.2, 3.4][Bubeck], [PL condition](https://arxiv.org/abs/1608.04636) |
 | W April 19 | [Acceleration](lectures/sgd.pdf) | |||
 | F April 21 |||[hw1](https://github.com/stanford-cme-307/homework/blob/main/hw1.pdf)
-| M April 24 | [SGD](lectures/sgd.pdf) | | [hw1 Solution](https://github.com/stanford-cme-307/homework/blob/928895769da4ad44bfb0a9d24fa10bd4bebf47de/CME_307_HW1_solution.pdf)||
+| M April 24 | [SGD](lectures/sgd.pdf) | | ||
 | W April 26 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
