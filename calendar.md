@@ -14,6 +14,10 @@ description: Course modules and dates
 | F April 21 |||[hw1](https://github.com/stanford-cme-307/homework/blob/main/hw1.pdf)
 | M April 24 | [SGD](lectures/sgd.pdf) | | ||
 | W April 26 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
+| M May 1 | [Duality](lectures/duality.pdf) ||||
+| W May 3 | [Duality applications](lectures/duality.pdf) ||||
+| M May 8 | [Proximal methods]() ||||
+| W May 10 | [Operator splitting]() ||||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
