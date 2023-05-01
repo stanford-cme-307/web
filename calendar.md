@@ -16,7 +16,7 @@ description: Course modules and dates
 | W April 26 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
 | M May 1 | [Duality](lectures/duality.pdf) ||||
 | W May 3 | [Duality applications](lectures/duality.pdf) ||||
-| M May 8 | [Proximal methods]() ||||
+| M May 8 | [Proximal methods]() ||project 1||
 | W May 10 | [Operator splitting]() ||||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
