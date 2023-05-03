@@ -19,6 +19,8 @@ description: Course modules and dates
 | F May 5 ||||project 1|
 | M May 8 | [Proximal methods]() ||||
 | W May 10 | [Operator splitting]() ||||
+| M May 15 | [Interior Point Methods]() ||||
+| W May 17 | [Stochastic Quasi-Newton]() ||||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
