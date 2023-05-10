@@ -15,12 +15,13 @@ description: Course modules and dates
 | M April 24 | [SGD](lectures/sgd.pdf) | | ||
 | W April 26 | [Quasi-Newton methods](lectures/qn.pdf) | [quasi-Newton](https://github.com/stanford-cme-307/demos/blob/main/qn.jl) |||
 | M May 1 | [Duality](lectures/duality.pdf) ||||
-| W May 3 | [Duality applications](lectures/duality.pdf) |||| |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/CME_307__Assignment_2.pdf)
+| W May 3 | [Duality applications](lectures/duality.pdf) ||||
 | F May 5 |||project 1||
 | M May 8 | [Operators](lectures/operators.pdf) ||||
 | W May 10 | [Operator splitting](lectures/operators.pdf) ||||
 | M May 15 | [Interior Point Methods]() ||||
 | W May 17 | [Stochastic Quasi-Newton]() ||||
+| F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/CME_307__Assignment_2.pdf)||
 | M May 22 | [MILP]() ||||
 | W May 24 | [MILP]() ||||
 | M May 29   | Holiday                                         |      |     |         |
