@@ -18,7 +18,7 @@ description: Course modules and dates
 | W May 3 | [Duality applications](lectures/duality.pdf) ||||
 | F May 5 |||project 1||
 | M May 8 | [Operators](lectures/operators.pdf) ||||
-| W May 10 | [Operator splitting](lectures/operators.pdf) ||||
+| W May 10 | [Operator splitting](lectures/splitting.pdf) ||||
 | M May 15 | [Interior Point Methods]() ||||
 | W May 17 | [Stochastic Quasi-Newton]() ||||
 | F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/hw2.pdf)||
