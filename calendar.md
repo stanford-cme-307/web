@@ -21,7 +21,7 @@ description: Course modules and dates
 | W May 10 | [Operator splitting](lectures/operators.pdf) ||||
 | M May 15 | [Interior Point Methods]() ||||
 | W May 17 | [Stochastic Quasi-Newton]() ||||
-| F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/CME_307__Assignment_2.pdf)||
+| F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/hw2.pdf)||
 | M May 22 | [MILP]() ||||
 | W May 24 | [MILP]() ||||
 | M May 29   | Holiday                                         |      |     |         |
