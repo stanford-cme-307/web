@@ -22,8 +22,8 @@ description: Course modules and dates
 | M May 15 | [Interior Point Methods](lectures/ipm.pdf) ||||
 | W May 17 | [Stochastic Quasi-Newton](lectures/nysopt.pdf) ||||
 | F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/hw2.pdf)||
-| M May 22 | [MILP]() ||||
-| W May 24 | [MILP]() ||||
+| M May 22 | MILP ||| [How to give a talk](lectures/how-to-give-a-talk.pdf)|
+| W May 24 | MILP ||||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
