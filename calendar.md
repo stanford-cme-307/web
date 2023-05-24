@@ -22,8 +22,8 @@ description: Course modules and dates
 | M May 15 | [Interior Point Methods](lectures/ipm.pdf) ||||
 | W May 17 | [Stochastic Quasi-Newton](lectures/nysopt.pdf) ||||
 | F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/hw2.pdf)||
-| M May 22 | MILP ||| [How to give a talk](lectures/how-to-give-a-talk.pdf)|
-| W May 24 | MILP ||||
+| M May 22 | [MILP](BTlinear) | [Power systems](https://jump.dev/JuMP.jl/stable/tutorials/applications/power_systems/) || [How to give a talk](lectures/how-to-give-a-talk.pdf) |
+| W May 24 | MILP | [Multicast Routing](https://colab.research.google.com/drive/1iOn1T1Muh51KaA7mf7UlQOdhSFZhZyry?usp=sharing) |||
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
@@ -43,3 +43,4 @@ description: Course modules and dates
 [BauschkeCombettes]: https://link.springer.com/book/10.1007/978-3-319-48311-5
 [Beck]: [https://epubs.siam.org/doi/10.1137/1.9781611974997
 [WrightRecht]: [https://www.cambridge.org/core/books/optimization-for-data-analysis/C02C3708905D236AA354D1CE1739A6A2]
+[BTlinear]: [http://athenasc.com/linoptbook.html]
