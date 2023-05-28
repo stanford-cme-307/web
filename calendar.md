@@ -28,6 +28,7 @@ description: Course modules and dates
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
 | W June 7   | Project presentations                           |      |     |         |
+| F June 9   |  |      |  Project report due   |         |
 
 
 [JuliaOR]:	https://www.chkwon.net/julia/
