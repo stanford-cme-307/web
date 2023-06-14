@@ -22,8 +22,8 @@ description: Course modules and dates
 | M May 15 | [Interior Point Methods](lectures/ipm.pdf) ||||
 | W May 17 | [Stochastic Quasi-Newton](lectures/nysopt.pdf) ||||
 | F May 19 |||[hw2](https://github.com/stanford-cme-307/homework/blob/main/hw2.pdf)||
-| M May 22 | [MILP](BTlinear) | [Power systems](https://jump.dev/JuMP.jl/stable/tutorials/applications/power_systems/) || [How to give a talk](lectures/how-to-give-a-talk.pdf) |
-| W May 24 | MILP | [Multicast Routing](https://colab.research.google.com/drive/1iOn1T1Muh51KaA7mf7UlQOdhSFZhZyry?usp=sharing) |||
+| M May 22 | MILP | [Power systems](https://jump.dev/JuMP.jl/stable/tutorials/applications/power_systems/) || [How to give a talk](lectures/how-to-give-a-talk.pdf) |
+| W May 24 | MILP | [Multicast Routing](https://colab.research.google.com/drive/1iOn1T1Muh51KaA7mf7UlQOdhSFZhZyry?usp=sharing) || [Linear optimization book][BTlinear] |
 | M May 29   | Holiday                                         |      |     |         |
 | W May 31   | Project presentations                           |      |     |         |
 | M June 5   | Project presentations                           |      |     |         |
