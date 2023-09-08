@@ -84,6 +84,7 @@ or it can be a research project to be chosen in consultation with the course sta
 The research project option is intended for PhD students to align your work on the class 
 with your longer term research objectives.
 The research project may be done as a small group (1-3 people).
+<!-- https://info.catme.org/ -->
 Come chat with any of the course staff during our office hours to clear your project with us.
 
 You will submit your project reports as a pdf or as a jupyter or pluto notebook.

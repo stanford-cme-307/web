@@ -18,13 +18,44 @@ description: >-
 
 ## Course description and prerequisites
 
+An optimizer seeks to identify the decisions that will maximize their objectives
+while satisfying constraints, with applications across engineering, 
+business, economics, statistics, data analysis, 
+and everyday life. 
+Through this course, students will learn to formulate and solve real-world problems using modern optimization
+and the fundamental analysis required to develop new algorithms for 
+new problems.
+We formalize optimization problems, in particular considering their 
+size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, and speed,
+and introduce algorithmic paradigms including linear systems,
+first and second order methods, 
+preconditioning, stochastic optimization, and integer programming.
+<!-- 
 Applications, theories, and algorithms for finite-dimensional linear and nonlinear optimization problems with continuous and discrete variables. 
 Elements of convex analysis, first- and second-order optimality conditions, sensitivity and duality. 
 Algorithms for unconstrained optimization, and linearly and nonlinearly constrained problems. 
-Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics.
+Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics. -->
+
+This course is required for ICME PhD students. 
+PhD students from other disciplines seeking to use optimization in their research or perform optimization research, 
+ambitious ICME masters students, 
+or advanced undergraduates in mathematics, computer science, statistics, and related fields, are also welcome.
 
 Prerequisites:
 - Math 113 (linear algebra) and 115 (calculus), or equivalent
+- fluency in proof-based mathematics
+
+## Course learning goals
+
+<!-- Big dream: students should be able to formulate and solve real-world problems using modern optimization. -->
+
+Through active engagement and completion of course activities, you will be able to:
+<!-- * recognize that every problem is an optimization problem. -->
+* formulate real-world problems as optimization problems.
+* identify appropriate solvers and explain tradeoffs in the context of a real world problem, considering features including size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, and speed.
+* tweak optimization algorithms to adapt them to a specific problem.
+* assess new optimization papers for their relevance to a given problem.
+* develop confidence as an optimizer by designing a solution to an optimization problem, including selecting methodology, writing code, and presenting results.
 
 ## Computing environment
 

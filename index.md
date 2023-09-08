@@ -1,7 +1,7 @@
 ---
 layout: home
-title: MS&E 311 / CME 307
-description: MS&E 311 / CME 307 course homepage.
+title: CME 307
+description: CME 307 course homepage.
 nav_exclude: false
 has_toc: true
 nav_order: 1
@@ -11,21 +11,14 @@ seo:
 
 ---
 
-# {{site.title}}: {{ site.tagline }}
+# {{site.title}}: {{ site.tagline }}, Winter 2024
 {: .no_toc }
 {: .mb-2 }
-**Instructor:** [Prof. Madeleine Udell](http://web.stanford.edu/~udell)
-Management Science and Engineering, Stanford University
+Cross-listed as CME 307 and MS&E 311, Stanford University <br>
+**Instructor:** [Prof. Madeleine Udell](http://web.stanford.edu/~udell), Management Science and Engineering
 
 <!-- 1. TOC
 {:toc} -->
-
-## Course description
-
-Applications, theories, and algorithms for finite-dimensional linear and nonlinear optimization problems with continuous and discrete variables. 
-Elements of convex analysis, first- and second-order optimality conditions, sensitivity and duality. 
-Algorithms for unconstrained optimization, and linearly and nonlinearly constrained problems. 
-Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics.
 
 ## Class schedule
 

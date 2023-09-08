@@ -1,8 +1,10 @@
 ---
 layout: page
-title: Calendar
+title: Materials
 description: Course modules and dates
 ---
+
+Lecture slides and readings from the Spring 2023 version of the course are posted here.
 
 | **Day** | **Lecture** | **Demo** | **Due** | **Reading** |
 | M April 3 | [Introduction (quadratic)](lectures/intro.pdf) |  |  | [Nesterov 1.1][Nesterov] |
