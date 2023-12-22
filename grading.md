@@ -18,17 +18,18 @@ description: Grading
 The course grading scheme is designed to encourage students to keep up with
 the course content as it happens, and to join lectures in person if they're able.
 
-- **Homework (35%):** three (or so) homework assignments
-- **Project (60%):** two projects
-- **Participation (5%):** students are expected to attend lecture, ask questions, and engage in discussion
-- (optional) **Exam (30%):** can replace the second project
-
-These weights are approximate; we reserve the right to change them later.
+- **Homework (40%):** four homework assignments on problem formulation, algorithm analysis, and algorithm design
+- **Project (45%):** solve an optimization problem
+- **Presentation (5%):** present in-class on recent optimization research
+- **Participation (10%):** attend lecture, ask questions, engage in discussion, and submit course surveys and in-class quizzes and writing assignments
 
 More details about each assignment follow.
 
 ## Homework
 
+Homework supports our course goals of learning to model optimization problems (hw1),
+to make mathematical predictions about the performance of optimization algorithms (hw2 and hw3),
+and learning to tweak optimization algorithms to adapt them to a specific problem (hw4).
 Homework will be submitted on Gradescope.
 
 *Slip days.* We recognize that students are balancing many priorities,
@@ -59,8 +60,8 @@ However, each student must submit their own homework. We ask that you
 - Give credit to the other resources that have helped you: please write on your homework 
 the textbooks, notes, web pages, or large language models you found useful.
 - Write up your homework by yourself. 
-That is, all of the text that you submit should be typed or hand-written by you.
-No copy-pasting.
+That is, all of the text that you submit should be typed by you.
+Tab completion is fine (eg, using Github Copilot).
 
 *Partial credit.* If you're not able to answer a homework question, but you show us
 the work that you performed to think about the question and to try to understand it,
@@ -72,35 +73,57 @@ or share or post solutions (yours or ours) to a public website.
 
 ## Projects
 
-The first project for the course will require you to implement an optimization algorithm 
-(from class, or another that you are interested in),
-try it out on a few problems, and write a report about your experience.
-You may implement in any language you like, although we recommend using Julia.
-The algorithm implementation must be completed individually by every student,
-following the same collaboration policy as for the homework.
+The course project supports our course goal of developing confidence as an optimizer by designing a solution to an optimization problem.
+You will chooce between three types of projects for this class:
+* Optimization methodology
+* Detailed application to real-world problem
+* Develop LLM tools for optimization modeling
 
-The second project may be a repeat of the first (using another algorithm), 
-or it can be a research project to be chosen in consultation with the course staff.
-The research project option is intended for PhD students to align your work on the class 
-with your longer term research objectives.
-The research project may be done as a small group (1-3 people).
-<!-- https://info.catme.org/ -->
+You will work on the project in a team of 1-3 people. (A 1-person team is only acceptable if your project is aligned with ongoing research for your PhD.) 
+You project should be chosen in consultation with the course staff.
+For PhD students, we suggest choosing a project that to align your work on the class with your longer term research objectives.
 Come chat with any of the course staff during our office hours to clear your project with us.
 
-You will submit your project reports as a pdf or as a jupyter or pluto notebook.
-We may share projects with other students enrolled in the class. 
-If you need to keep your project private, please speak with an instructor.
+As part of the project, you will submit a project proposal, midterm report, and final report, 
+present your findings live during the last week of class, and 
+get (and give) feedback from your peers in the class.
+[The project expectations](https://docs.google.com/document/d/1Lwn30NnQyGyu1c5-VDRAvv_z2kO03lsF1D_IQKD-BqI/edit) details project deliverables and lists project ideas.
 
-Additionally, students submitting research projects will present on their work in class.
-[Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
-on the project presentations tab, particularly if you plan to leave campus early.
-It is possible to present project remotely by prior permission of the instructor.
+You will submit your project reports as a pdf, which can be prepared in LaTeX or printed from a Jupyter notebook.
+We will share projects with other students enrolled in the class for peer-grading, 
+to support our course goals of assessing optimization literature and developing confidence as an optimizer.
+If you need to keep your project private, please speak with the course staff.
 
-## Exams
+Project final reports will be graded on the following items: 
+(For a methodological or theoretical project, the "problem" referenced below might be that previous literature does not handle problems with certain features.)
+<!-- example rubric https://docs.google.com/document/d/1KG69xTjNXjEe2BP4ScKdl39F35FzHpkJ/edit -->
+1. Does the project pose an interesting problem?
+2. Does the project explore the impact of at least three of the major problem features discussed in class (size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, speed, generalizability)? Which?
+3. Does the project draw conclusions? Do you believe the conclusions? 
+4. Do the graphics and tables presented support the conclusions of the project?
+5. Is the writing clear and engaging?
+
+The total project grade will holistically consider the quality and timeliness of the feedback you provided to other students on their projects, 
+as well as your project report and presentation.
+<!-- [Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
+on the project presentations tab, particularly if you plan to leave campus early. -->
+
+<!-- ## Exams
 
 Optionally, students can choose to take an exam rather than submit the second project.
 We will provide more details about the exam later in the quarter.
-It will probably be scheduled in person during the exam period.
+It will probably be scheduled in person during the exam period. -->
+
+## Presentation
+
+Students will design short presentations on recent literature in optimization once during the quarter. 
+[Sign up for a date and paper to present.](https://docs.google.com/spreadsheets/d/17vG8kedtmZv27EavLJNXHjOUiQxyvBnBpwDh6skNQHE/edit?usp=sharing)
+
+## Participation
+
+Students are expected to attend class and actively participate in discussion.
+We will variously use polling questions and in-class surveys, quizzes, presentations, and writing assignments to quantify participation.
+Students should expect to receive full participation credit if they miss no more than three days of class.
 
 ## Exceptions
 
@@ -111,9 +134,3 @@ with an academic accommodation letter from the Office of Accessible Education
 or in other such exceptional circumstances.
 Requests due to job interviews, other classes and assignments, and poor planning will not be considered.
 We suggest you save your slip days to insure against catastrophe.
-
-## Participation
-
-Students are expected to attend class and actively participate in discussion.
-We may fall back to more formal grading for participation to encourage attendance, 
-but expect to treat it informally in 2023.

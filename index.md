@@ -8,7 +8,6 @@ nav_order: 1
 seo:
   type: Course
   name: MS&E 311 / CME 307
-
 ---
 
 # {{site.title}}: {{ site.tagline }}, Winter 2024
@@ -22,9 +21,9 @@ Cross-listed as CME 307 and MS&E 311, Stanford University <br>
 
 ## Class schedule
 
-**Lecture:** MW 1:30-2:50pm in Thornton 110, starting April 3 <br>
+**Lecture:** MW 1:30-2:50pm in Thornton 110, starting January 8 <br>
 **Office hours:** See contact page for times and locations <br>
-**Discussion section:** optional and occasional, F 1:30-2:50 in Thornton 110 <br>
+**Project work:** F 1:30-2:50 in Thornton 110 <br>
 
 Use office hours to discuss topics directly related to the course
 and also anything else that's on your mind beyond the class: for example, 
@@ -36,9 +35,9 @@ The [following spreadsheet](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jN
 serves as our schedule and provides links to useful resources.
 It will also be used to coordinate project presentations.
 
-## Acknowledgements
+<!-- ## Acknowledgements
 {: .no_toc }
 
 The MS&E 311 materials build on course content developed by 
-[Yinyu Ye](https://web.stanford.edu/~yyye/) 
+[Yinyu Ye](https://web.stanford.edu/~yyye/)  -->
 

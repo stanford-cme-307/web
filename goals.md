@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Goals
+has_toc: false
 description: >-
     Course learning goals and detailed objectives
 ---
@@ -27,6 +28,7 @@ These course learning goals and more detailed objectives will guide our course t
     * Identify features of an optimization problem written in a standard form (eg in LaTeX)
     * List solvers appropriate for a problem with given features
 3. make mathematical predictions about the performance of optimization algorithms
+ <!-- and understand the implications of mathematical theory for practical optimization. -->
     * Understand convergence guarantees and rates for optimization algorithms, including global and local convergence, and sublinear, linear, and superlinear convergence
     * Use duality to prove lower bounds and develop stopping criteria
     * Assess the sensitivity of a solution to problem data
