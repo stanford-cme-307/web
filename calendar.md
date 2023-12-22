@@ -4,10 +4,13 @@ title: Materials
 description: Course modules and dates
 ---
 
-Since class sessions will be highly interactive, they will not be recorded, but slides will be posted below. 
+[The course schedule and links to resources and materials are posted here.](https://docs.google.com/spreadsheets/d/1ncPzDvHLd1Qu_6oAs-Opf6u489hyJ5a_3s7B--zznnA/edit#gid=1738667907)
+Since class sessions will be highly interactive, they will not be recorded, but slides will be posted. 
 Class sessions will be a combination of mini-lectures and small group breakout sessions where you will discuss, solve problems, and complete activities with a few of your classmates.
 
-<iframe src="<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrnXnPdZf_jMEKc9ZPtgOLcNF3Dhg-UuDS9O1HQrJVKAxf-gslNlWe5ulDpoomZuhbangpMljrFrut/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>" width="100%" height="1000" frameborder="0"></iframe>
+<!-- Include an iframe with a link to our course schedule on google drive as plain html -->
+<!-- <iframe src="<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrnXnPdZf_jMEKc9ZPtgOLcNF3Dhg-UuDS9O1HQrJVKAxf-gslNlWe5ulDpoomZuhbangpMljrFrut/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>" width="100%" height="1000" frameborder="0"></iframe> -->
+
 
 Lecture slides and readings from the Spring 2023 version of the course are posted below.
 
