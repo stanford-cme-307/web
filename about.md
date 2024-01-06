@@ -38,8 +38,8 @@ Modern applications in data analysis, machine learning, engineering system desig
 
 This course is required for ICME PhD students. 
 PhD students from other disciplines seeking to use optimization in their research or perform optimization research, 
-ambitious ICME masters students, 
-or advanced undergraduates in mathematics, computer science, statistics, and related fields, are also welcome.
+ambitious ICME masters students.
+Advanced undergraduates in mathematics, computer science, statistics, and related fields are also welcome.
 
 Prerequisites:
 - Math 113 (linear algebra) and 115 (calculus), or equivalent

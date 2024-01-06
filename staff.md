@@ -11,9 +11,9 @@ Staff information is stored in the `_staffers` directory and rendered according 
 ## Course communication 
 
 * The best way to communicate is real-time, in person or on Zoom. 
-Real-time meetings are more efficient, more effective, and more fun.
+<!-- Real-time meetings are more efficient, more effective, and more fun. -->
 Find your instructors after class, in office hours, or by [booking an office hours slot](https://calendar.app.google/eeHciuuD1mdrCYQy7) if your question requires privacy.
-* We use the [Ed platform](https://edstem.org/us/courses/38299) to manage offine course questions and discussion. 
+* We use the [Ed platform](https://edstem.org/us/courses/51411/discussion/) to manage offine course questions and discussion. 
 Longer or more mathematically involved questions, or debugging requests, are more appropriate for office hours.
 * Grades will be posted on Gradescope and should be discussed only real-time, not by email or on Ed.
 * Direct email to instructors should be used to submit letters from OAE
