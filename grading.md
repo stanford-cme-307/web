@@ -16,7 +16,7 @@ description: Grading
 ## Course grading scheme
 
 The course grading scheme is designed to encourage students to keep up with
-the course content as it happens, and to join lectures in person if they're able.
+the course content as it happen and to ensure students meet the course learning goals.
 
 - **Homework (40%):** four homework assignments on problem formulation, algorithm analysis, and algorithm design
 - **Project (45%):** solve an optimization problem
@@ -81,7 +81,7 @@ You will chooce between three types of projects for this class:
 
 You will work on the project in a team of 1-3 people. (A 1-person team is only acceptable if your project is aligned with ongoing research for your PhD.) 
 You project should be chosen in consultation with the course staff.
-For PhD students, we suggest choosing a project that to align your work on the class with your longer term research objectives.
+For PhD students, we suggest choosing a project to align your work on the class with your longer term research objectives.
 Come chat with any of the course staff during our office hours to clear your project with us.
 
 As part of the project, you will submit a project proposal, midterm report, and final report, 

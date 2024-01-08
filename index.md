@@ -3,7 +3,7 @@ layout: home
 title: CME 307
 description: CME 307 course homepage.
 nav_exclude: false
-has_toc: true
+has_toc: false
 nav_order: 1
 seo:
   type: Course
