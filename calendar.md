@@ -9,6 +9,9 @@ Class sessions will be a combination of mini-lectures and small group breakout s
 Since class sessions will be highly interactive, they will not be recorded.
 Slides will sometimes be posted. 
 
+| **Day** | **Lecture** |
+| M January 8 | [Introduction](lectures/2024/intro.pdf) |
+| W January 10 | [Linear programs](lectures/2024/lp.pdf) |
 <!-- Include an iframe with a link to our course schedule on google drive as plain html -->
 <!-- <iframe src="<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrnXnPdZf_jMEKc9ZPtgOLcNF3Dhg-UuDS9O1HQrJVKAxf-gslNlWe5ulDpoomZuhbangpMljrFrut/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>" width="100%" height="1000" frameborder="0"></iframe> -->
 
