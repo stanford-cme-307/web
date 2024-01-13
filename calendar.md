@@ -17,7 +17,7 @@ Slides will sometimes be posted.
 | W January 10 | [Linear programs](lectures/2024/lp.pdf) |  |
 | W January 17 |  |  |
 | M January 22 |  |  |
-| W January 24 |  | [hw1](https://github.com/stanford-cme-307/web/blob/main/homework/hw1.zip) |
+| W January 24 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
 
 # 2023 Materials
 
