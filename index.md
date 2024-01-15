@@ -32,10 +32,10 @@ questions about career trajectories, research, and more.
 
 ## Topics and resources
 
-Announcements will be posted on [Ed](https://edstem.org/us/courses/51411/discussion/). To access, sign up for the course on canvas
+Announcements will be posted on [Ed](https://edstem.org/us/courses/51411/discussion/). To access, enroll in the course
 and/or fill out the [student survey](https://forms.gle/7hPniFeC576S12FAA) to indicate that you're auditing.
 
-The [following spreadsheet](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit#gid=0) 
+The [following spreadsheet](https://docs.google.com/spreadsheets/d/1ncPzDvHLd1Qu_6oAs-Opf6u489hyJ5a_3s7B--zznnA/edit#gid=1738667907)
 serves as our schedule and provides links to useful resources.
 It will also be used to coordinate project presentations.
 
