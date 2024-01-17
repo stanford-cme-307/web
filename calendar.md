@@ -11,7 +11,8 @@ Slides will sometimes be posted.
 
 | **Day** | **Lecture** | **Due** |
 | M January 8 | [Introduction](lectures/2024/intro.pdf) |  |
-| W January 10 | [Linear programs](lectures/2024/lp.pdf) |  |
+| W January 10 | [Linear programs: geometry](lectures/2024/lp.pdf) |  |
+| M January 15 | no class (holiday) |  |
 | W January 17 |  |  |
 | M January 22 |  |  |
 | W January 24 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
