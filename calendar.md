@@ -12,10 +12,12 @@ Slides will sometimes be posted.
 | **Day** | **Lecture** | **Due** |
 | M January 8 | [Introduction](lectures/2024/intro.pdf) |  |
 | W January 10 | [Linear programs: geometry](lectures/2024/lp.pdf) |  |
+| F January 12 | Recitation: project brainstorming |  |
 | M January 15 | no class (holiday) |  |
 | W January 17 | [Linear programs: modeling and solving](lectures/2024/lp.pdf) |  |
-| M January 22 | [Linear programs: duality](lectures/2024/lp.pdf) |  |
-| W January 24 | Linear programs: research | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
+| M January 22 | [Linear programs: solving](lectures/2024/lp.pdf) |  |
+| W January 24 | [Linear programs: duality](lectures/2024/lp.pdf) | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
+| F January 26 | Linear programs: research |  |
 
 # 2023 Materials
 
