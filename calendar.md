@@ -18,6 +18,10 @@ Slides will sometimes be posted.
 | M January 22 | [Linear programs: solving](lectures/2024/lp.pdf) |  |
 | W January 24 | [Linear programs: duality](lectures/2024/lp.pdf) | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
 | F January 26 | Linear programs: research |  |
+| M January 29 | [Optimality conditions](lectures/2024/opt.pdf) |  |
+| W January 31 | [Quadratic programs](lectures/2024/opt.pdf) |  |
+| M February 5 | [Gradient descent](lectures/2024/gd.pdf) |  |
+| W February 7 | [(Quasi)-Newton and IPMs](lectures/2024/qn.pdf) |  |
 
 # 2023 Materials
 
