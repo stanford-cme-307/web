@@ -23,6 +23,11 @@ Slides will sometimes be posted.
 | M February 5 | [Gradient descent](lectures/2024/gd.pdf) |  |
 | W February 7 | [(Quasi)-Newton and IPMs](lectures/2024/qn.pdf) |  |
 | F February 9 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/hw2.zip) |
+| M February 12 |  |  |
+| W February 14 |  |  |
+| M February 19 |  |  |
+| W February 21 |  |  |
+| M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/hw3.zip) | 
 
 # 2023 Materials
 
