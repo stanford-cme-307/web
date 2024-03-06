@@ -29,8 +29,8 @@ Slides will sometimes be posted.
 | W February 21 |  |  |
 | M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/hw3.zip) | 
 | W February 28 | [Convex duality](lectures/2024/duality.pdf) and [Interior point methods](lectures/2024/ipm.pdf) |  |
-| M March 4 | [First order methods](lectures/2024/operators.pdf) |  |
-| W March 6 | First order methods |  |
+| M February 21 | [First order methods](lectures/2024/operators.pdf) |  |
+| W February 21 | [Zero order methods](https://docs.google.com/presentation/d/1Z2HyHJnSVW6vIeDST55zZ2xd5qgtvSJ_Zgv5zJVE6AQ/edit?usp=sharing) |  |
 
 # 2023 Materials
 
