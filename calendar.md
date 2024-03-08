@@ -22,7 +22,7 @@ Slides will sometimes be posted.
 | W January 31 | [Quadratic programs](lectures/2024/quad.pdf) |  |
 | M February 5 | [Gradient descent](lectures/2024/gd.pdf) |  |
 | W February 7 | [(Quasi)-Newton and IPMs](lectures/2024/qn.pdf) |  |
-| F February 9 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/hw2.zip) |
+| F February 9 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/hw2.zip) <br> [hw2_sol](https://github.com/stanford-cme-307/web/raw/main/homework/hw2_sol.zip) |
 | M February 12 | [(Quasi)-Newton](lectures/2024/qn.pdf) |  |
 | W February 14 | [Acceleration and SGD](lectures/2024/sgd.pdf) |  |
 | M February 19 | Holiday, no class |  |
