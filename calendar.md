@@ -27,7 +27,7 @@ Slides will sometimes be posted.
 | W February 14 | [Acceleration and SGD](lectures/2024/sgd.pdf) |  |
 | M February 19 | Holiday, no class |  |
 | W February 21 |  |  |
-| M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/hw3.zip) | 
+| M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/hw3.zip) <br> [hw3_sol](https://github.com/stanford-cme-307/web/raw/main/homework/hw3_sol.zip) | 
 | W February 28 | [Convex duality](lectures/2024/duality.pdf) and [Interior point methods](lectures/2024/ipm.pdf) |  |
 | M February 21 | [First order methods](lectures/2024/operators.pdf) |  |
 | W February 21 | [Zero order methods](https://docs.google.com/presentation/d/1Z2HyHJnSVW6vIeDST55zZ2xd5qgtvSJ_Zgv5zJVE6AQ/edit?usp=sharing) |  |
