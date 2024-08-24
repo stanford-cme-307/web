@@ -19,8 +19,8 @@ The course grading scheme is designed to encourage students to keep up with
 the course content as it happen and to ensure students meet the course learning goals.
 
 - **Homework (40%):** four homework assignments on problem formulation, algorithm analysis, and algorithm design
-- **Midterm (20%):**
-- **Final exam (35%):**
+- **Midterm (20%):** closed book, 70 minutes, in class on 10/21.
+- **Final exam (35%):** closed book, 90 minutes, during exam period. 
 <!-- - **Project (45%):** solve an optimization problem -->
 <!-- - **Presentation (5%):** present in-class on recent optimization research -->
 - **Participation (5%):** attend lecture, ask questions, engage in discussion, and submit course surveys.
@@ -113,9 +113,11 @@ on the project presentations tab, particularly if you plan to leave campus early
 
 ## Exams
 
-The course will feature one in-class midterm exam and one final exam,
-which will mimic the format of the ICME qualifying exam in Optimization.
-See the Qualifying exam tab for details about ICME qualifying exam, including practice exams.
+The course will feature one in-class midterm exam and one final exam
+that will mimic the format of the ICME qualifying exam in Optimization.
+Both are closed-book. One page of notes, double sided, is allowed.
+See the Qualifying exam tab for details about ICME qualifying exam, including practice exams,
+and final exams from previous years.
 
 <!-- ## Presentation
 
