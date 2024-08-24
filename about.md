@@ -37,9 +37,9 @@ Algorithms for unconstrained optimization, and linearly and nonlinearly constrai
 Modern applications in data analysis, machine learning, engineering system design, communications, game theory, auctions, and economics. -->
 
 This course is required for ICME PhD students. 
-PhD students from other disciplines seeking to use optimization in their research or perform optimization research, 
-ambitious ICME masters students.
-Advanced undergraduates in mathematics, computer science, statistics, and related fields are also welcome.
+PhD students from other disciplines seeking to research optimization or to use optimization in their research or perform optimization research, 
+ambitious ICME masters students,
+and advanced undergraduates in mathematics, computer science, statistics, and related fields are also welcome.
 
 Prerequisites:
 - Math 113 (linear algebra) and 115 (calculus), or equivalent
@@ -51,26 +51,30 @@ Prerequisites:
 
 Through active engagement and completion of course activities, you will be able to:
 <!-- * recognize that every problem is an optimization problem. -->
-* formulate real-world problems as optimization problems.
-* identify appropriate solvers and explain tradeoffs in the context of a real world problem, considering features including size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, and speed.
-* make mathematical predictions about the performance of optimization algorithms.
-* tweak optimization algorithms to adapt them to a specific problem.
-* develop confidence as an optimizer by designing a solution to an optimization problem, including reviewing the relevant literature, selecting methodology, writing code, and presenting results.
+* Formulate real-world problems as optimization problems.
+* Identify analytical properties of a real world problem, including size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, speed, generalizability, conic representability. Explain how these properties influence guarantees of optimality, algorithm and solver selection, and solution speed.
+* Make mathematical predictions about the performance of optimization algorithms and stability of optimal solutions.
+<!-- * tweak optimization algorithms to adapt them to a specific problem.
+* develop confidence as an optimizer by designing a solution to an optimization problem, including reviewing the relevant literature, selecting methodology, writing code, and presenting results. -->
 
 ## Computing environment
 
-We will be using the Julia programming language via Pluto notebooks for in-class demos.
+We will be using the Gurobi optimizer through [gurobipy](https://pypi.org/project/gurobipy/) in Python to model and solve optimization problems, as gurobipy is has ample features and documentation,
+and is supported by the [OptiMUS optimization modeling toolkit](https://optimus-solver.vercel.app/).
+We will also use the Julia programming language for in-class algorithm demos, 
+as Julia code is both simple to write and fast to run.
+<!-- We will be using the Julia programming language via Pluto notebooks for in-class demos.
 Most optimization solvers are easy to access and swap out from within the Julia ecosystem,
 and Julia code is both simple to write and fast to run.
 Pluto notebooks allow for better interactivity and reactivity
 and are easy to install and use.
 [Learn how to install and use Pluto notebooks.](https://plutojl.org/)
 
-Students may use any language they wish (and that the course staff can read) to complete homework assignments and projects.
+Students may use any language they wish (and that the course staff can read) to complete homework assignments and projects. -->
 
 ## Best practices for learning 
 
-Learning how to learn effectively is a skill unto itself! To get the most out of our course learning experience, I recommend the following:
+Learning how to learn effectively is a skill unto itself! To get the most out of our course learning experience, we recommend the following:
 * If possible, attend all class meetings and be fully present and engaged. 
 * Take notes on what you read, either directly in the book or somewhere else, and jot down all of the questions you have. 
 * Test yourself on what you have read by trying to summarize key points without looking back at the text.

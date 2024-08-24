@@ -19,9 +19,12 @@ The course grading scheme is designed to encourage students to keep up with
 the course content as it happen and to ensure students meet the course learning goals.
 
 - **Homework (40%):** four homework assignments on problem formulation, algorithm analysis, and algorithm design
-- **Project (45%):** solve an optimization problem
-- **Presentation (5%):** present in-class on recent optimization research
-- **Participation (10%):** attend lecture, ask questions, engage in discussion, and submit course surveys and in-class quizzes and writing assignments
+- **Midterm (20%):**
+- **Final exam (35%):**
+<!-- - **Project (45%):** solve an optimization problem -->
+<!-- - **Presentation (5%):** present in-class on recent optimization research -->
+- **Participation (5%):** attend lecture, ask questions, engage in discussion, and submit course surveys.
+<!-- and in-class quizzes and writing assignments -->
 
 More details about each assignment follow.
 
@@ -34,9 +37,9 @@ Homework will be submitted on Gradescope.
 
 *Slip days.* We recognize that students are balancing many priorities,
 and so we make accommodations to allow for late homework.
-Students have 5 slip days that may be used through the quarter with no grade penalty.
-At most 3 slip days may be used for a single assignment.
-For example, you could submit one homework three days late and a second two days late.
+Students have 9 slip days that may be used through the quarter with no grade penalty.
+At most 4 slip days may be used for a single assignment.
+For example, you could submit two homeworks 4 days late and a third 1 day late.
 To calculate slip days, we round up: a homework submitted 24 hours and one minute after it is due will use two slip days.
 Homework submitted after all your slip days are used will receive a score of 0.
 
@@ -71,7 +74,7 @@ you will receive partial credit.
 Under no circumstance should you seek out or look at solutions to assignments given in previous years,
 or share or post solutions (yours or ours) to a public website.
 
-## Projects
+<!-- ## Projects
 
 The course project supports our course goal of developing confidence as an optimizer by designing a solution to an optimization problem.
 You will chooce between three types of projects for this class:
@@ -96,7 +99,7 @@ If you need to keep your project private, please speak with the course staff.
 
 Project final reports will be graded on the following items: 
 (For a methodological or theoretical project, the "problem" referenced below might be that previous literature does not handle problems with certain features.)
-<!-- example rubric https://docs.google.com/document/d/1KG69xTjNXjEe2BP4ScKdl39F35FzHpkJ/edit -->
+<!-- example rubric https://docs.google.com/document/d/1KG69xTjNXjEe2BP4ScKdl39F35FzHpkJ/edit 
 1. Does the project pose an interesting problem?
 2. Does the project explore the impact of at least three of the major problem features discussed in class (size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, speed, generalizability)? Which?
 3. Does the project draw conclusions? Do you believe the conclusions? 
@@ -105,19 +108,19 @@ Project final reports will be graded on the following items:
 
 The total project grade will holistically consider the quality and timeliness of the feedback you provided to other students on their projects, 
 as well as your project report and presentation.
-<!-- [Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
-on the project presentations tab, particularly if you plan to leave campus early. -->
+[Sign up for a slot](https://docs.google.com/spreadsheets/d/1PXv_sFkhz5jNAA765kgHanSPoILm2fHzzRNuOOJzpHM/edit?usp=sharing)
+on the project presentations tab, particularly if you plan to leave campus early. --> 
 
-<!-- ## Exams
+## Exams
 
-Optionally, students can choose to take an exam rather than submit the second project.
-We will provide more details about the exam later in the quarter.
-It will probably be scheduled in person during the exam period. -->
+The course will feature one in-class midterm exam and one final exam,
+which will mimic the format of the ICME qualifying exam in Optimization.
+See the Qualifying exam tab for details about ICME qualifying exam, including practice exams.
 
-## Presentation
+<!-- ## Presentation
 
 Students will design short presentations on recent literature in optimization once during the quarter. 
-[Sign up for a date and paper to present.](https://docs.google.com/spreadsheets/d/17vG8kedtmZv27EavLJNXHjOUiQxyvBnBpwDh6skNQHE/edit?usp=sharing)
+[Sign up for a date and paper to present.](https://docs.google.com/spreadsheets/d/17vG8kedtmZv27EavLJNXHjOUiQxyvBnBpwDh6skNQHE/edit?usp=sharing) -->
 
 ## Participation
 
