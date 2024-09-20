@@ -26,12 +26,14 @@ Cross-listed as CME 307, MS&E 311 and OIT 676, Stanford University <br>
 **Section:** F 10:30-11:50 in Lathrop 018 (attendance not required) <br>
 
 Use office hours to discuss topics directly related to the course
-and also anything else that's on your mind beyond the class: for example, 
+and also anything else on your mind beyond the class: for example, 
 questions about career trajectories, research, and more.
 
 ## Topics and resources
 
-Announcements will be posted on [Ed](https://edstem.org/us/courses/63926/discussion/). To access, enroll in the course
+* The course schedule and links to surveys, resources, and materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/1Kt7AXrvqt8lvuuOuWdWgyi96RM9LVjVS1LpP2XffbL8/edit?gid=0#gid=0).
+* Slides will be posted after (and sometimes before) class on the [materials tab](materials.md).
+* Announcements will be posted on [Ed](https://edstem.org/us/courses/63926/discussion/). To access, enroll in the course
 and/or fill out the [student survey](https://forms.gle/7hPniFeC576S12FAA) to indicate that you're auditing.
 
 <!-- The [following spreadsheet](https://docs.google.com/spreadsheets/d/1ncPzDvHLd1Qu_6oAs-Opf6u489hyJ5a_3s7B--zznnA/edit#gid=1738667907)

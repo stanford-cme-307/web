@@ -18,6 +18,8 @@ description: >-
 
 ## Course description and prerequisites
 
+Optimization entails seeking decisions that maximize objectives while satisfying constraints, with applications across engineering, business, economics, statistics, data analysis, and everyday life. This course provides an in-depth and rigorous introduction to mathematical optimization, covering how to formulate, analyze, and solve real-world problems using modern optimization theory and software. Topics include finite-dimensional linear optimization problems with continuous and discrete variables, sensitivity and duality, basic elements of convex analysis, first- and second-order optimality conditions for nonlinear optimization problems, and a discussion of important algorithmic and computational aspects related to optimization.
+<!-- 2024 Spring 
 An optimizer seeks to identify the decisions that will maximize their objectives
 while satisfying constraints, with applications across engineering, 
 business, economics, statistics, data analysis, 
@@ -29,8 +31,8 @@ We formalize optimization problems, in particular considering their
 size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, and speed,
 and introduce algorithmic paradigms including linear systems,
 first and second order methods, 
-preconditioning, stochastic optimization, and integer programming.
-<!-- 
+preconditioning, stochastic optimization, and integer programming. -->
+<!-- 2022 and earlier
 Applications, theories, and algorithms for finite-dimensional linear and nonlinear optimization problems with continuous and discrete variables. 
 Elements of convex analysis, first- and second-order optimality conditions, sensitivity and duality. 
 Algorithms for unconstrained optimization, and linearly and nonlinearly constrained problems. 
@@ -52,8 +54,14 @@ Prerequisites:
 Through active engagement and completion of course activities, you will be able to:
 <!-- * recognize that every problem is an optimization problem. -->
 * Formulate real-world problems as optimization problems.
-* Identify analytical properties of a real world problem, including size, sparsity, discrete variables, convexity, ill-conditioning, access patterns to problem data, convergence tolerance, speed, generalizability, conic representability. Explain how these properties influence guarantees of optimality, algorithm and solver selection, and solution speed.
-* Make mathematical predictions about the performance of optimization algorithms and stability of optimal solutions.
+* Characterize and analyze optimal solutions to problems by using the core principles of optimization theory and developing fluency in optimization proof techniques.
+* Understand the benefits and drawbacks of modeling and solving an optimization problem 
+in any of several standard forms, 
+including linear programs (with continuous and discrete variables), 
+quadratic and second-order conic problems, 
+semidefinite programming, stochastic and robust optimization.
+* Identify analytical properties of a real-world problem and understand how these influence guarantees of optimality, algorithm and solver selection, or speed of convergence to an optimal solution.
+* Tweak optimization algorithms to adapt them to a specific problem.
 <!-- * tweak optimization algorithms to adapt them to a specific problem.
 * develop confidence as an optimizer by designing a solution to an optimization problem, including reviewing the relevant literature, selecting methodology, writing code, and presenting results. -->
 

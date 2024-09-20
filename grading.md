@@ -139,3 +139,7 @@ with an academic accommodation letter from the Office of Accessible Education
 or in other such exceptional circumstances.
 Requests due to job interviews, other classes and assignments, and poor planning will not be considered.
 We suggest you save your slip days to insure against catastrophe.
+
+## Unstoppable education: the show must go on!
+
+Stanford as an institution is committed to the highest quality education, and as your teaching team, our first priority is to uphold your educational experience. To that end we are committed to following the syllabus as written here, including through short or long-term disruptions, such as public health emergencies, natural disasters, or protests and demonstrations. However, there may be extenuating circumstances that necessitate some changes. Should adjustments be necessary, we will communicate clearly and promptly to ensure you understand the expectations and are positioned for successful learning.
