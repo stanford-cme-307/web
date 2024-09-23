@@ -13,7 +13,7 @@ Since class sessions will be highly interactive, they will not be recorded.
 Slides will sometimes be posted.  -->
 
 | **Day** | **Lecture** | **Due** |
-| M September 23 | [Introduction](lectures/2024fall/intro.pdf) |  |
+| M September 23 | [Introduction](2024fall/intro.pdf) |  |
 
 # Winter 2024 Materials
 
