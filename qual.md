@@ -19,8 +19,8 @@ To study, try looking through the lectures slides and homework, and making a she
 
 You may find previous qualifying and final exams useful for your studying, though course topics may shift from year to year, so don't worry if questions seem unfamiliar!
 
-- [2023 qualifying exam](homework/2023-CME307-qual.pdf)
-- [2023 final exam](homework/2023-CME307-final.pdf)
+- [2023 qualifying exam](homework/qual/2023-CME307-qual.pdf)
+- [2023 final exam](homework/qual/2023-CME307-final.pdf)
 
 # OIT qualifying exam
 
