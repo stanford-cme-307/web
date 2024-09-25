@@ -14,6 +14,7 @@ Slides will sometimes be posted.  -->
 
 | **Day** | **Lecture** | **Due** |
 | M September 23 | [Introduction](lectures/2024fall/intro.pdf) |  |
+| M September 23 | [LP geometry](lectures/2024fall/lp.pdf) |  |
 
 # Winter 2024 Materials
 
