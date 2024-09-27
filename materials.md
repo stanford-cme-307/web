@@ -14,7 +14,8 @@ Slides will sometimes be posted.  -->
 
 | **Day** | **Lecture** | **Due** |
 | M September 23 | [Introduction](lectures/2024fall/intro.pdf) |  |
-| M September 23 | [LP geometry](lectures/2024fall/lp.pdf) |  |
+| W September 25 | [LP geometry](lectures/2024fall/lp.pdf) |  |
+| F October 4 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw1.zip) |
 
 # Winter 2024 Materials
 
@@ -27,17 +28,17 @@ Lecture slides, readings, and homework from the Winter 2024 version of the cours
 | M January 15 | no class (holiday) |  |
 | W January 17 | [Linear programs: modeling and solving](lectures/2024/lp.pdf) |  |
 | M January 22 | [Linear programs: solving](lectures/2024/lp.pdf) |  |
-| W January 24 | [Linear programs: duality](lectures/2024/lp.pdf) | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/hw1.zip) |
+| W January 24 | [Linear programs: duality](lectures/2024/lp.pdf) | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw1.zip) <br> [hw1_sol](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw1_sol.zip) |
 | M January 29 | [Optimality conditions](lectures/2024/opt.pdf) |  |
 | W January 31 | [Quadratic programs](lectures/2024/quad.pdf) |  |
 | M February 5 | [Gradient descent](lectures/2024/gd.pdf) |  |
 | W February 7 | [(Quasi)-Newton and IPMs](lectures/2024/qn.pdf) |  |
-| F February 9 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/hw2.zip) <br> [hw2_sol](https://github.com/stanford-cme-307/web/raw/main/homework/hw2_sol.zip) |
+| F February 9 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw2.zip) <br> [hw2_sol](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw2_sol.zip) |
 | M February 12 | [(Quasi)-Newton](lectures/2024/qn.pdf) |  |
 | W February 14 | [Acceleration and SGD](lectures/2024/sgd.pdf) |  |
 | M February 19 | Holiday, no class |  |
 | W February 21 |  |  |
-| M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/hw3.zip) <br> [hw3_sol](https://github.com/stanford-cme-307/web/raw/main/homework/hw3_sol.zip) | 
+| M February 26 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw3.zip) <br> [hw3_sol](https://github.com/stanford-cme-307/web/raw/main/homework/w24/hw3_sol.zip) | 
 | W February 28 | [Convex duality](lectures/2024/duality.pdf) and [Interior point methods](lectures/2024/ipm.pdf) |  |
 | M February 21 | [First order methods](lectures/2024/operators.pdf) |  |
 | W February 21 | [Zero order methods](https://docs.google.com/presentation/d/1Z2HyHJnSVW6vIeDST55zZ2xd5qgtvSJ_Zgv5zJVE6AQ/edit?usp=sharing) |  |
