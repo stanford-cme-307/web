@@ -15,6 +15,7 @@ Slides will sometimes be posted.  -->
 | **Day** | **Lecture** | **Due** |
 | M September 23 | [Introduction](lectures/2024fall/intro.pdf) |  |
 | W September 25 | [LP geometry](lectures/2024fall/lp.pdf) |  |
+| M September 25 | [LP solving and modeling](lectures/2024fall/lp.pdf) |  |
 | F October 4 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw1.zip) |
 
 # Winter 2024 Materials
