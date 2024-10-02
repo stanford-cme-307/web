@@ -17,6 +17,9 @@ Slides will sometimes be posted.  -->
 | W September 25 | [LP geometry](lectures/2024fall/lp.pdf) |  |
 | M September 25 | [LP solving and modeling](lectures/2024fall/lp.pdf) |  |
 | F October 4 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw1.zip) |
+| M September 30 | [Slides on modeling with binary variables](lectures/2024fall/Lecture03_Slides_IP_modeling.pdf) |  |
+| W October 2 | [Lecture notes on duality](lectures/2024fall/Lecture04_duality_notes.pdf) |  |
+| W October 2 | [Slides on duality](lectures/2024fall/Lecture04_slides_posted.pdf) |  |
 
 # Winter 2024 Materials
 
