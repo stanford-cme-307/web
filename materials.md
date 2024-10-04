@@ -20,6 +20,7 @@ Slides will sometimes be posted.  -->
 | M September 30 | [Slides on modeling with binary variables](lectures/2024fall/Lecture03_Slides_IP_modeling.pdf) |  |
 | W October 2 | [Lecture notes on duality](lectures/2024fall/Lecture04_duality_notes.pdf) |  |
 | W October 2 | [Slides on duality](lectures/2024fall/Lecture04_slides_posted.pdf) |  |
+| F October 11 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw2.zip) |
 
 # Winter 2024 Materials
 
