@@ -21,6 +21,7 @@ Slides will sometimes be posted.  -->
 | W October 2 | [Slides on duality](lectures/2024fall/Lecture04_slides_posted.pdf) |  |
 | F October 4 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw1.zip) |
 | F October 11 |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw2.zip) |
+| M October 7 | [Lecture 5 - slides preclass](lectures/2024fall/Lecture05_slides_preclass.pdf) |  |
 
 # Winter 2024 Materials
 
