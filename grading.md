@@ -30,9 +30,11 @@ More details about each assignment follow.
 
 ## Homework
 
-Homework supports our course goals of learning to model optimization problems (hw1),
-to make mathematical predictions about the performance of optimization algorithms (hw2 and hw3),
-and learning to tweak optimization algorithms to adapt them to a specific problem (hw4).
+<!-- Homework supports our course goals of learning to model optimization problems (hw1),
+to characterize optimal solutions (hw2),
+make mathematical predictions about the performance of optimization algorithms (hw3),
+recognizing problems structures 
+and learning to tweak optimization algorithms to adapt them to a specific problem (hw6). -->
 Homework will be submitted on Gradescope.
 
 *Slip days.* We recognize that students are balancing many priorities,
