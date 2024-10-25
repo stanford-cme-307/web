@@ -23,6 +23,7 @@ Slides will sometimes be posted.  -->
 | W October 9 | [Lecture 6 - slides postclass](lectures/2024fall/Lecture06_slides_postclass.pdf) |  |
 | M October 14 | [Lecture 7 - slides preclass](lectures/2024fall/Lecture07_slides_preclass.pdf), [post class](lectures/2024fall/Lecture07_slides_postclass.pdf), [and full lecture notes](lectures/2024fall/Lecture_notes_discrete_optimization.pdf) | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw2.zip) |
 | W October 16 | [Lecture 8 - slides](lectures/2024fall/Lecture08_slides_postclass.pdf) |  |
+| F November 1 | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw3.zip) |
 
 # Winter 2024 Materials
 
