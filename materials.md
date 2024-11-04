@@ -19,14 +19,14 @@ Slides will sometimes be posted.  -->
 | M September 30 | [Slides on modeling with binary variables](lectures/2024fall/Lecture03_Slides_IP_modeling.pdf) |  |
 | W October 2 |  [Slides on duality](lectures/2024fall/Lecture04_slides_postclass.pdf) |  |
 | F October 4 |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw1.zip) |
-| M October 7 | [Lecture 5 - slides preclass](lectures/2024fall/Lecture05_slides_preclass.pdf), [post class](lectures/2024fall/Lecture05_slides_postclass.pdf), [and full lecture notes](lectures/2024fall/Lecture_notes_duality.pdf) |  |
-| W October 9 | [Lecture 6 - slides postclass](lectures/2024fall/Lecture06_slides_postclass.pdf) |  |
-| M October 14 | [Lecture 7 - slides preclass](lectures/2024fall/Lecture07_slides_preclass.pdf), [post class](lectures/2024fall/Lecture07_slides_postclass.pdf), [and full lecture notes](lectures/2024fall/Lecture_notes_discrete_optimization.pdf) | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw2.zip) |
+| M October 7 | [Lecture 5 - final slides](lectures/2024fall/Lecture05_slides_postclass.pdf) and [full lecture notes](lectures/2024fall/Lecture_notes_duality.pdf) |  |
+| W October 9 | [Lecture 6 - final slides](lectures/2024fall/Lecture06_slides_postclass.pdf) |  |
+| M October 14 | [Lecture 7 - final slides](lectures/2024fall/Lecture07_slides_postclass.pdf), [full lecture notes](lectures/2024fall/Lecture_notes_discrete_optimization.pdf) | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw2.zip) |
 | W October 16 | [Lecture 8 - slides](lectures/2024fall/Lecture08_slides_postclass.pdf) |  |
 | M October 28 | [Lecture 9 - optimality conditions](lectures/2024fall/opt.pdf) ||
-| W October 30 | [Lecture 10 - convex duality](lectures/2024fall/Lecture10_slides_preclass.pdf) ||
-| F November 1 | [Lecture 11 - convex duality](lectures/2024fall/Lecture11_slides_preclass.pdf) ||
-| F November 1 |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw3.zip) |
+| W October 30 | [Lecture 10 - final slides](lectures/2024fall/Lecture10_slides_postclass.pdf) ||
+| F November 1 | [Lecture 11 - final slides](lectures/2024fall/Lecture11_slides_postclass.pdf) ||
+| M November 4 |  [Lecture 12 - slides pre-class](lectures/2024fall/Lecture12_slides_preclass.pdf), [full lecture notes](lectures/2024fall/Lecture_notes_convex_nonlinear_optimization.pdf) | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw3.zip) |
 
 # Winter 2024 Materials
 
