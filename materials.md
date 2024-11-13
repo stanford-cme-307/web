@@ -29,7 +29,7 @@ Slides will sometimes be posted.  -->
 | M November 4 |  [Lecture 12 - final slides](lectures/2024fall/Lecture12_slides_final.pdf), [full lecture notes](lectures/2024fall/Lecture_notes_convex_nonlinear_optimization.pdf) |  |
 | W November 6 | [Conic optimization](lectures/2024fall/conic.pdf) | |
 | M November 11 | [Gradient descent](lectures/2024fall/gd.pdf) | |
-| W November 13 |  | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw4.zip) |
+| W November 13 | [Quasi-Newton methods](lectures/2024fall/qn.pdf) | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw4.zip) |
 
 # Winter 2024 Materials
 
