@@ -30,9 +30,9 @@ Slides will sometimes be posted.  -->
 | W November 6 | [Conic optimization](lectures/2024fall/conic.pdf) |  |
 | M November 11 | [Gradient descent](lectures/2024fall/gd.pdf) |  |
 | W November 13 | [Quasi-Newton methods](lectures/2024fall/qn.pdf) | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw4.zip) |
-| M November 11 | [Interior point methods](lectures/2024fall/ipm.pdf) |  |
-| W November 11 | [First order methods](lectures/2024fall/operators.pdf), [Accelerated and stochastic gradient method](lectures/2024fall/sgd.pdf) |  |
-| F November 22 |  | [hw5](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw5.zip) |
+| M November 18 | [Interior point methods](lectures/2024fall/ipm.pdf) |  |
+| W November 20 | [First order methods](lectures/2024fall/operators.pdf), [Accelerated and stochastic gradient method](lectures/2024fall/sgd.pdf) |  |
+| Tu December 3 |  | [hw5](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw5.zip) |
 
 # Winter 2024 Materials
 
