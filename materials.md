@@ -35,6 +35,7 @@ Slides will sometimes be posted.  -->
 | M December 2 | [Optimization under uncertainty 1](lectures/2024fall/Lecture18_slides.pdf) |  |
 | Tu December 3 |  | [hw5](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw5.zip) |
 | W December 4 | [Optimization under uncertainty 2](lectures/2024fall/Lecture19_slides.pdf) |  |
+| F December 6 | [Algorithms cheatsheet](lectures/2024fall/algorithms.pdf) ||
 
 # Winter 2024 Materials
 
