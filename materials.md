@@ -31,11 +31,13 @@ Slides will sometimes be posted.  -->
 | M November 11 | [Gradient descent](lectures/2024fall/gd.pdf) |  |
 | W November 13 | [Quasi-Newton methods](lectures/2024fall/qn.pdf) | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw4.zip) |
 | M November 18 | [Interior point methods](lectures/2024fall/ipm.pdf) |  |
-| W November 20 | [First order methods](lectures/2024fall/operators.pdf), [Accelerated and stochastic gradient method](lectures/2024fall/sgd.pdf) |  |
+| W November 20 | [Accelerated and stochastic gradient method](lectures/2024fall/sgd.pdf) |  |
 | M December 2 | [Optimization under uncertainty 1](lectures/2024fall/Lecture18_slides.pdf) |  |
 | Tu December 3 |  | [hw5](https://github.com/stanford-cme-307/web/raw/main/homework/f24/hw5.zip) |
 | W December 4 | [Optimization under uncertainty 2](lectures/2024fall/Lecture19_slides.pdf) |  |
 | F December 6 | [Algorithms cheatsheet](lectures/2024fall/algorithms.pdf) ||
+
+Supplementary materials: [First order methods and operator splitting](lectures/2024fall/operators.pdf), 
 
 # Winter 2024 Materials
 
