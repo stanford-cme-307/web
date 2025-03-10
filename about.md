@@ -62,8 +62,8 @@ quadratic and second-order conic problems,
 semidefinite programming, stochastic and robust optimization.
 * Identify analytical properties of a real-world problem and understand how these influence guarantees of optimality, algorithm and solver selection, or speed of convergence to an optimal solution.
 * Tweak optimization algorithms to adapt them to a specific problem.
-<!-- * tweak optimization algorithms to adapt them to a specific problem.
-* develop confidence as an optimizer by designing a solution to an optimization problem, including reviewing the relevant literature, selecting methodology, writing code, and presenting results. -->
+<!-- * tweak optimization algorithms to adapt them to a specific problem.  -->
+<!-- * develop confidence as an optimizer by designing a solution to an optimization problem, including reviewing the relevant literature, selecting methodology, writing code, and presenting results. -->
 
 ## Computing environment
 
@@ -71,14 +71,7 @@ We will be using the Gurobi optimizer through [gurobipy](https://pypi.org/projec
 and is supported by the [OptiMUS optimization modeling toolkit](https://optimus-solver.vercel.app/).
 We will also use the Julia programming language for in-class algorithm demos, 
 as Julia code is both simple to write and fast to run.
-<!-- We will be using the Julia programming language via Pluto notebooks for in-class demos.
-Most optimization solvers are easy to access and swap out from within the Julia ecosystem,
-and Julia code is both simple to write and fast to run.
-Pluto notebooks allow for better interactivity and reactivity
-and are easy to install and use.
-[Learn how to install and use Pluto notebooks.](https://plutojl.org/)
-
-Students may use any language they wish (and that the course staff can read) to complete homework assignments and projects. -->
+<!-- We will be using the Julia programming language via Pluto notebooks for in-class demos. Most optimization solvers are easy to access and swap out from within the Julia ecosystem, and Julia code is both simple to write and fast to run. Pluto notebooks allow for better interactivity and reactivity and are easy to install and use. [Learn how to install and use Pluto notebooks.](https://plutojl.org/) Students may use any language they wish (and that the course staff can read) to complete homework assignments and projects. -->
 
 ## Best practices for learning 
 
