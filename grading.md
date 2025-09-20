@@ -115,13 +115,17 @@ on the project presentations tab, particularly if you plan to leave campus early
 
 ## Exams and quizzes
 
-The course will feature one in-class midterm exam that assesses mastery of
-the core course material in optimization and will mimic the format of the ICME qualifying exam in Optimization.
+The course will feature one in-class 75 minute midterm exam 
+that assesses mastery of the core course material in optimization 
+and will mimic the format of the ICME qualifying exam in Optimization.
 
 Quizzes will help you keep up to speed with the material. 
-They should be easy if you pay attention in class
+We will hold a five-minute quiz at the beginning of class each Wednesday,
+starting in the second week.
+The quizzes are meant to be easy if you pay attention in class
 and read the course notes. They will focus on the previous week's material,
 but may also quiz important facts from earlier in the course.
+We will drop your lowest quiz score.
 
 All exams and quizzes are closed-book. One page of notes, double sided, is allowed.
 See the Qualifying exam tab for details about ICME qualifying exam, including practice exams, and final exams from previous years.
