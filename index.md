@@ -21,9 +21,9 @@ Cross-listed as CME 307, MS&E 311 and OIT 676, Stanford University <br>
 
 ## Class schedule
 
-**Lecture:** MW 10:30-11:50pm in Lathrop 018, starting September 23 <br>
+**Lecture:** MW 10:30-11:50pm in Thornton 110, starting September 22 <br>
 **Office hours:** See contact page for times and locations <br>
-**Section:** F 10:30-11:50 in Lathrop 018 (attendance not required) <br>
+**Section:** F 10:30-11:50 in Thornton 110 (attendance not required) <br>
 
 Use office hours to discuss topics directly related to the course
 and also anything else on your mind beyond the class: for example, 
