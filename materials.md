@@ -4,7 +4,7 @@ title: Materials
 description: Course modules and dates
 ---
 
-The course schedule and links to surveys, resources, and materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/1Kt7AXrvqt8lvuuOuWdWgyi96RM9LVjVS1LpP2XffbL8/edit?gid=0#gid=0).
+The course schedule and links to surveys, resources, and materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0/edit?usp=sharing).
 
 Slides will be posted below before each lecture.
 
