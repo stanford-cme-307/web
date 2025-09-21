@@ -10,7 +10,7 @@ seo:
   name: CME 307 / MS&E 311
 ---
 
-# {{site.title}}: {{ site.tagline }}, Fall 2024
+# {{site.title}}: {{ site.tagline }}, Fall 2025
 {: .no_toc }
 {: .mb-2 }
 Cross-listed as CME 307, MS&E 311 and OIT 676, Stanford University <br>
