@@ -34,7 +34,7 @@ questions about career trajectories, research, and more.
 * The course schedule and links to surveys, resources, and materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0/edit?usp=sharing).
 * Slides will be posted after (and sometimes before) class on the [materials tab](materials.md).
 * Announcements will be posted on [Ed](https://edstem.org/us/courses/87386/discussion). To access, enroll in the course
-and/or fill out the [student survey](https://docs.google.com/spreadsheets/d/15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0/edit?usp=sharing) to indicate that you're auditing. (You may need to click on the Ed link from canvas before the link above works for you.)
+and/or fill out the [student survey](https://docs.google.com/forms/d/e/1FAIpQLSeMKLl4zDicEUFvViDTOhS5yciG7hDN_A-_4plA4N8--yyTHQ/viewform?usp=header) to indicate that you're auditing. (You may need to click on the Ed link from canvas before the link above works for you.)
 
 <!-- The [following spreadsheet](https://docs.google.com/spreadsheets/d/1ncPzDvHLd1Qu_6oAs-Opf6u489hyJ5a_3s7B--zznnA/edit#gid=1738667907)
 serves as our schedule and provides links to useful resources. -->
