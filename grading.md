@@ -135,11 +135,11 @@ See the Qualifying exam tab for details about ICME qualifying exam, including pr
 Students will design short presentations on recent literature in optimization once during the quarter. 
 [Sign up for a date and paper to present.](https://docs.google.com/spreadsheets/d/17vG8kedtmZv27EavLJNXHjOUiQxyvBnBpwDh6skNQHE/edit?usp=sharing) -->
 
-## Participation
+<!-- ## Participation
 
 Students are expected to attend class and actively participate in discussion.
 We will variously use polling questions and in-class surveys, quizzes, presentations, and writing assignments to quantify participation.
-Students should expect to receive full participation credit if they miss no more than three days of class.
+Students should expect to receive full participation credit if they miss no more than three days of class. -->
 
 ## Exceptions
 
