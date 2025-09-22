@@ -4,13 +4,24 @@ title: Materials
 description: Course modules and dates
 ---
 
-The course schedule and links to surveys, resources, and materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0/edit?usp=sharing).
+The course schedule and links to surveys, resources, and supplementary materials are posted [on this spreadsheet](https://docs.google.com/spreadsheets/d/15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0/edit?usp=sharing).
 
-Slides will be posted below before each lecture.
+Slides will be posted below before each lecture, and notes afterwards.
+The quizzes and tests will be based solely on the lecture, slides, and notes;
+other readings listed on the spreadsheet will aid your understanding but 
+are not required.
 
 <!-- Class sessions will be a combination of mini-lectures and small group breakout sessions where you will discuss, solve problems, and complete activities with a few of your classmates.
 Since class sessions will be highly interactive, they will not be recorded.
 Slides will sometimes be posted.  -->
+
+| **Day** | **Lecture** | **Due** | **Lecture Notes** |
+|---------|-------------|---------|-------------------|
+| M September 22 | [Introduction](lectures/2025fall/intro.pdf) |  | [Intro notes](notes/2025fall/intro.pdf) |
+
+# Fall 2024 Materials
+
+Lecture slides, readings, and homework from the Fall 2024 version of the course are posted below.
 
 | **Day** | **Lecture** | **Due** |
 | M September 23 | [Introduction](lectures/2024fall/intro.pdf) |  |
