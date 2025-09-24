@@ -17,7 +17,8 @@ Slides will sometimes be posted.  -->
 
 | **Day** | **Lecture** | **Due** | **Lecture Notes** |
 |---------|-------------|---------|-------------------|
-| M September 22 | [Introduction](lectures/2025fall/intro.pdf) |  | [Intro notes](notes/2025fall/intro.pdf) |
+| M September 22 | [Introduction](lectures/2025fall/intro.pdf) |  | [Intro notes](notes/2025fall/lec1.pdf) |
+| W September 25 | [LP geometry](lectures/2024fall/lp.pdf) |  | [Geometry notes](notes/2025fall/lec2.pdf) |
 
 # Fall 2024 Materials
 
