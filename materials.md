@@ -17,8 +17,10 @@ Slides will sometimes be posted.  -->
 
 | **Day** | **Lecture** | **Lecture Notes** | **Due** |
 |---------|-------------|-------------------|---------|
-| M September 22 | [Introduction](lectures/2025fall/intro.pdf) | [Intro notes](notes/2025fall/lec1.pdf) |  |
-| W September 24 | [LP geometry](lectures/2025fall/lp.pdf) | [Geometry notes](notes/2025fall/lec2.pdf) |  |
+| M September 22 | [Introduction](lectures/2025fall/intro.pdf) | [Intro](notes/2025fall/lec1.pdf) |  |
+| W September 24 | [LP geometry](lectures/2025fall/lp.pdf) | [Geometry](notes/2025fall/lec2.pdf) |  |
+| M September 29 | [LP solving](lectures/2025fall/lp.pdf) | [Solving](notes/2025fall/lec3.pdf) |  |
+| W October 1 |  |  | Quiz 1 (in class) |
 | F October 3 |  |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw1.zip) |
 
 # Fall 2024 Materials
