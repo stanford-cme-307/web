@@ -21,7 +21,7 @@ Slides will sometimes be posted.  -->
 | W September 24 | [LP geometry](lectures/2025fall/lp.pdf) | [Geometry](notes/2025fall/lec2.pdf) |  |
 | M September 29 | [LP solving](lectures/2025fall/lp.pdf) | [Solving](notes/2025fall/lec3.pdf) |  |
 | W October 1 |  |  | Quiz 1 (in class) [practice problems](quiz/quiz1-practice.pdf) |
-| W October 1 | [Slides pre-class](lectures/2025fall/Lecture04_slides.pdf) | [Notes for duality (lectures 4-6)](notes/2025fall/Lectures04-06_notes.pdf) | 
+| W October 1 | [Complete slides (with binary modeling) ](lectures/2025fall/Lecture04_slides.pdf) | [Notes for duality (lectures 4-6)](notes/2025fall/Lectures04-06_notes.pdf) | 
 | F October 3 |  |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw1.zip) |
 
 # Fall 2024 Materials
