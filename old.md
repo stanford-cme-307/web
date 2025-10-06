@@ -2,6 +2,7 @@
 layout: page
 title: Previous years
 description: Course modules and dates from previous years
+nav_exclude: true
 ---
 # Fall 2024 Materials
 
