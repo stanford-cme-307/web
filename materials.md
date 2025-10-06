@@ -25,4 +25,4 @@ Slides will sometimes be posted.  -->
 | F October 3 |  |  | [hw1](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw1.zip) |
 | M October 6 | [ Duality part 2 - slides preclass](lectures/2025fall/Lecture05_slides_preclass.pdf) | 
 
-If you'd like to read ahead, feel free to look at the material from [previous years](old.md).
+If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
