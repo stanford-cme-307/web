@@ -26,6 +26,7 @@ Slides will sometimes be posted.  -->
 | M October 6 | [ Duality part 2 - final slides](lectures/2025fall/Lecture05_slides.pdf) | 
 | W October 8 |  |  | Quiz 2 (in class) [practice problems](quiz/quiz2-practice.pdf) |
 | W October 8 | [ Duality part 3 - final slides ](lectures/2025fall/Lecture06_slides.pdf) | 
+| M October 13 | [Optimality conditions](lectures/2025fall/opt.pdf) |  |  |
 | W October 15 |  |  | [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw2.zip) |
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
