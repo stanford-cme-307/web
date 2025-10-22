@@ -27,7 +27,7 @@ Slides will sometimes be posted.  -->
 | M October 13 | [Optimality conditions](lectures/2025fall/opt.pdf) | [Notes for optimality (lecture 7)](notes/2025fall/lec7.pdf) |  |
 | W October 15 | [Complete slides](lectures/2025fall/Lecture08_slides.pdf) | [Notes for convex duality and KKT conditions (lectures 8-9)](notes/2025fall/Lectures08-09_notes.pdf) | Quiz 3 (in class) [practice problems](quiz/quiz3-practice.pdf) <br><br> [hw2](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw2.zip) |
 | M October 20 | [Duality in QCQPs, KKT Conditions - final slides](lectures/2025fall/Lecture09_slides.pdf) |  |
-| W October 22 |  |  | Quiz 4 (in class) [practice problems](quiz/quiz4-practice.pdf) | 
+| W October 22 | [Conic optimization](lectures/2025fall/conic.pdf) | [Conic optimization notes](notes/2025fall/lec10.pdf) | Quiz 4 (in class) [practice problems](quiz/quiz4-practice.pdf) | 
 | M October 27 |  |  | [hw3](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw3.zip) |
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
