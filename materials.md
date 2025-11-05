@@ -33,5 +33,6 @@ Slides will sometimes be posted.  -->
 | W October 29 | [Newton and quasi-Newton](lectures/2025fall/qn.pdf) | [Notes on lecture 12](notes/2025fall/lec12.pdf) | Quiz 5 (in class) [practice problems](quiz/quiz5-practice.pdf) | 
 | M November 3 | midterm | | |
 | W November 5 | [Project discussion](lectures/2025fall/projects.pdf) | | |
+| W November 12 |  |  | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw4.zip) |
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
