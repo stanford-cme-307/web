@@ -95,6 +95,9 @@ get (and give) feedback from your peers in the class. -->
 You will submit your project reports as a pdf, which can be prepared in LaTeX or printed from a Jupyter notebook.
 We may also ask you to present your findings live to 
 the course staff or to your peers.
+[These slides](https://docs.google.com/presentation/d/1KPgDelcMZUbn7J4Mr9Z5exl5rLLG21QAq816r2hEW2o/edit?slide=id.p#slide=id.p)
+provide more detail on project deliverables.
+<!-- [This folder](https://www.dropbox.com/scl/fo/eoojv5f0qwwdc2emitcc8/AMD_S6H8ohjZvA4-PLF7ZQE?rlkey=bd34lfhqm2t80jsg8qzfgu4e5&e=1&st=6xyp83e1&dl=0) contains suggested project ideas from 2025. -->
 <!-- We will share projects with other students enrolled in the class for peer-grading, 
 to support our course goals of assessing optimization literature and developing confidence as an optimizer.
 If you need to keep your project private, please speak with the course staff. -->
