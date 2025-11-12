@@ -34,6 +34,6 @@ Slides will sometimes be posted.  -->
 | M November 3 | midterm | | |
 | W November 5 | [Project discussion](lectures/2025fall/projects.pdf) | | |
 | M November 10 | [Interior point methods](lectures/2025fall/ipm.pdf) | | |
-| W November 12 | First-order methods |  | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw4.zip), project proposal |
+| W November 12 | [Operators and first-order methods](lectures/2025fall/operators.pdf) |  | [hw4](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw4.zip), project proposal, Quiz 7 (in class) [practice problems](quiz/quiz7-practice.pdf)|
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
