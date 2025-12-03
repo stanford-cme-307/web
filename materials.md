@@ -38,7 +38,7 @@ Slides will sometimes be posted.  -->
 | M November 17 | [Discrete optimization 1 - Final slides](lectures/2025fall/Lecture16_slides.pdf) | [Notes for discrete optimization (lectures 16-17)](notes/2025fall/Lectures16-17_notes.pdf) |  |
 | W November 19 | [Discrete optimization 2 - Final slides](lectures/2025fall/Lecture17_slides.pdf) | | Quiz 8 (in class) [practice problems](quiz/quiz8-practice.pdf) |
 | M December 1 | [Optimization under uncertainty - 1](lectures/2025fall/Lecture18_slides.pdf) | | |
-| W December 3 | [Optimization under uncertainty - 2] | | Quiz 9 (in class) [practice problems](quiz/quiz9-practice.pdf) |
+| W December 3 | [Optimization under uncertainty - 2](lectures/2025fall/Lecture19_slides.pdf) | | Quiz 9 (in class) [practice problems](quiz/quiz9-practice.pdf) |
 | F December 5 |  |  | [hw5](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw5.zip), project |
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.
