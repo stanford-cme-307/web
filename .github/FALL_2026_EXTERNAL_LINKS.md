@@ -6,9 +6,6 @@ not need annual replacement.
 
 ## Replace before publishing
 
-- [ ] **Ed course:** replace the Fall 2025 course URL in `index.md` and `staff.md`.
-  The old URL is `https://edstem.org/us/courses/87386/discussion` and is currently
-  hidden.
 - [ ] **Public schedule spreadsheet:** replace the Fall 2025 Google Sheet URL in
   `index.md` and `materials.md`. The old sheet ID is
   `15KZyWinDcj--XBpuG229Ani2FfWezeYhPUMIoE0aeq0` and is currently hidden.
@@ -33,6 +30,8 @@ not need annual replacement.
 
 ## Confirmed for Fall 2026
 
+- [x] Ed course in `index.md` and `staff.md`:
+  `https://edstem.org/us/courses/105466`.
 - [x] Student survey in `index.md`; keep the existing link visible.
 - [x] Madeleine's appointment calendar in `staff.md` and `_staffers/madeleine.md`.
 - [x] Wenzhi Gao's webpage: `https://web.stanford.edu/~gwz/`.
@@ -40,6 +39,7 @@ not need annual replacement.
 
 ## Related lecture source outside the website repository
 
-- [ ] Replace the old Ed course URL in `../lectures/intro.tex` (course `51411`).
+- [ ] Replace the old Ed course URL in `../lectures/intro.tex` (course `51411`)
+  with the Fall 2026 course (`105466`).
 - [ ] Confirm the course-survey short link in `../lectures/intro.tex`
   (`https://forms.gle/7hPniFeC576S12FAA`) before generating Fall 2026 slides.

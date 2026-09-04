@@ -13,10 +13,7 @@ Staff information is stored in the `_staffers` directory and rendered according 
 * The best way to communicate is real-time, in person or on Zoom. 
 <!-- Real-time meetings are more efficient, more effective, and more fun. -->
 Find your instructors after class, in office hours, or by booking an office hours slot [with Madeleine](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ37cqkJAC5Z_f8dJjHOSb9LjG5kK_FN4iPxoGInZtjZL5uwttVHjmL2ktbkTGBpHilyXEPSqXI9) or [Dan](https://calendar.app.google/EYTgGWW7GgjDP8kRA) if your question requires privacy.
-{% comment %}
-Fall 2026: replace the Ed course link before publishing this item.
-* We use the [Ed platform](https://edstem.org/us/courses/87386/discussion/) to manage online course questions and discussion.
-{% endcomment %}
+* We use the [Ed platform](https://edstem.org/us/courses/105466) to manage online course questions and discussion.
 Longer or more mathematically involved questions, or debugging requests, are more appropriate for office hours.
 * Grades will be posted on Gradescope and should be discussed only real-time, not by email or on Ed.
 * Direct email to instructors should be used to submit letters from OAE
