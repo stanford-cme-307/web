@@ -32,6 +32,8 @@ not need annual replacement.
 
 - [x] Ed course in `index.md` and `staff.md`:
   `https://edstem.org/us/courses/105466`.
+- [x] Gradescope course in `grading.md` and `staff.md`:
+  `https://www.gradescope.com/courses/1387345`.
 - [x] Student survey in `index.md`; keep the existing link visible.
 - [x] Madeleine's appointment calendar in `staff.md` and `_staffers/madeleine.md`.
 - [x] Wenzhi Gao's webpage: `https://web.stanford.edu/~gwz/`.

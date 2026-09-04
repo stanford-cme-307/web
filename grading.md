@@ -35,7 +35,7 @@ to characterize optimal solutions (hw2),
 make mathematical predictions about the performance of optimization algorithms (hw3),
 recognizing problems structures 
 and learning to tweak optimization algorithms to adapt them to a specific problem (hw6). -->
-Homework will be submitted on Gradescope.
+Homework will be submitted on [Gradescope](https://www.gradescope.com/courses/1387345).
 
 *Slip days.* We recognize that students are balancing many priorities,
 and so we make accommodations to allow for late homework.
