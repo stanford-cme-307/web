@@ -19,8 +19,8 @@ The course grading scheme is designed to encourage students to keep up with
 the course content as it happen and to ensure students meet the course learning goals.
 
 - **Homework (20%):** five homework assignments on problem formulation, algorithm analysis, and algorithm design
-- **Midterm (45%):** closed book, 75 minutes, in class on 11/3.
-- **Quiz (15%):** closed book, 5 minutes, Wednesdays at the beginning of class starting week 2.
+- **Midterm (45%):** closed book, 75 minutes, in class on 11/5.
+- **Quiz (15%):** closed book, 5 minutes, Thursdays at the beginning of class starting week 2.
 - **Project (20%):** model and solve an optimization problem, tweak an optimization algorithm and report results on a benchmark, or conduct original research in optimization.
 <!-- - **Presentation (5%):** present in-class on recent optimization research -->
 <!-- - **Participation (5%):** attend lecture, ask questions, engage in discussion, and submit course surveys. -->
@@ -95,8 +95,10 @@ get (and give) feedback from your peers in the class. -->
 You will submit your project reports as a pdf, which can be prepared in LaTeX or printed from a Jupyter notebook.
 We may also ask you to present your findings live to 
 the course staff or to your peers.
+<!-- Fall 2026: confirm or replace these project-detail slides before publishing.
 [These slides](https://docs.google.com/presentation/d/1KPgDelcMZUbn7J4Mr9Z5exl5rLLG21QAq816r2hEW2o/edit?slide=id.p#slide=id.p)
 provide more detail on project deliverables.
+-->
 <!-- [This folder](https://www.dropbox.com/scl/fo/eoojv5f0qwwdc2emitcc8/AMD_S6H8ohjZvA4-PLF7ZQE?rlkey=bd34lfhqm2t80jsg8qzfgu4e5&e=1&st=6xyp83e1&dl=0) contains suggested project ideas from 2025. -->
 <!-- We will share projects with other students enrolled in the class for peer-grading, 
 to support our course goals of assessing optimization literature and developing confidence as an optimizer.
@@ -123,7 +125,7 @@ that assesses mastery of the core course material in optimization
 and will mimic the format of the ICME qualifying exam in Optimization.
 
 Quizzes will help you keep up to speed with the material. 
-We will hold a five-minute quiz at the beginning of class each Wednesday,
+We will hold a five-minute quiz at the beginning of class each Thursday,
 starting in the second week.
 The quizzes are meant to be easy if you pay attention in class
 and read the course notes. They will focus on the previous week's material,

@@ -4,5 +4,5 @@ role: Instructor
 title: Assistant Professor, Management Science and Engineering
 email: udell@stanford.edu
 website: http://web.stanford.edu/~udell
-office-hours: Mondays 3-4pm in Huang 251 or [by appointment](https://calendar.app.google/sCu1wpZXkUdAXdA59)
+office-hours: "[Book an appointment](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ37cqkJAC5Z_f8dJjHOSb9LjG5kK_FN4iPxoGInZtjZL5uwttVHjmL2ktbkTGBpHilyXEPSqXI9)"
 ---
