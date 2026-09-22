@@ -19,11 +19,12 @@ The course grading scheme is designed to encourage students to keep up with
 the course content as it happen and to ensure students meet the course learning goals.
 
 - **Homework (20%):** five homework assignments on problem formulation, algorithm analysis, and algorithm design
-- **Midterm (45%):** closed book, 75 minutes, in class on 11/5.
+- **Midterm (20%):** closed book, 75 minutes, in class on 11/5.
 - **Quiz (15%):** closed book, 5 minutes, Thursdays at the beginning of class starting week 2.
-- **Project (20%):** model and solve an optimization problem, tweak an optimization algorithm and report results on a benchmark, or conduct original research in optimization.
+- **Final (40%):** closed book, 90 minutes, in person on scheduled exam day.
+<!-- - **Project (20%):** model and solve an optimization problem, tweak an optimization algorithm and report results on a benchmark, or conduct original research in optimization. -->
 <!-- - **Presentation (5%):** present in-class on recent optimization research -->
-<!-- - **Participation (5%):** attend lecture, ask questions, engage in discussion, and submit course surveys. -->
+- **Participation (5%):** attend lecture, ask questions, take quizzes, engage in discussion, and submit course surveys.
 <!-- and in-class quizzes and writing assignments -->
 
 More details about each assignment follow.
@@ -35,7 +36,7 @@ to characterize optimal solutions (hw2),
 make mathematical predictions about the performance of optimization algorithms (hw3),
 recognizing problems structures 
 and learning to tweak optimization algorithms to adapt them to a specific problem (hw6). -->
-Homework will be submitted on [Gradescope](https://www.gradescope.com/courses/1387345).
+Homework will be submitted on [Gradescope](https://www.gradescope.com/courses/1387345). Some homeworks will be graded traditionally based on the written work; for other homeworks, you will be asked to present and defend your answers in person, and your grade will be based on your presentation.
 
 *Slip days.* We recognize that students are balancing many priorities,
 and so we make accommodations to allow for late homework.
@@ -63,10 +64,9 @@ However, each student must submit their own homework. We ask that you
 
 - Give credit to the people who have helped you: please write on your homework the names of the people you worked with.
 - Give credit to the other resources that have helped you: please write on your homework 
-the textbooks, notes, web pages, or large language models you found useful.
+the textbooks, notes, web pages, or AI agents you found useful.
 - Write up your homework by yourself. 
-That is, all of the text that you submit should be typed by you.
-Tab completion is fine (eg, using Github Copilot).
+That is, all of the text that you submit should be written or typed by you.
 
 *Partial credit.* If you're not able to answer a homework question, but you show us
 the work that you performed to think about the question and to try to understand it,
@@ -78,7 +78,10 @@ or share or post solutions (yours or ours) to a public website.
 
 ## Projects
 
-The course project supports our course goal of developing confidence as an optimizer by designing a solution to an optimization problem.
+Previous versions of this course have featured a project. 
+You may choose to do a project this quarter, and the course staff are happy to discuss and help you. However, projects will not contribute to your course grade. 
+
+<!-- The course project supports our course goal of developing confidence as an optimizer by designing a solution to an optimization problem.
 You will choose between three types of projects for this class:
 * model and solve a real-world optimization problem
 * implement and tweak an optimization algorithm and report results on a benchmark
@@ -94,7 +97,7 @@ get (and give) feedback from your peers in the class. -->
 <!-- [The project expectations](https://docs.google.com/document/d/1Lwn30NnQyGyu1c5-VDRAvv_z2kO03lsF1D_IQKD-BqI/edit) details project deliverables and lists project ideas. -->
 You will submit your project reports as a pdf, which can be prepared in LaTeX or printed from a Jupyter notebook.
 We may also ask you to present your findings live to 
-the course staff or to your peers.
+the course staff or to your peers. -->
 <!-- Fall 2026: confirm or replace these project-detail slides before publishing.
 [These slides](https://docs.google.com/presentation/d/1KPgDelcMZUbn7J4Mr9Z5exl5rLLG21QAq816r2hEW2o/edit?slide=id.p#slide=id.p)
 provide more detail on project deliverables.
@@ -140,11 +143,11 @@ See the Qualifying exam tab for details about ICME qualifying exam, including pr
 Students will design short presentations on recent literature in optimization once during the quarter. 
 [Sign up for a date and paper to present.](https://docs.google.com/spreadsheets/d/17vG8kedtmZv27EavLJNXHjOUiQxyvBnBpwDh6skNQHE/edit?usp=sharing) -->
 
-<!-- ## Participation
+## Participation
 
 Students are expected to attend class and actively participate in discussion.
 We will variously use polling questions and in-class surveys, quizzes, presentations, and writing assignments to quantify participation.
-Students should expect to receive full participation credit if they miss no more than three days of class. -->
+Students should expect to receive full participation credit if they miss no more than three days of class.
 
 ## Exceptions
 
@@ -156,6 +159,6 @@ or in other such exceptional circumstances.
 Requests due to job interviews, other classes and assignments, and poor planning will not be considered.
 We suggest you save your slip days to insure against catastrophe.
 
-## Unstoppable education: the show must go on!
+<!-- ## Unstoppable education: the show must go on!
 
-Stanford as an institution is committed to the highest quality education, and as your teaching team, our first priority is to uphold your educational experience. To that end we are committed to following the syllabus as written here, including through short or long-term disruptions, such as public health emergencies, natural disasters, or protests and demonstrations. However, there may be extenuating circumstances that necessitate some changes. Should adjustments be necessary, we will communicate clearly and promptly to ensure you understand the expectations and are positioned for successful learning.
+Stanford as an institution is committed to the highest quality education, and as your teaching team, our first priority is to uphold your educational experience. To that end we are committed to following the syllabus as written here, including through short or long-term disruptions, such as public health emergencies, natural disasters, or protests and demonstrations. However, there may be extenuating circumstances that necessitate some changes. Should adjustments be necessary, we will communicate clearly and promptly to ensure you understand the expectations and are positioned for successful learning. -->
