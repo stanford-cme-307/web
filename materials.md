@@ -22,7 +22,7 @@ Slides will sometimes be posted.  -->
 | Th September 24 | [Geometry in linear optimization](lectures/2025fall/lp.pdf) | [Geometry](notes/2025fall/lec2.pdf) | |
 | T September 29 | [Modeling linear programs and the simplex method](lectures/2025fall/lp.pdf) | [Solving](notes/2025fall/lec3.pdf) | |
 | Th October 1 | [Linear programming duality and the separating hyperplane theorem](lectures/2025fall/Lecture04_slides.pdf) | [Duality](notes/2025fall/Lectures04-06_notes.pdf) | |
-| F October 2 | | | [Homework 1: LP Modeling and Geometry](https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw1.zip) |
+| F October 2 | | | [Homework 1: LP Modeling and Geometry](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw1.zip) |
 | T October 6 | [Theorems of alternative and strong duality](lectures/2025fall/Lecture05_slides.pdf) | | |
 | Th October 8 | [Sensitivity analysis and applications](lectures/2025fall/Lecture06_slides.pdf) | | |
 | T October 13 | [Convex analysis and optimality conditions](lectures/2025fall/opt.pdf) | [Optimality conditions](notes/2025fall/lec7.pdf) | |
