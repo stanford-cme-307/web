@@ -4,5 +4,5 @@ role: Teaching Assistant
 title: PhD Student, Institute for Computational and Mathematical Engineering
 email: gwz@stanford.edu
 website: https://web.stanford.edu/~gwz/
-office-hours: 6-7pm Tuesday & Thursday at Basement of Huang Enginnering Center (Outside ICME Suite)
+office-hours: 6-7pm Tuesday at Basement of Huang Enginnering Center (Outside ICME Suite)
 ---
