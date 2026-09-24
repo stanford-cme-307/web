@@ -21,7 +21,7 @@ Cross-listed as CME 307, MS&E 311 and OIT 676, Stanford University <br>
 
 ## Class schedule
 
-**Lecture:** TTh 11:30 AM–12:50 PM in McMurtry Art Building Oshman, starting September 22 <br>
+**Lecture:** TTh 11:30 AM–12:50 PM in Building 320 (Braun Geology Corner) -- room 105, starting September 22 <br>
 **Office hours:** See contact page for times and locations. CA office hours may occasionally be repurposed for review or problem-solving sessions; details will be announced in advance. <br>
 
 Use office hours to discuss topics directly related to the course
