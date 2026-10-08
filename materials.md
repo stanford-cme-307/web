@@ -24,7 +24,7 @@ Slides will sometimes be posted.  -->
 | Th October 1 | [Linear programming duality and the separating hyperplane theorem](lectures/2025fall/Lecture04_slides.pdf) | [Duality](notes/2025fall/Lectures04-06_notes.pdf) | |
 | F October 2 | | | [Homework 1: LP Modeling and Geometry](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw1.zip) |
 | T October 6 | [Theorems of alternative and strong duality](lectures/2025fall/Lecture05_slides.pdf) | | |
-| Th October 8 | [Sensitivity analysis and applications](lectures/2025fall/Lecture06_slides_preclass.pdf) | | |
+| Th October 8 | [Sensitivity analysis and applications](lectures/2025fall/Lecture06_slides.pdf) | | |
 | T October 13 | [Convex analysis and optimality conditions](lectures/2025fall/opt.pdf) | [Optimality conditions](notes/2025fall/lec7.pdf) | |
 | Th October 15 | [Convex duality and KKT conditions](lectures/2025fall/Lecture08_slides.pdf) | [Convex duality and KKT conditions](notes/2025fall/Lectures08-09_notes.pdf) | Homework 2 |
 | T October 20 | [KKT conditions and Fenchel duality](lectures/2025fall/Lecture09_slides.pdf) | | |
