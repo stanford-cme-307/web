@@ -17,7 +17,7 @@ Find your instructors after class, in office hours, or by booking an office hour
 Longer or more mathematically involved questions, or debugging requests, are more appropriate for office hours.
 * Grades will be posted on [Gradescope](https://www.gradescope.com/courses/1387345) and should be discussed only real-time, not by email or on Ed.
 * Direct email to instructors should be used to submit letters from OAE
-or to schedule a meeting with an instructor if the bookable office hours slots for [Madeleine](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ37cqkJAC5Z_f8dJjHOSb9LjG5kK_FN4iPxoGInZtjZL5uwttVHjmL2ktbkTGBpHilyXEPSqXI9) and [Dan](https://calendar.app.google/dNQUdv3wDxemqKZy6) don't fit your schedule.
+or to schedule a meeting with an instructor if the bookable office hours slots for [Madeleine](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ37cqkJAC5Z_f8dJjHOSb9LjG5kK_FN4iPxoGInZtjZL5uwttVHjmL2ktbkTGBpHilyXEPSqXI9) and [Dan](https://calendar.app.google/n3Gue2ibpUzienh7A) don't fit your schedule.
 
 ## Instructors
 
