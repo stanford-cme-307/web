@@ -30,11 +30,10 @@ Slides will sometimes be posted.  -->
 | F October 16 | | | [Homework 2: LP Duality and Sensitivity](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw2.zip) |
 | T October 20 | [KKT conditions and Fenchel duality](lectures/2025fall/Lecture09_slides.pdf) | | |
 | Th October 22 | [Conic programs and quadratic approximations](lectures/2025fall/conic.pdf) | [Conic optimization](notes/2025fall/lec10.pdf) | |
-| T October 27 | [Gradient descent and Newton's method](lectures/2025fall/gd.pdf) | [Gradient descent](notes/2025fall/lec11.pdf) | |
-| W October 28 | | | [Homework 3: Convex Analysis and Duality](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw3.zip) |
-| Th October 29 | [Quasi-Newton methods and preconditioning](lectures/2025fall/qn.pdf) | [Quasi-Newton methods](notes/2025fall/lec12.pdf) | |
+| T October 27 | [Gradient descent and Newton's method](lectures/2025fall/gd.pdf) | [Gradient descent](notes/2025fall/lec11.pdf) | Homework 3 |
+| Th October 29 | **Midterm** | | |
 | T November 3 | **Democracy Day — no class** | | |
-| Th November 5 | **Midterm** | | |
+| Th November 5 | [Quasi-Newton methods and preconditioning](lectures/2025fall/qn.pdf) | [Quasi-Newton methods](notes/2025fall/lec12.pdf) | |
 | T November 10 | [Interior point methods](lectures/2025fall/ipm.pdf) | | |
 | Th November 12 | Stochastic optimization | | Homework 4 |
 | T November 17 | [Mixed-integer linear optimization](lectures/2025fall/Lecture16_slides.pdf) | [Discrete optimization](notes/2025fall/Lectures16-17_notes.pdf) | |
