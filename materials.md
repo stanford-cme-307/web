@@ -29,7 +29,7 @@ Slides will sometimes be posted.  -->
 | Th October 15 | [Convex duality and KKT conditions](lectures/2025fall/Lecture08_slides.pdf) | [Convex duality and KKT conditions](notes/2025fall/Lectures08-09_notes.pdf) | |
 | F October 16 | | | [Homework 2: LP Duality and Sensitivity](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw2.zip) |
 | T October 20 | [KKT conditions and Fenchel duality](lectures/2025fall/Lecture09_slides.pdf) | | |
-| Th October 22 | [Conic programs and quadratic approximations](lectures/2025fall/conic.pdf) | [Conic optimization](notes/2025fall/lec10.pdf) | |
+| Th October 22 | [Conic optimization](lectures/2026fall/conic.pdf) | [Conic optimization](notes/2026fall/lec10.pdf) | |
 | T October 27 | [Gradient descent and Newton's method](lectures/2025fall/gd.pdf) | [Gradient descent](notes/2025fall/lec11.pdf) | |
 | W October 28 | | | [Homework 3: Convex Analysis and Duality](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw3.zip) |
 | Th October 29 | **Midterm** | | |
