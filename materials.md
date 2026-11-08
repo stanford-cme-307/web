@@ -34,7 +34,7 @@ Slides will sometimes be posted.  -->
 | W October 28 | | | [Homework 3: Convex Analysis and Duality](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw3.zip) |
 | Th October 29 | **Midterm** | | |
 | T November 3 | **Democracy Day — no class** | | |
-| Th November 5 | [Quasi-Newton methods and preconditioning](lectures/2025fall/qn.pdf) | [Quasi-Newton methods](notes/2026fall/lec12.pdf) ([Last year](notes/2025fall/lec12.pdf)) | |
+| Th November 5 | Quasi-Newton methods and preconditioning ([Full](lectures/2026fall/qn.pdf), [Condensed](lectures/2026fall/qn-condensed.pdf)) ([Last year](lectures/2025fall/qn.pdf)) | [Quasi-Newton methods](notes/2026fall/lec12.pdf) ([Last year](notes/2025fall/lec12.pdf)) | |
 | T November 10 | [Interior point methods](lectures/2025fall/ipm.pdf) | | |
 | Th November 12 | Stochastic optimization | | |
 | F November 13 | | | [Homework 4: Conic Modeling, Gradient Descent, and Preconditioning](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4.zip) |
