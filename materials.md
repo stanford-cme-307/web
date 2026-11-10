@@ -59,7 +59,7 @@ Old Fall 2025 files:
 - [Quiz 3 practice problems](quiz/quiz3-practice.pdf)
 - [Quiz 4 practice problems](quiz/quiz4-practice.pdf)
 - [Quiz 5 practice problems](quiz/quiz5-practice.pdf)
-- [Quasi-Newton practice problems](quiz/qn-practice.pdf)
+- [Quiz 6 practice problems](quiz/quiz6-practice.pdf)
 - [Quiz 7 practice problems](quiz/quiz7-practice.pdf)
 - [Quiz 8 practice problems](quiz/quiz8-practice.pdf)
 - [Quiz 9 practice problems](quiz/quiz9-practice.pdf)
