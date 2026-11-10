@@ -37,7 +37,7 @@ Slides will sometimes be posted.  -->
 | Th November 5 | Quasi-Newton methods and preconditioning ([Full](lectures/2026fall/qn.pdf), [Condensed](lectures/2026fall/qn-condensed.pdf)) ([Last year](lectures/2025fall/qn.pdf)) | [Quasi-Newton methods](notes/2026fall/lec12.pdf) ([Last year](notes/2025fall/lec12.pdf)) | |
 | T November 10 | Interior point methods ([Full](lectures/2026fall/ipm.pdf), [Condensed](lectures/2026fall/ipm-condensed.pdf)) ([Last year](lectures/2025fall/ipm.pdf)) | | |
 | Th November 12 | Stochastic optimization | | |
-| F November 13 | | | [Homework 4: Conic Modeling, Gradient Descent, and Preconditioning](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4.zip) |
+| F November 13 | | | [Homework 4: Conic Modeling, Gradient Descent, and Preconditioning](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4.zip) ([mnist-mini](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4/update.zip)) |
 | T November 17 | [Mixed-integer linear optimization](lectures/2025fall/Lecture16_slides.pdf) | [Discrete optimization](notes/2025fall/Lectures16-17_notes.pdf) | |
 | Th November 19 | [Combinatorial optimization](lectures/2025fall/Lecture17_slides.pdf) | | |
 | November 23–27 | **Thanksgiving recess — no class** | | |
