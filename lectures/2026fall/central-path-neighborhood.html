@@ -1851,21 +1851,25 @@ html&gt;body{padding:0}&lt;/style&gt;
     #central-path-explorer .slider { display:flex; flex-direction:column; gap:6px; flex:1 1 220px; min-width:0; }
     #central-path-explorer .legend { display:flex; flex-wrap:wrap; align-items:center; gap:12px 22px; }
     #central-path-explorer .legend span { display:inline-flex; align-items:center; gap:7px; }
+    #central-path-explorer [hidden] { display:none !important; }
     #central-path-explorer .swatch-path { width:24px; height:4px; background:var(--blue); }
-    #central-path-explorer .swatch-region { width:24px; height:15px; background:color-mix(in srgb,var(--purple) 28%,var(--background)); }
+    #central-path-explorer .swatch-region { width:24px; height:15px; background:color-mix(in srgb,var(--purple) 35%,var(--background)); }
+    #central-path-explorer .swatch-outer { width:24px; height:15px; background:color-mix(in srgb,var(--purple) 13%,var(--background)); }
     #central-path-explorer svg { display:block; width:100%; height:auto; overflow:visible; }
     #central-path-explorer .axis-label { font-size:18px; fill:var(--foreground); }
     #central-path-explorer .detail { display:flex; flex-wrap:wrap; gap:6px 24px; }
   &lt;/style&gt;
   &lt;div class=&quot;controls&quot;&gt;
     &lt;label class=&quot;slider&quot; for=&quot;cp-mu&quot;&gt;&lt;span&gt;Barrier parameter μ = &lt;strong id=&quot;cp-mu-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-mu&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;-180&quot; max=&quot;131&quot; value=&quot;-70&quot; step=&quot;1&quot;&gt;&lt;/label&gt;
-    &lt;label class=&quot;slider&quot; for=&quot;cp-theta&quot;&gt;&lt;span&gt;Neighborhood size θ = &lt;strong id=&quot;cp-theta-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-theta&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;90&quot; value=&quot;40&quot; step=&quot;5&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;slider&quot; for=&quot;cp-theta&quot;&gt;&lt;span&gt;Inner neighborhood θ₁ = &lt;strong id=&quot;cp-theta-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-theta&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;90&quot; value=&quot;40&quot; step=&quot;5&quot;&gt;&lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;controls&quot;&gt;
     &lt;label class=&quot;form-label&quot; for=&quot;cp-mode&quot;&gt;Neighborhood&lt;/label&gt;
     &lt;select id=&quot;cp-mode&quot; class=&quot;form-select&quot;&gt;&lt;option value=&quot;fixed&quot;&gt;Selected μ&lt;/option&gt;&lt;option value=&quot;whole&quot;&gt;Whole central path&lt;/option&gt;&lt;/select&gt;
+    &lt;label class=&quot;form-check&quot;&gt;&lt;input id=&quot;cp-show-outer&quot; class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt;&lt;span class=&quot;form-check-label&quot;&gt;Show outer neighborhood&lt;/span&gt;&lt;/label&gt;
+    &lt;label id=&quot;cp-outer-control&quot; class=&quot;slider&quot; for=&quot;cp-theta-outer&quot;&gt;&lt;span&gt;Outer neighborhood θ₂ = &lt;strong id=&quot;cp-theta-outer-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-theta-outer&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;90&quot; value=&quot;70&quot; step=&quot;5&quot;&gt;&lt;/label&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;i class=&quot;swatch-path&quot;&gt;&lt;/i&gt;Central path&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;swatch-region&quot;&gt;&lt;/i&gt;&lt;span id=&quot;cp-region-label&quot;&gt;δμ(x) ≤ θ&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;i class=&quot;swatch-path&quot;&gt;&lt;/i&gt;Central path&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;swatch-region&quot;&gt;&lt;/i&gt;&lt;span id=&quot;cp-region-label&quot;&gt;δμ(x) ≤ θ₁&lt;/span&gt;&lt;/span&gt;&lt;span id=&quot;cp-outer-legend&quot;&gt;&lt;i class=&quot;swatch-outer&quot;&gt;&lt;/i&gt;&lt;span id=&quot;cp-outer-region-label&quot;&gt;δμ(x) ≤ θ₂&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
   &lt;svg id=&quot;cp-plot&quot; role=&quot;img&quot; aria-label=&quot;Central path and numerically shaded centrality neighborhood in the feasible triangle&quot;&gt;&lt;/svg&gt;
   &lt;div id=&quot;cp-detail&quot; class=&quot;detail tabular-nums&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
   &lt;div id=&quot;cp-selected&quot; class=&quot;detail tabular-nums&quot; aria-live=&quot;polite&quot;&gt;Click inside the triangle to inspect a point.&lt;/div&gt;
@@ -1873,8 +1877,11 @@ html&gt;body{padding:0}&lt;/style&gt;
   (() =&gt; {
     const root=document.getElementById(&#x27;central-path-explorer&#x27;);
     const plot=root.querySelector(&#x27;#cp-plot&#x27;), muSlider=root.querySelector(&#x27;#cp-mu&#x27;), thetaSlider=root.querySelector(&#x27;#cp-theta&#x27;);
+    const outerSlider=root.querySelector(&#x27;#cp-theta-outer&#x27;), outerToggle=root.querySelector(&#x27;#cp-show-outer&#x27;);
     const mode=root.querySelector(&#x27;#cp-mode&#x27;), muValue=root.querySelector(&#x27;#cp-mu-value&#x27;), thetaValue=root.querySelector(&#x27;#cp-theta-value&#x27;);
+    const outerValue=root.querySelector(&#x27;#cp-theta-outer-value&#x27;), outerControl=root.querySelector(&#x27;#cp-outer-control&#x27;), outerLegend=root.querySelector(&#x27;#cp-outer-legend&#x27;);
     const regionLabel=root.querySelector(&#x27;#cp-region-label&#x27;), detail=root.querySelector(&#x27;#cp-detail&#x27;), selected=root.querySelector(&#x27;#cp-selected&#x27;);
+    const outerRegionLabel=root.querySelector(&#x27;#cp-outer-region-label&#x27;);
     const NS=&#x27;http://www.w3.org/2000/svg&#x27;, N=180;
     let picked=null, geometry=null, animation=null;
     function center(mu) {
@@ -1891,12 +1898,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       return {delta:Math.hypot(...r.map((z,i)=&gt;z/mu-a[i])),kappa:Math.hypot(...r.map((z,i)=&gt;t*z-a[i]))};
     }
     function el(tag,attrs,text) { const e=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v)); if(text!==undefined)e.textContent=text;plot.appendChild(e);return e; }
-    function save() { if(window.openai&amp;&amp;window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{mu:Number(muSlider.value),theta:Number(thetaSlider.value),mode:mode.value,point:picked}}).catch(()=&gt;{}); }
+    function save() { if(window.openai&amp;&amp;window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{mu:Number(muSlider.value),theta:Number(thetaSlider.value),thetaOuter:Number(outerSlider.value),showOuter:outerToggle.checked,mode:mode.value,point:picked}}).catch(()=&gt;{}); }
     function fmt(v) { return v&lt;.1?v.toFixed(3):v.toFixed(2); }
     function draw() {
-      const mu=Math.min(20,Math.pow(10,Number(muSlider.value)/100)), theta=Number(thetaSlider.value)/100, selectedMode=mode.value;
-      muValue.textContent=fmt(mu); thetaValue.textContent=theta.toFixed(2);
-      regionLabel.textContent=selectedMode===&#x27;fixed&#x27;?&#x27;δμ(x) ≤ θ&#x27;:&#x27;κ(x) ≤ θ&#x27;;
+      const mu=Math.min(20,Math.pow(10,Number(muSlider.value)/100)), theta=Number(thetaSlider.value)/100, thetaOuter=Number(outerSlider.value)/100, selectedMode=mode.value;
+      muValue.textContent=fmt(mu); thetaValue.textContent=theta.toFixed(2); outerValue.textContent=thetaOuter.toFixed(2);
+      outerControl.hidden=!outerToggle.checked; outerLegend.hidden=!outerToggle.checked;
+      regionLabel.textContent=selectedMode===&#x27;fixed&#x27;?&#x27;δμ(x) ≤ θ₁&#x27;:&#x27;κ(x) ≤ θ₁&#x27;;
+      outerRegionLabel.textContent=selectedMode===&#x27;fixed&#x27;?&#x27;δμ(x) ≤ θ₂&#x27;:&#x27;κ(x) ≤ θ₂&#x27;;
       const width=Math.max(300,Math.floor(root.getBoundingClientRect().width)), height=Math.min(550,Math.max(365,width*.76));
       const left=57,right=18,top=18,bottom=50,span=Math.min(width-left-right,height-top-bottom);
       const x0=left+(width-left-right-span)/2,y0=height-bottom; geometry={x0,y0,span};
@@ -1904,7 +1913,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       plot.setAttribute(&#x27;viewBox&#x27;,`0 0 ${width} ${height}`); plot.replaceChildren();
       el(&#x27;polygon&#x27;,{points:`${xp(0)},${yp(0)} ${xp(1)},${yp(0)} ${xp(0)},${yp(1)}`,fill:&#x27;color-mix(in srgb,var(--blue) 6%,var(--background))&#x27;,stroke:&#x27;var(--border)&#x27;,&#x27;stroke-width&#x27;:1.5});
       const vals=Array.from({length:N+1},()=&gt;new Float64Array(N+1));
-      for(let i=0;i&lt;=N;i++)for(let j=0;j&lt;=N-i;j++){ const m=metrics(i/N,j/N,mu); vals[i][j]=(selectedMode===&#x27;fixed&#x27;?m.delta:m.kappa)-theta; }
+      for(let i=0;i&lt;=N;i++)for(let j=0;j&lt;=N-i;j++){ const m=metrics(i/N,j/N,mu); vals[i][j]=selectedMode===&#x27;fixed&#x27;?m.delta:m.kappa; }
+      function region(threshold,opacity) {
       const polygons=[];
       function clip(vertices) {
         let out=[];
@@ -1915,10 +1925,13 @@ html&gt;body{padding:0}&lt;/style&gt;
         if(out.length&gt;=3) polygons.push(out.map((p,i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;}${xp(p[0]/N).toFixed(2)} ${yp(p[1]/N).toFixed(2)}`).join(&#x27; &#x27;)+&#x27;Z&#x27;);
       }
       for(let i=0;i&lt;N;i++)for(let j=0;j&lt;N-i;j++){
-        clip([[i,j,vals[i][j]],[i+1,j,vals[i+1][j]],[i,j+1,vals[i][j+1]]]);
-        if(i+j&lt;N-1)clip([[i+1,j,vals[i+1][j]],[i+1,j+1,vals[i+1][j+1]],[i,j+1,vals[i][j+1]]]);
+        clip([[i,j,vals[i][j]-threshold],[i+1,j,vals[i+1][j]-threshold],[i,j+1,vals[i][j+1]-threshold]]);
+        if(i+j&lt;N-1)clip([[i+1,j,vals[i+1][j]-threshold],[i+1,j+1,vals[i+1][j+1]-threshold],[i,j+1,vals[i][j+1]-threshold]]);
       }
-      el(&#x27;path&#x27;,{d:polygons.join(&#x27; &#x27;),fill:&#x27;var(--purple)&#x27;,&#x27;fill-opacity&#x27;:.22,stroke:&#x27;none&#x27;,&#x27;pointer-events&#x27;:&#x27;none&#x27;});
+      el(&#x27;path&#x27;,{d:polygons.join(&#x27; &#x27;),fill:&#x27;var(--purple)&#x27;,&#x27;fill-opacity&#x27;:opacity,stroke:&#x27;none&#x27;,&#x27;pointer-events&#x27;:&#x27;none&#x27;});
+      }
+      if(outerToggle.checked)region(thetaOuter,.13);
+      region(theta,.27);
       const line=[]; for(let k=0;k&lt;=150;k++){const point=center(Math.pow(10,-4+8*k/150));line.push(`${k?&#x27;L&#x27;:&#x27;M&#x27;}${xp(point[0]).toFixed(3)} ${yp(point[1]).toFixed(3)}`);}
       el(&#x27;path&#x27;,{d:line.join(&#x27; &#x27;),fill:&#x27;none&#x27;,stroke:&#x27;var(--blue)&#x27;,&#x27;stroke-width&#x27;:3,&#x27;stroke-linejoin&#x27;:&#x27;round&#x27;,&#x27;pointer-events&#x27;:&#x27;none&#x27;});
       for(const t of [0,.5,1]) { el(&#x27;line&#x27;,{x1:xp(t),y1:yp(0),x2:xp(t),y2:yp(0)+5,stroke:&#x27;var(--foreground)&#x27;}); el(&#x27;text&#x27;,{x:xp(t),y:yp(0)+23,&#x27;text-anchor&#x27;:&#x27;middle&#x27;,class:&#x27;axis-label&#x27;},String(t)); if(t&gt;0){el(&#x27;line&#x27;,{x1:xp(0)-5,y1:yp(t),x2:xp(0),y2:yp(t),stroke:&#x27;var(--foreground)&#x27;}); el(&#x27;text&#x27;,{x:xp(0)-9,y:yp(t)+6,&#x27;text-anchor&#x27;:&#x27;end&#x27;,class:&#x27;axis-label&#x27;},String(t));}}
@@ -1929,13 +1942,13 @@ html&gt;body{padding:0}&lt;/style&gt;
       const x=center(mu), gap=1-x[0]-.45*x[1];
       el(&#x27;circle&#x27;,{cx:xp(x[0]),cy:yp(x[1]),r:7,fill:&#x27;var(--blue)&#x27;,stroke:&#x27;var(--background)&#x27;,&#x27;stroke-width&#x27;:2});
       detail.textContent=`μ-center: (${x[0].toFixed(3)}, ${x[1].toFixed(3)})   ·   objective gap: ${gap.toFixed(3)}`;
-      if(picked){const m=metrics(picked[0],picked[1],mu),v=selectedMode===&#x27;fixed&#x27;?m.delta:m.kappa,name=selectedMode===&#x27;fixed&#x27;?&#x27;δμ&#x27;:&#x27;κ&#x27;; el(&#x27;circle&#x27;,{cx:xp(picked[0]),cy:yp(picked[1]),r:7,fill:&#x27;var(--orange)&#x27;,stroke:&#x27;var(--background)&#x27;,&#x27;stroke-width&#x27;:2}); selected.textContent=`Selected (${picked[0].toFixed(3)}, ${picked[1].toFixed(3)}): ${name} = ${v.toFixed(3)} · ${v&lt;=theta?&#x27;inside&#x27;:&#x27;outside&#x27;}`; }
+      if(picked){const m=metrics(picked[0],picked[1],mu),v=selectedMode===&#x27;fixed&#x27;?m.delta:m.kappa,name=selectedMode===&#x27;fixed&#x27;?&#x27;δμ&#x27;:&#x27;κ&#x27;; el(&#x27;circle&#x27;,{cx:xp(picked[0]),cy:yp(picked[1]),r:7,fill:&#x27;var(--orange)&#x27;,stroke:&#x27;var(--background)&#x27;,&#x27;stroke-width&#x27;:2}); const position=v&lt;=theta?(outerToggle.checked?&#x27;inside inner&#x27;:&#x27;inside&#x27;):outerToggle.checked&amp;&amp;v&lt;=thetaOuter?&#x27;inside outer only&#x27;:&#x27;outside&#x27;; selected.textContent=`Selected (${picked[0].toFixed(3)}, ${picked[1].toFixed(3)}): ${name} = ${v.toFixed(3)} · ${position}`; }
     }
     function update(){if(animation!==null)cancelAnimationFrame(animation);animation=requestAnimationFrame(()=&gt;{animation=null;draw();});save();}
-    function applyState(state){const saved=state&amp;&amp;state.modelContent;if(!saved)return;if(Number.isFinite(saved.mu)&amp;&amp;saved.mu&gt;=-180&amp;&amp;saved.mu&lt;=131)muSlider.value=String(saved.mu);if(Number.isFinite(saved.theta)&amp;&amp;saved.theta&gt;=10&amp;&amp;saved.theta&lt;=90)thetaSlider.value=String(saved.theta);if(saved.mode===&#x27;whole&#x27;||saved.mode===&#x27;fixed&#x27;)mode.value=saved.mode;if(saved.point===null)picked=null;else if(Array.isArray(saved.point)&amp;&amp;saved.point.length===2&amp;&amp;saved.point.every(Number.isFinite)&amp;&amp;saved.point[0]&gt;0&amp;&amp;saved.point[1]&gt;0&amp;&amp;saved.point[0]+saved.point[1]&lt;1)picked=saved.point;}
+    function applyState(state){const saved=state&amp;&amp;state.modelContent;if(!saved)return;if(Number.isFinite(saved.mu)&amp;&amp;saved.mu&gt;=-180&amp;&amp;saved.mu&lt;=131)muSlider.value=String(saved.mu);if(Number.isFinite(saved.theta)&amp;&amp;saved.theta&gt;=10&amp;&amp;saved.theta&lt;=90)thetaSlider.value=String(saved.theta);if(Number.isFinite(saved.thetaOuter)&amp;&amp;saved.thetaOuter&gt;=10&amp;&amp;saved.thetaOuter&lt;=90)outerSlider.value=String(saved.thetaOuter);if(Number(outerSlider.value)&lt;Number(thetaSlider.value))outerSlider.value=thetaSlider.value;if(typeof saved.showOuter===&#x27;boolean&#x27;)outerToggle.checked=saved.showOuter;if(saved.mode===&#x27;whole&#x27;||saved.mode===&#x27;fixed&#x27;)mode.value=saved.mode;if(saved.point===null)picked=null;else if(Array.isArray(saved.point)&amp;&amp;saved.point.length===2&amp;&amp;saved.point.every(Number.isFinite)&amp;&amp;saved.point[0]&gt;0&amp;&amp;saved.point[1]&gt;0&amp;&amp;saved.point[0]+saved.point[1]&lt;1)picked=saved.point;}
     applyState(window.openai&amp;&amp;window.openai.widgetState);
     window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{if(event.detail&amp;&amp;event.detail.globals&amp;&amp;event.detail.globals.widgetState){applyState(event.detail.globals.widgetState);draw();}});
-    muSlider.addEventListener(&#x27;input&#x27;,update);thetaSlider.addEventListener(&#x27;input&#x27;,update);mode.addEventListener(&#x27;change&#x27;,update);
+    muSlider.addEventListener(&#x27;input&#x27;,update);thetaSlider.addEventListener(&#x27;input&#x27;,()=&gt;{if(Number(thetaSlider.value)&gt;Number(outerSlider.value))outerSlider.value=thetaSlider.value;update();});outerSlider.addEventListener(&#x27;input&#x27;,()=&gt;{if(Number(outerSlider.value)&lt;Number(thetaSlider.value))thetaSlider.value=outerSlider.value;update();});outerToggle.addEventListener(&#x27;change&#x27;,update);mode.addEventListener(&#x27;change&#x27;,update);
     plot.addEventListener(&#x27;click&#x27;,event=&gt;{if(!geometry)return;const p=plot.createSVGPoint();p.x=event.clientX;p.y=event.clientY;const q=p.matrixTransform(plot.getScreenCTM().inverse());const x=(q.x-geometry.x0)/geometry.span,y=(geometry.y0-q.y)/geometry.span;if(x&gt;0&amp;&amp;y&gt;0&amp;&amp;x+y&lt;1){picked=[x,y];update();}});
     new ResizeObserver(()=&gt;draw()).observe(root);draw();
   })();
