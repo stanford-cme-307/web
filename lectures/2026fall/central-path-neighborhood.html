@@ -1858,7 +1858,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #central-path-explorer .detail { display:flex; flex-wrap:wrap; gap:6px 24px; }
   &lt;/style&gt;
   &lt;div class=&quot;controls&quot;&gt;
-    &lt;label class=&quot;slider&quot; for=&quot;cp-mu&quot;&gt;&lt;span&gt;Barrier parameter μ = &lt;strong id=&quot;cp-mu-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-mu&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;-180&quot; max=&quot;50&quot; value=&quot;-70&quot; step=&quot;1&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;slider&quot; for=&quot;cp-mu&quot;&gt;&lt;span&gt;Barrier parameter μ = &lt;strong id=&quot;cp-mu-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-mu&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;-180&quot; max=&quot;131&quot; value=&quot;-70&quot; step=&quot;1&quot;&gt;&lt;/label&gt;
     &lt;label class=&quot;slider&quot; for=&quot;cp-theta&quot;&gt;&lt;span&gt;Neighborhood size θ = &lt;strong id=&quot;cp-theta-value&quot; class=&quot;tabular-nums&quot;&gt;&lt;/strong&gt;&lt;/span&gt;&lt;input id=&quot;cp-theta&quot; class=&quot;form-range&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;90&quot; value=&quot;40&quot; step=&quot;5&quot;&gt;&lt;/label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;controls&quot;&gt;
@@ -1894,7 +1894,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     function save() { if(window.openai&amp;&amp;window.openai.setWidgetState) window.openai.setWidgetState({modelContent:{mu:Number(muSlider.value),theta:Number(thetaSlider.value),mode:mode.value,point:picked}}).catch(()=&gt;{}); }
     function fmt(v) { return v&lt;.1?v.toFixed(3):v.toFixed(2); }
     function draw() {
-      const mu=Math.pow(10,Number(muSlider.value)/100), theta=Number(thetaSlider.value)/100, selectedMode=mode.value;
+      const mu=Math.min(20,Math.pow(10,Number(muSlider.value)/100)), theta=Number(thetaSlider.value)/100, selectedMode=mode.value;
       muValue.textContent=fmt(mu); thetaValue.textContent=theta.toFixed(2);
       regionLabel.textContent=selectedMode===&#x27;fixed&#x27;?&#x27;δμ(x) ≤ θ&#x27;:&#x27;κ(x) ≤ θ&#x27;;
       const width=Math.max(300,Math.floor(root.getBoundingClientRect().width)), height=Math.min(550,Math.max(365,width*.76));
@@ -1932,7 +1932,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       if(picked){const m=metrics(picked[0],picked[1],mu),v=selectedMode===&#x27;fixed&#x27;?m.delta:m.kappa,name=selectedMode===&#x27;fixed&#x27;?&#x27;δμ&#x27;:&#x27;κ&#x27;; el(&#x27;circle&#x27;,{cx:xp(picked[0]),cy:yp(picked[1]),r:7,fill:&#x27;var(--orange)&#x27;,stroke:&#x27;var(--background)&#x27;,&#x27;stroke-width&#x27;:2}); selected.textContent=`Selected (${picked[0].toFixed(3)}, ${picked[1].toFixed(3)}): ${name} = ${v.toFixed(3)} · ${v&lt;=theta?&#x27;inside&#x27;:&#x27;outside&#x27;}`; }
     }
     function update(){if(animation!==null)cancelAnimationFrame(animation);animation=requestAnimationFrame(()=&gt;{animation=null;draw();});save();}
-    function applyState(state){const saved=state&amp;&amp;state.modelContent;if(!saved)return;if(Number.isFinite(saved.mu)&amp;&amp;saved.mu&gt;=-180&amp;&amp;saved.mu&lt;=50)muSlider.value=String(saved.mu);if(Number.isFinite(saved.theta)&amp;&amp;saved.theta&gt;=10&amp;&amp;saved.theta&lt;=90)thetaSlider.value=String(saved.theta);if(saved.mode===&#x27;whole&#x27;||saved.mode===&#x27;fixed&#x27;)mode.value=saved.mode;if(saved.point===null)picked=null;else if(Array.isArray(saved.point)&amp;&amp;saved.point.length===2&amp;&amp;saved.point.every(Number.isFinite)&amp;&amp;saved.point[0]&gt;0&amp;&amp;saved.point[1]&gt;0&amp;&amp;saved.point[0]+saved.point[1]&lt;1)picked=saved.point;}
+    function applyState(state){const saved=state&amp;&amp;state.modelContent;if(!saved)return;if(Number.isFinite(saved.mu)&amp;&amp;saved.mu&gt;=-180&amp;&amp;saved.mu&lt;=131)muSlider.value=String(saved.mu);if(Number.isFinite(saved.theta)&amp;&amp;saved.theta&gt;=10&amp;&amp;saved.theta&lt;=90)thetaSlider.value=String(saved.theta);if(saved.mode===&#x27;whole&#x27;||saved.mode===&#x27;fixed&#x27;)mode.value=saved.mode;if(saved.point===null)picked=null;else if(Array.isArray(saved.point)&amp;&amp;saved.point.length===2&amp;&amp;saved.point.every(Number.isFinite)&amp;&amp;saved.point[0]&gt;0&amp;&amp;saved.point[1]&gt;0&amp;&amp;saved.point[0]+saved.point[1]&lt;1)picked=saved.point;}
     applyState(window.openai&amp;&amp;window.openai.widgetState);
     window.addEventListener(&#x27;openai:set_globals&#x27;,event=&gt;{if(event.detail&amp;&amp;event.detail.globals&amp;&amp;event.detail.globals.widgetState){applyState(event.detail.globals.widgetState);draw();}});
     muSlider.addEventListener(&#x27;input&#x27;,update);thetaSlider.addEventListener(&#x27;input&#x27;,update);mode.addEventListener(&#x27;change&#x27;,update);
