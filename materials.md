@@ -55,6 +55,7 @@ Old Fall 2025 files:
 
 ## Quiz practice problems
 
+- [Stochastic optimization practice problems](quiz/stochastic-2027-practice.pdf) (streaming and acceleration)
 - [Quiz 1 practice problems](quiz/quiz1-practice.pdf)
 - [Quiz 2 practice problems](quiz/quiz2-practice.pdf)
 - [Quiz 3 practice problems](quiz/quiz3-practice.pdf)
