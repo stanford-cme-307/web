@@ -44,7 +44,7 @@ Slides will sometimes be posted.  -->
 | T December 1 | [Optimization under uncertainty I](lectures/2025fall/Lecture18_slides.pdf) | | |
 | Th December 3 | [Optimization under uncertainty II](lectures/2025fall/Lecture19_slides.pdf) | | |
 | F December 4 | | | Homework 5; **Project due** |
-| Th December 10 | **Final exam, 3:30–5:00 pm** | | |
+| F December 11 | **Final exam, 12:15–1:45 pm** | | |
 
 <!-- Fall 2026: homework content is intentionally hidden until assignments are finalized.
 Old Fall 2025 files:
