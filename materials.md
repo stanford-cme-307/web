@@ -16,35 +16,35 @@ Other readings may aid your understanding but are not required.
 Since class sessions will be highly interactive, they will not be recorded.
 Slides will sometimes be posted.  -->
 
-| **Day** | **Lecture or session** | **Lecture notes** | **Due** |
-|---------|------------------------|-------------------|---------|
-| T September 22 | [Introduction and linear algebra review](lectures/2025fall/intro.pdf) | [Introduction](notes/2025fall/lec1.pdf) | |
-| Th September 24 | [Geometry in linear optimization](lectures/2025fall/lp.pdf) | [Geometry](notes/2025fall/lec2.pdf) | |
-| T September 29 | [Modeling linear programs and the simplex method](lectures/2025fall/lp.pdf) | [Solving](notes/2025fall/lec3.pdf) | |
-| Th October 1 | [Linear programming duality and the separating hyperplane theorem](lectures/2025fall/Lecture04_slides.pdf) | [Duality](notes/2025fall/Lectures04-06_notes.pdf) | |
-| F October 2 | | | [Homework 1: LP Modeling and Geometry](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw1.zip) |
-| T October 6 | [Theorems of alternative and strong duality](lectures/2025fall/Lecture05_slides.pdf) | | |
-| Th October 8 | [Sensitivity analysis and applications](lectures/2025fall/Lecture06_slides.pdf) | | |
-| T October 13 | [Convex analysis and optimality conditions](lectures/2025fall/opt.pdf) | [Optimality conditions](notes/2025fall/lec7.pdf) | |
-| Th October 15 | [Convex duality and KKT conditions](lectures/2025fall/Lecture08_slides.pdf) | [Convex duality and KKT conditions](notes/2025fall/Lectures08-09_notes.pdf) | |
-| F October 16 | | | [Homework 2: LP Duality and Sensitivity](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw2.zip) |
-| T October 20 | [KKT conditions and Fenchel duality](lectures/2025fall/Lecture09_slides.pdf) | | |
-| Th October 22 | [Conic optimization](lectures/2026fall/conic.pdf) | [Conic optimization](notes/2026fall/lec10.pdf) | |
-| T October 27 | [Gradient descent and Newton's method](lectures/2025fall/gd.pdf) | [Gradient descent](notes/2025fall/lec11.pdf) | |
-| W October 28 | | | [Homework 3: Convex Analysis and Duality](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw3.zip) |
-| Th October 29 | **Midterm** | | |
-| T November 3 | **Democracy Day — no class** | | |
-| Th November 5 | Quasi-Newton methods and preconditioning ([Full](lectures/2026fall/qn.pdf), [Condensed](lectures/2026fall/qn-condensed.pdf)) ([Last year](lectures/2025fall/qn.pdf)) | [Quasi-Newton methods](notes/2026fall/lec12.pdf) ([Last year](notes/2025fall/lec12.pdf)) | |
-| T November 10 | Interior point methods ([Full](lectures/2026fall/ipm.pdf), [Condensed](lectures/2026fall/ipm-condensed.pdf)) ([Last year](lectures/2025fall/ipm.pdf))<br>Interactive demos: [Affine scaling](lectures/2026fall/dikin-affine-scaling.html), [Central path](lectures/2026fall/central-path-neighborhood.html) | | |
-| Th November 12 | [Stochastic optimization](lectures/2026fall/stochastic-2027.pdf) | [Stochastic optimization](notes/2026fall/lec-stochastic-2027.pdf) | |
-| F November 13 | | | [Homework 4: Conic Modeling, Gradient Descent, and Preconditioning](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4.zip) ([mnist-mini](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4/update.zip)) |
-| T November 17 | [Mixed-integer linear optimization](lectures/2025fall/Lecture16_slides.pdf) | [Discrete optimization](notes/2025fall/Lectures16-17_notes.pdf) | |
-| Th November 19 | [Combinatorial optimization](lectures/2025fall/Lecture17_slides.pdf) | | |
-| November 23–27 | **Thanksgiving recess — no class** | | |
-| T December 1 | [Optimization under uncertainty I](lectures/2025fall/Lecture18_slides.pdf) | | |
-| Th December 3 | [Optimization under uncertainty II](lectures/2025fall/Lecture19_slides.pdf) | | |
-| F December 4 | | | Homework 5; **Project due** |
-| F December 11 | **Final exam, 12:15–1:45 pm** | | |
+| **Day** | **Lecture or session** | **Lecture notes** | **Practice quizzes** | **Due** |
+|---------|------------------------|-------------------| ---------------------- |---------|
+| T September 22 | [Introduction and linear algebra review](lectures/2025fall/intro.pdf) | [Introduction](notes/2025fall/lec1.pdf) |  | |
+| Th September 24 | [Geometry in linear optimization](lectures/2025fall/lp.pdf) | [Geometry](notes/2025fall/lec2.pdf) |  | |
+| T September 29 | [Modeling linear programs and the simplex method](lectures/2025fall/lp.pdf) | [Solving](notes/2025fall/lec3.pdf) | [Linear programming (PDF)]({{ '/quiz/quiz1-practice.pdf' | relative_url }}) | |
+| Th October 1 | [Linear programming duality and the separating hyperplane theorem](lectures/2025fall/Lecture04_slides.pdf) | [Duality](notes/2025fall/Lectures04-06_notes.pdf) | [LP duality (PDF)]({{ '/quiz/quiz2-practice.pdf' | relative_url }}) | |
+| F October 2 | | |  | [Homework 1: LP Modeling and Geometry](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw1.zip) |
+| T October 6 | [Theorems of alternative and strong duality](lectures/2025fall/Lecture05_slides.pdf) | |  | |
+| Th October 8 | [Sensitivity analysis and applications](lectures/2025fall/Lecture06_slides.pdf) | |  | |
+| T October 13 | [Convex analysis and optimality conditions](lectures/2025fall/opt.pdf) | [Optimality conditions](notes/2025fall/lec7.pdf) | [Optimality conditions (PDF)]({{ '/quiz/quiz3-practice.pdf' | relative_url }}) | |
+| Th October 15 | [Convex duality and KKT conditions](lectures/2025fall/Lecture08_slides.pdf) | [Convex duality and KKT conditions](notes/2025fall/Lectures08-09_notes.pdf) | [Lagrangians and Slater’s condition (PDF)]({{ '/quiz/quiz4-practice.pdf' | relative_url }}) | |
+| F October 16 | | |  | [Homework 2: LP Duality and Sensitivity](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw2.zip) |
+| T October 20 | [KKT conditions and Fenchel duality](lectures/2025fall/Lecture09_slides.pdf) | | [Subgradients and Fenchel conjugacy (PDF)]({{ '/quiz/quiz8-practice.pdf' | relative_url }}) | |
+| Th October 22 | [Conic optimization](lectures/2026fall/conic.pdf) | [Conic optimization](notes/2026fall/lec10.pdf) |  | |
+| T October 27 | [Gradient descent and Newton's method](lectures/2025fall/gd.pdf) | [Gradient descent](notes/2025fall/lec11.pdf) | [Gradient descent (PDF)]({{ '/quiz/quiz5-practice.pdf' | relative_url }}) | |
+| W October 28 | | |  | [Homework 3: Convex Analysis and Duality](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw3.zip) |
+| Th October 29 | **Midterm** | |  | |
+| T November 3 | **Democracy Day — no class** | |  | |
+| Th November 5 | Quasi-Newton methods and preconditioning ([Full](lectures/2026fall/qn.pdf), [Condensed](lectures/2026fall/qn-condensed.pdf)) ([Last year](lectures/2025fall/qn.pdf)) | [Quasi-Newton methods](notes/2026fall/lec12.pdf) ([Last year](notes/2025fall/lec12.pdf)) | [Preconditioning (PDF)]({{ '/quiz/quiz6-practice.pdf' | relative_url }}) | |
+| T November 10 | Interior point methods ([Full](lectures/2026fall/ipm.pdf), [Condensed](lectures/2026fall/ipm-condensed.pdf)) ([Last year](lectures/2025fall/ipm.pdf))<br>Interactive demos: [Affine scaling](lectures/2026fall/dikin-affine-scaling.html), [Central path](lectures/2026fall/central-path-neighborhood.html) | | [Interior-point methods (PDF)]({{ '/quiz/quiz7-practice.pdf' | relative_url }}) | |
+| Th November 12 | [Stochastic optimization](lectures/2026fall/stochastic-2027.pdf) | [Stochastic optimization](notes/2026fall/lec-stochastic-2027.pdf) | [Stochastic practice]({{ '/quiz/stochastic-2027-practice.html' | relative_url }}) · [PDF]({{ '/quiz/stochastic-2027-practice.pdf' | relative_url }}) | |
+| F November 13 | | |  | [Homework 4: Conic Modeling, Gradient Descent, and Preconditioning](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4.zip) ([mnist-mini](https://github.com/stanford-cme-307/web/raw/main/homework/f26/hw4/update.zip)) |
+| T November 17 | [Mixed-integer linear optimization](lectures/2025fall/Lecture16_slides.pdf) | [Discrete optimization](notes/2025fall/Lectures16-17_notes.pdf) | [Integer programming (PDF)]({{ '/quiz/quiz9-practice.pdf' | relative_url }}) | |
+| Th November 19 | [Combinatorial optimization](lectures/2025fall/Lecture17_slides.pdf) | |  | |
+| November 23–27 | **Thanksgiving recess — no class** | |  | |
+| T December 1 | [Optimization under uncertainty I](lectures/2025fall/Lecture18_slides.pdf) | |  | |
+| Th December 3 | [Optimization under uncertainty II](lectures/2025fall/Lecture19_slides.pdf) | |  | |
+| F December 4 | | |  | Homework 5; **Project due** |
+| F December 11 | **Final exam, 12:15–1:45 pm** | |  | |
 
 <!-- Fall 2026: homework content is intentionally hidden until assignments are finalized.
 Old Fall 2025 files:
@@ -52,18 +52,5 @@ Old Fall 2025 files:
 - https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw4.zip
 - https://github.com/stanford-cme-307/web/raw/main/homework/f25/hw5.zip
 -->
-
-## Quiz practice problems
-
-- [Stochastic optimization practice problems](quiz/stochastic-2027-practice.pdf) (streaming and acceleration)
-- [Quiz 1 practice problems](quiz/quiz1-practice.pdf)
-- [Quiz 2 practice problems](quiz/quiz2-practice.pdf)
-- [Quiz 3 practice problems](quiz/quiz3-practice.pdf)
-- [Quiz 4 practice problems](quiz/quiz4-practice.pdf)
-- [Quiz 5 practice problems](quiz/quiz5-practice.pdf)
-- [Quiz 6 practice problems](quiz/quiz6-practice.pdf)
-- [Quiz 7 practice problems](quiz/quiz7-practice.pdf)
-- [Quiz 8 practice problems](quiz/quiz8-practice.pdf)
-- [Quiz 9 practice problems](quiz/quiz9-practice.pdf)
 
 If you'd like to read ahead, feel free to look at the material from [previous years](old.md). As content and structure of the course changes from year to year, previous years' homework or exams may not predict this year's.

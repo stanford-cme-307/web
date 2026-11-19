@@ -1,0 +1,570 @@
+---
+layout: page
+title: Stochastic optimization practice
+nav_exclude: true
+permalink: /quiz/stochastic-2027-practice.html
+---
+
+<!-- Problems and worked solutions from the CME 307 stochastic practice handout. -->
+<style>
+.practice-quiz details {
+  margin-bottom: 1.5rem;
+}
+.practice-quiz summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.practice-quiz .solution {
+  border-inline-start: 2px solid #d9d5e3;
+  margin-top: 0.75rem;
+  padding-inline-start: 1rem;
+}
+.practice-quiz math[display="block"] {
+  max-width: 100%;
+  overflow-x: auto;
+}
+</style>
+
+<div class="practice-quiz">
+<h1>Stochastic optimization practice</h1>
+<p><a href="{{ '/quiz/stochastic-2027-practice.pdf' | relative_url }}">Download the questions (PDF)</a></p>
+<p>Allow about five minutes per exercise and briefly justify each answer.
+Exercises 1–10 cover streaming SGD and acceleration. Exercises 11–12 are optional.</p>
+<p>Throughout, <math><mi mathvariant="double-struck">E</mi></math> denotes expectation
+and <math><mo>‖</mo><mo>⋅</mo><mo>‖</mo></math> denotes the Euclidean norm.</p>
+
+
+<h2>Streaming samples and SGD</h2>
+
+<h3 id="exercise-1">1. Optimal order at a kink</h3>
+<p>A newsvendor chooses a real-valued order quantity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q\geq0</annotation></semantics></math>
+and pays
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo>;</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo>−</mo><mi>D</mi><msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo></msub><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mi>D</mi><mo>−</mo><mi>q</mi><msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">\ell(q;D)=(q-D)_++2(D-q)_+</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>u</mi><msub><mo stretchy="false" form="postfix">)</mo><mo>+</mo></msub><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>u</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">(u)_+=\max\{u,0\}</annotation></semantics></math>.
+Demand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>,
+with probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>,
+respectively. Find the slope of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>𝔼</mi><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo>;</mo><mi>D</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(q)=\mathbb{E}\ell(q;D)</annotation></semantics></math>
+immediately to the left and right of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">q=2</annotation></semantics></math>.
+Use the slopes to decide if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">q=2</annotation></semantics></math>
+minimizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 1</summary>
+  <div class="solution">
+<p>Immediately left of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+the slope is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mn>5</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4-2(3/4)=-5/4</annotation></semantics></math>.
+Immediately right of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+it is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>4</mn><mo>−</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">3/4-2(1/4)=1/4</annotation></semantics></math>.
+The slope crosses zero, so by convexity
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">q=2</annotation></semantics></math>
+is the unique minimizer. Equivalently, the subdifferential at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">[</mo><mi>−</mi><mn>5</mn><mi>/</mi><mn>4</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">[-5/4,1/4]</annotation></semantics></math>,
+with zero in its interior.</p>
+  </div>
+</details>
+
+<h3 id="exercise-2">2. What projection does to a mean update</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒳</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mi>∞</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal X=[0,\infty)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>ξ</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\ell(x;\xi)=(x-\xi)^2/2</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\xi=1</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+with equal probabilities. At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>,
+take a projected SGD step
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>+</mo></msup><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo>−</mo><mi>t</mi><mi>g</mi><mo stretchy="false" form="postfix">}</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>ξ</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>t</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">x^+=\max\{0,x-tg\},\qquad g=x-\xi,\qquad t=1/2.</annotation></semantics></math>
+Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mi>g</mi></mrow><annotation encoding="application/x-tex">\mathbb{E}g</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><msup><mi>x</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\mathbb{E}x^+</annotation></semantics></math>.
+Compare the expected iterate with the projected step that uses the exact
+gradient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F&#39;(0)</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>𝔼</mi><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(x)=\mathbb{E}\ell(x;\xi)</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 2</summary>
+  <div class="solution">
+<p>At zero,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mi>−</mi><mi>ξ</mi></mrow><annotation encoding="application/x-tex">g=-\xi</annotation></semantics></math>
+has mean zero, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>+</mo></msup><annotation encoding="application/x-tex">x^+</annotation></semantics></math>
+equals
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\xi=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">\xi=-1</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><msup><mi>x</mi><mo>+</mo></msup><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\mathbb{E}x^+=1/4</annotation></semantics></math>.
+Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">F&#39;(0)=0</annotation></semantics></math>,
+the exact projected step stays at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>.
+Projection clips one of the two moves and leaves the other intact.</p>
+  </div>
+</details>
+
+<h3 id="exercise-3">3. Two samples from a simulator</h3>
+<p>At a fixed point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x\in\mathbb{R}</annotation></semantics></math>,
+a simulator returns the stochastic gradient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>x</mi><mo>+</mo><mi>ξ</mi></mrow><annotation encoding="application/x-tex">g(x;\xi)=x+\xi</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\xi=2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
+with equal probabilities. You can average two gradients using
+independent draws, or use one draw
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>
+and run the second simulation with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>ξ</mi></mrow><annotation encoding="application/x-tex">-\xi</annotation></semantics></math>.
+Compute the mean and variance of the average gradient for each plan.
+Explain why they have different variances with the same number of
+gradient evaluations.</p>
+<details>
+  <summary>Solution to exercise 3</summary>
+  <div class="solution">
+<p>The independent average is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>ξ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>ξ</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">x+(\xi_1+\xi_2)/2</annotation></semantics></math>,
+with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>+</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>4</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(4+4)/4=2</annotation></semantics></math>
+because the noises are independent. The paired average is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo>−</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x+(\xi-\xi)/2=x</annotation></semantics></math>,
+with mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and variance zero. Choosing the opposite noise makes the two errors
+cancel in every pair.</p>
+  </div>
+</details>
+
+<h3 id="exercise-4">4. When all samples share a minimizer</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>ξ</mi><msup><mi>x</mi><mn>2</mn></msup><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\ell(x;\xi)=\xi x^2/2</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\xi=1</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+with equal probabilities. Starting at a fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x_0\in\mathbb{R}</annotation></semantics></math>,
+run SGD with a fresh independent draw at each step and step size
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">t=1/4</annotation></semantics></math>.
+Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msubsup><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo>∣</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\mathbb{E}[x_{k+1}^2\mid x_k]</annotation></semantics></math>.
+Does the expected objective
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathbb{E}F(x_k)</annotation></semantics></math>
+approach a positive noise floor, where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>𝔼</mi><mi>ℓ</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(x)=\mathbb{E}\ell(x;\xi)</annotation></semantics></math>?</p>
+<details>
+  <summary>Solution to exercise 4</summary>
+  <div class="solution">
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>=</mo><msub><mi>ξ</mi><mi>k</mi></msub><msub><mi>x</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">g_k=\xi_k x_k</annotation></semantics></math>,
+the possible next iterates are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><msub><mi>x</mi><mi>k</mi></msub><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">3x_k/4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">x_k/4</annotation></semantics></math>,
+each with probability
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><msubsup><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup><mo>∣</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mi>/</mi><mn>16</mn><mo stretchy="false" form="postfix">)</mo><msubsup><mi>x</mi><mi>k</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\mathbb{E}[x_{k+1}^2\mid x_k]=(5/16)x_k^2</annotation></semantics></math>.
+Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F(x)=x^2</annotation></semantics></math>,
+so iterating expectations gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>5</mn><mi>/</mi><mn>16</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup><msubsup><mi>x</mi><mn>0</mn><mn>2</mn></msubsup><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathbb{E}F(x_k)=(5/16)^k x_0^2\to0</annotation></semantics></math>.
+Each sampled gradient vanishes at the common minimizer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>.</p>
+  </div>
+</details>
+
+<h3 id="exercise-5">5. Same demands, different regret</h3>
+<p>A vendor chooses
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>k</mi></msub><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">q_k\in[0,1]</annotation></semantics></math>
+each day and pays
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msub><mi>q</mi><mi>k</mi></msub><mo>−</mo><msub><mi>D</mi><mi>k</mi></msub><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|q_k-D_k|</annotation></semantics></math>.
+On day
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+the vendor orders
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q_0=0</annotation></semantics></math>.
+On each later day the vendor orders the previous day’s demand,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>k</mi></msub><mo>=</mo><msub><mi>D</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">q_k=D_{k-1}</annotation></semantics></math>.
+Compute the vendor’s four-day regret for each demand sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0,1,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1,0,1)</annotation></semantics></math>,
+relative to the best fixed order on that sequence. Explain why the two
+regrets differ.</p>
+<details>
+  <summary>Solution to exercise 5</summary>
+  <div class="solution">
+<p>In either sequence each fixed order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">q\in[0,1]</annotation></semantics></math>
+costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>q</mi><mo>+</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2q+2(1-q)=2</annotation></semantics></math>.
+The vendor pays
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+each time the demand switches, and pays
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+on the first day. The first sequence costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+with regret
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>.
+The second costs
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>3</mn><annotation encoding="application/x-tex">3</annotation></semantics></math>
+with regret
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+Both fixed-order costs depend only on demand counts, and the vendor’s
+costs depend on the order of arrival.</p>
+  </div>
+</details>
+
+<h3 id="exercise-6">6. Two ways to report one iterate</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>F</mi><annotation encoding="application/x-tex">F</annotation></semantics></math>
+be convex and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">x_0,\ldots,x_{T-1}</annotation></semantics></math>
+be the iterates from a run of SGD with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T\geq1</annotation></semantics></math>.
+Given these iterates, draw
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>J</mi><annotation encoding="application/x-tex">J</annotation></semantics></math>
+uniformly from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>T</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0,\ldots,T-1\}</annotation></semantics></math>.
+Compare the conditional expected objective
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>J</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>∣</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\mathbb{E}[F(x_J)\mid x_0,\ldots,x_{T-1}]</annotation></semantics></math>
+with the objective at the average
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>T</mi></msub><mo>=</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>x</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\bar x_T=T^{-1}\sum_{k=0}^{T-1}x_k</annotation></semantics></math>.
+When can averaging be strictly better? Give a two-iterate example.</p>
+<details>
+  <summary>Solution to exercise 6</summary>
+  <div class="solution">
+<p>The conditional expectation is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">T^{-1}\sum_{k=0}^{T-1}F(x_k)</annotation></semantics></math>
+by uniform sampling. Jensen’s inequality bounds
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>T</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F(\bar x_T)</annotation></semantics></math>
+above by that average. Strict convexity on the segment between two
+distinct iterates gives strict inequality for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">T=2</annotation></semantics></math>.
+For example,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">F(x)=x^2</annotation></semantics></math>
+at iterates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+gives conditional expected objective
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mi>J</mi></msub><annotation encoding="application/x-tex">x_J</annotation></semantics></math>
+and objective
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>x</mi><mo accent="true">‾</mo></mover><mi>T</mi></msub><annotation encoding="application/x-tex">\bar x_T</annotation></semantics></math>.</p>
+  </div>
+</details>
+
+<h3 id="exercise-7">7. Shrink an estimate of the mean</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ξ</mi><mn>0</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>ξ</mi><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\xi_0,\ldots,\xi_{T-1}</annotation></semantics></math>
+be independent samples from a distribution with unknown mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">m\in\mathbb{R}</annotation></semantics></math>
+and variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sigma^2&gt;0</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">T\geq1</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>ξ</mi><mo accent="true">‾</mo></mover><mo>=</mo><msup><mi>T</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msubsup><msub><mi>ξ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\bar\xi=T^{-1}\sum_{k=0}^{T-1}\xi_k</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>ξ</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">F(x)=\mathbb{E}[(x-\xi)^2]/2</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>F</mi><mo>⋆</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>−</mo><mi>m</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">F(x)-F^\star=(x-m)^2/2</annotation></semantics></math>.
+You may use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo>−</mo><mi>m</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">]</mo><mo>=</mo><mrow><mi mathvariant="normal">Var</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>Y</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>𝔼</mi><mi>Y</mi><mo>−</mo><mi>m</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{E}[(Y-m)^2]=\operatorname{Var}(Y)+(\mathbb{E}Y-m)^2</annotation></semantics></math>.
+For which
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+does
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>x</mi><mo accent="true">̂</mo></mover><mo>=</mo><mover><mi>ξ</mi><mo accent="true">‾</mo></mover><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\widehat x=\bar\xi/2</annotation></semantics></math>
+have smaller expected objective gap than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>ξ</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar\xi</annotation></semantics></math>?
+Explain how the comparison fits the lecture’s sample lower bound, which
+concerns the worst case over distributions.</p>
+<details>
+  <summary>Solution to exercise 7</summary>
+  <div class="solution">
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>ξ</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar\xi</annotation></semantics></math>
+the expected gap is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>T</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma^2/(2T)</annotation></semantics></math>.
+The estimator
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>x</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\widehat x</annotation></semantics></math>
+has mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m/2</annotation></semantics></math>
+and variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mi>T</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\sigma^2/(4T)</annotation></semantics></math>,
+so its expected gap is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>m</mi><mn>2</mn></msup><mo>+</mo><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mi>T</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">(m^2+\sigma^2/T)/8</annotation></semantics></math>.
+It improves on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>ξ</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar\xi</annotation></semantics></math>
+exactly when
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>m</mi><mn>2</mn></msup><mo>&lt;</mo><mn>3</mn><msup><mi>σ</mi><mn>2</mn></msup><mi>/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">m^2&lt;3\sigma^2/T</annotation></semantics></math>.
+It loses for sufficiently large
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>m</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|m|</annotation></semantics></math>
+and its error grows without bound as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><mi>m</mi><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|m|</annotation></semantics></math>
+grows, consistent with a lower bound on the worst-case error over the
+family.</p>
+  </div>
+</details>
+
+<h2>Acceleration and momentum</h2>
+
+<h3 id="exercise-8">8. An easy instance with a large condition number</h3>
+<p>Consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mn>100</mn><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">f(x)=(x_1^2+100x_2^2)/2</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math>,
+with condition number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">\kappa=100</annotation></semantics></math>.
+You may choose a different positive step size at each update
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>t</mi><mi>k</mi></msub><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x_{k+1}=x_k-t_k\nabla f(x_k)</annotation></semantics></math>.
+Find two step sizes that reach the minimizer from every starting point
+in two gradient evaluations. Start by writing the update for each
+coordinate. How does the example fit the lecture’s lower bound for
+gradient methods?</p>
+<details>
+  <summary>Solution to exercise 8</summary>
+  <div class="solution">
+<p>The component multipliers of a step are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">1-t</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>100</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">1-100t</annotation></semantics></math>.
+Set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>100</mn></mrow><annotation encoding="application/x-tex">t_0=1/100</annotation></semantics></math>
+to make the second coordinate zero, then set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">t_1=1</annotation></semantics></math>
+to make the first zero while preserving the second. The reverse order
+also works. The lower bound concerns a worst-case function in the smooth
+strongly convex class, in sufficiently large dimension. This particular
+quadratic has only two curvatures, both known.</p>
+  </div>
+</details>
+
+<h3 id="exercise-9">9. Read the accelerated guarantee</h3>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">f(x)=3x^2</annotation></semantics></math>,
+valid smoothness and strong convexity constants are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">L=9</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu=1</annotation></semantics></math>.
+Run Nesterov’s method from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>−</mi><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_{-1}=x_0=1</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>9</mn></mrow><annotation encoding="application/x-tex">t=1/9</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\beta=1/2</annotation></semantics></math>.
+The first step gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">x_1=1/3</annotation></semantics></math>.
+Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>3</mn></msub><annotation encoding="application/x-tex">x_3</annotation></semantics></math>
+and compare their objective values. Is the comparison consistent with
+the guarantee
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>f</mi><mo>⋆</mo></msup><mo>≤</mo><mi>C</mi><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>/</mi><mn>3</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">f(x_k)-f^\star\leq C(2/3)^k</annotation></semantics></math>
+for a constant
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>?</p>
+<details>
+  <summary>Solution to exercise 9</summary>
+  <div class="solution">
+<p>The update is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mn>6</mn><mi>/</mi><mn>9</mn><mo stretchy="false" form="postfix">)</mo><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><msub><mi>y</mi><mi>k</mi></msub><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">x_{k+1}=(1-6/9)y_k=y_k/3</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mi>k</mi></msub><mo>=</mo><msub><mi>x</mi><mi>k</mi></msub><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">y_k=x_k+(x_k-x_{k-1})/2</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y_1=0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_2=0</annotation></semantics></math>,
+then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>y</mi><mn>2</mn></msub><mo>=</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">y_2=-1/6</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mi>−</mi><mn>1</mn><mi>/</mi><mn>18</mn></mrow><annotation encoding="application/x-tex">x_3=-1/18</annotation></semantics></math>.
+The objective rises from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>108</mn></mrow><annotation encoding="application/x-tex">1/108</annotation></semantics></math>.
+The guarantee bounds each gap by a decreasing envelope, which can
+accommodate this increase. Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><mn>7</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">C=7/2</annotation></semantics></math>
+in the lecture’s guarantee.</p>
+  </div>
+</details>
+
+<h3 id="exercise-10">10. A momentum estimate after a large past gradient</h3>
+<p>At a step of SGD with momentum, condition on the current iterate and
+its history. The current true gradient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F&#39;(x_k)=1</annotation></semantics></math>,
+and the fresh sampled gradient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>
+with equal probabilities. The previous momentum estimate is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>m</mi><mo accent="true">̃</mo></mover><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\tilde m_{k-1}=3</annotation></semantics></math>
+and the new estimate is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi>m</mi><mo accent="true">̃</mo></mover><mi>k</mi></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mover><mi>m</mi><mo accent="true">̃</mo></mover><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>g</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\tilde m_k=(\tilde m_{k-1}+g_k)/2</annotation></semantics></math>.
+Which of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>m</mi><mo accent="true">̃</mo></mover><mi>k</mi></msub><annotation encoding="application/x-tex">\tilde m_k</annotation></semantics></math>
+has lower conditional variance? Which has lower conditional mean squared
+error about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">F&#39;(x_k)</annotation></semantics></math>?</p>
+<details>
+  <summary>Solution to exercise 10</summary>
+  <div class="solution">
+<p>The sampled gradient has mean
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>,
+and mean squared error
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>.
+The momentum estimate is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">3/2</annotation></semantics></math>
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">5/2</annotation></semantics></math>
+with equal probabilities. Its conditional mean is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>2</mn><annotation encoding="application/x-tex">2</annotation></semantics></math>,
+its variance is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math>,
+and its mean squared error about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1</mn><annotation encoding="application/x-tex">1</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>4</mn><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>=</mo><mn>5</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4+(2-1)^2=5/4</annotation></semantics></math>.
+Momentum has less variance, and the fresh gradient has less squared
+error because it is unbiased.</p>
+  </div>
+</details>
+
+<h2>Optional heavy-ball problems</h2>
+
+<h3 id="exercise-11">11. Opposite signs at the ends of the spectrum</h3>
+<p>For heavy ball on a quadratic, the scalar error along an eigenvector
+of curvature
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo>−</mo><mi>t</mi><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><msub><mi>e</mi><mi>k</mi></msub><mo>−</mo><mi>β</mi><msub><mi>e</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">e_{k+1}=(1+\beta-t\lambda)e_k-\beta e_{k-1}</annotation></semantics></math>.
+Take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">t=1/4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\beta=1/4</annotation></semantics></math>.
+Compute the roots of
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>z</mi><mn>2</mn></msup><mo>−</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo>−</mo><mi>t</mi><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mi>z</mi><mo>+</mo><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z^2-(1+\beta-t\lambda)z+\beta=0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\lambda=9</annotation></semantics></math>.
+What do the moduli say about the geometric decay factors? Which mode has
+an alternating sign factor?</p>
+<details>
+  <summary>Solution to exercise 11</summary>
+  <div class="solution">
+<p>At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda=1</annotation></semantics></math>
+the polynomial is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(z-1/2)^2</annotation></semantics></math>,
+with repeated root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\lambda=9</annotation></semantics></math>
+it is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo>+</mo><mn>1</mn><mi>/</mi><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(z+1/2)^2</annotation></semantics></math>,
+with repeated root
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-1/2</annotation></semantics></math>.
+Both have geometric decay factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.
+The
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">\lambda=9</annotation></semantics></math>
+mode has an alternating factor
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">(-1)^k</annotation></semantics></math>.
+The repeated roots can also introduce a factor linear in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</p>
+  </div>
+</details>
+
+<h3 id="exercise-12">12. Heavy ball and two-point cycles</h3>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><msup><mi>ℝ</mi><mi>d</mi></msup><mo>→</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">f\colon\mathbb{R}^d\to\mathbb{R}</annotation></semantics></math>
+be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>-smooth
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L&gt;0</annotation></semantics></math>.
+Run heavy ball with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>1</mn><mi>/</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">0&lt;t\leq1/L</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>β</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\leq\beta&lt;1</annotation></semantics></math>,
+using the update
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>x</mi><mi>k</mi></msub><mo>+</mo><mi>β</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>t</mi><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">x_{k+1}=x_k+\beta(x_k-x_{k-1})-t\nabla f(x_k).</annotation></semantics></math>
+Could the iterates alternate forever between two distinct points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>?
+Write the update at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+and at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>,
+then subtract the equations and use smoothness to justify your
+answer.</p>
+<details>
+  <summary>Solution to exercise 12</summary>
+  <div class="solution">
+<p>The update from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t\nabla f(a)=(1+\beta)(a-b)</annotation></semantics></math>,
+and the update from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math>
+to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">t\nabla f(b)=(1+\beta)(b-a)</annotation></semantics></math>.
+Subtracting and applying smoothness gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">∥</mo><mo>=</mo><mi>t</mi><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mi>t</mi><mi>L</mi><mo stretchy="false" form="postfix">∥</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">∥</mo><mo>≤</mo><mo stretchy="false" form="postfix">∥</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">∥</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">2(1+\beta)\|a-b\|
+=t\|\nabla f(a)-\nabla f(b)\|
+\leq tL\|a-b\|\leq\|a-b\|.</annotation></semantics></math> Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>β</mi><mo stretchy="false" form="postfix">)</mo><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2(1+\beta)\geq2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≠</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\ne b</annotation></semantics></math>,
+the inequality is impossible.</p>
+  </div>
+</details>
+
+</div>
