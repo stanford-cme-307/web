@@ -131,23 +131,20 @@ Projection clips one of the two moves and leaves the other intact.</p>
   </div>
 </details>
 
-<h3 id="exercise-3">3. Two samples from a simulator</h3>
-<p>At a fixed point
+<h3 id="exercise-3">3. When two workers share a random seed</h3>
+<p>At a fixed
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x\in\mathbb{R}</annotation></semantics></math>,
-a simulator returns the stochastic gradient
+two workers run the same demand simulator to estimate a gradient. Each
+run returns
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>;</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>x</mi><mo>+</mo><mi>ξ</mi></mrow><annotation encoding="application/x-tex">g(x;\xi)=x+\xi</annotation></semantics></math>,
-with
+where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ξ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\xi=2</annotation></semantics></math>
 or
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">-2</annotation></semantics></math>
-with equal probabilities. You can average two gradients using
-independent draws, or use one draw
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ξ</mi><annotation encoding="application/x-tex">\xi</annotation></semantics></math>
-and run the second simulation with
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>ξ</mi></mrow><annotation encoding="application/x-tex">-\xi</annotation></semantics></math>.
-Compute the mean and variance of the average gradient for each plan.
-Explain why they have different variances with the same number of
-gradient evaluations.</p>
+with equal probabilities. In one case the workers draw independently. In
+the other, they accidentally use the same random seed, so their draws
+coincide. Find the mean and variance of the average of the two gradients
+in each case. Briefly explain why the variances differ.</p>
 <details>
   <summary>Solution to exercise 3</summary>
   <div class="solution">
@@ -157,12 +154,14 @@ with mean
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
 and variance
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>+</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>4</mn><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">(4+4)/4=2</annotation></semantics></math>
-because the noises are independent. The paired average is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo>−</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">x+(\xi-\xi)/2=x</annotation></semantics></math>,
+because the noises are independent. With a shared seed the average is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>ξ</mi><mo>+</mo><mi>ξ</mi><mo stretchy="false" form="postfix">)</mo><mi>/</mi><mn>2</mn><mo>=</mo><mi>x</mi><mo>+</mo><mi>ξ</mi></mrow><annotation encoding="application/x-tex">x+(\xi+\xi)/2=x+\xi</annotation></semantics></math>,
 with mean
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
-and variance zero. Choosing the opposite noise makes the two errors
-cancel in every pair.</p>
+and variance
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>4</mn><annotation encoding="application/x-tex">4</annotation></semantics></math>.
+Both workers contribute the same sample in that case, so the average has
+the variance of a single draw.</p>
   </div>
 </details>
 
