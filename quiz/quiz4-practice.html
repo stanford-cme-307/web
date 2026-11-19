@@ -1,0 +1,471 @@
+---
+layout: practice-quiz
+title: Lagrangians and KKT practice
+nav_exclude: true
+quiz_pdf: /quiz/quiz4-practice.pdf
+permalink: /quiz/quiz4-practice.html
+---
+
+<h2 id="lagrangians-duals-and-slaters-condition">Lagrangians, duals, and
+Slater’s condition</h2>
+<p>For each primal problem, give its Lagrangian, dual function, and dual
+problem (including its feasible set). Determine whether the primal is
+convex, whether Slater’s condition holds, and whether the optimal values
+agree. For Slater’s condition, use the course refinement that allows
+affine inequalities to hold with equality.</p>
+<h3 id="minimum-norm-point-with-linear-inequalities">1. Minimum-norm
+point with linear inequalities</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\tfrac12\|x\|_2^2</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x\in\mathbb R^n</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>≥</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax\ge b</annotation></semantics></math>,
+where
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>m</mi><mo>×</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">A\in\mathbb R^{m\times n}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">b\in\mathbb R^m</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 1</summary>
+  <div class="solution">
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo>,</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msup><mi>λ</mi><mo>⊺</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>−</mo><mi>A</mi><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msup><mi>b</mi><mo>⊺</mo></msup><mi>λ</mi><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>λ</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L(x,\lambda)=\tfrac12\|x\|_2^2+\lambda^\intercal(b-Ax),
+\qquad
+g(\lambda)=b^\intercal\lambda-\tfrac12\|A^\intercal\lambda\|_2^2.
+</annotation></semantics></math> The infimum is attained at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>λ</mi></mrow><annotation encoding="application/x-tex">x=A^\intercal\lambda</annotation></semantics></math>.
+The dual maximizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>.
+The primal is convex and all constraints are affine, so feasibility
+suffices for the refined Slater condition and equal optimal values. The
+unrefined strict test would require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>&gt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax&gt;b</annotation></semantics></math>,
+which depends on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">A,b</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h3 id="minimizing-a-concave-quadratic">2. Minimizing a concave
+quadratic</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">-x^2</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x\in\mathbb R</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^2\le1</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 2</summary>
+  <div class="solution">
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">L=(\lambda-1)x^2-\lambda</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">g(\lambda)=-\lambda</annotation></semantics></math>
+if
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda\ge1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">g(\lambda)=-\infty</annotation></semantics></math>
+otherwise. The dual maximizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">-\lambda</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda\ge1</annotation></semantics></math>,
+attaining
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda=1</annotation></semantics></math>.
+The concave objective makes the problem nonconvex. The point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>
+is strictly feasible, and the primal attains
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>±</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">x=\pm1</annotation></semantics></math>,
+so the two values agree by direct calculation.</p>
+  </div>
+</details>
+<h3 id="entropy-on-a-constrained-simplex">3. Entropy on a constrained
+simplex</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>x</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n x_i\log x_i</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax\le b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>𝟏</mn><mo>⊺</mo></msup><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathbf 1^\intercal x=1</annotation></semantics></math>.
+Nonnegativity is included among the inequalities. Use the closed entropy
+convention
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0\log0=0</annotation></semantics></math>,
+with domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 3</summary>
+  <div class="solution">
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">F(x)=\sum_i x_i\log x_i</annotation></semantics></math>
+on the nonnegative orthant. For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">\nu\in\mathbb R</annotation></semantics></math>,
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>F</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><msup><mi>λ</mi><mo>⊺</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>ν</mi><mo stretchy="false" form="prefix">(</mo><msup><mn>𝟏</mn><mo>⊺</mo></msup><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L=F(x)+\lambda^\intercal(Ax-b)+\nu(\mathbf 1^\intercal x-1).
+</annotation></semantics></math> For a scalar coefficient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>,
+the minimum of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mi>u</mi><mo>+</mo><mi>a</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">u\log u+au</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u\ge0</annotation></semantics></math>
+is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>e</mi><mrow><mi>−</mi><mn>1</mn><mo>−</mo><mi>a</mi></mrow></msup></mrow><annotation encoding="application/x-tex">-e^{-1-a}</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>−</mi><mn>1</mn><mo>−</mo><mi>a</mi></mrow></msup></mrow><annotation encoding="application/x-tex">u=e^{-1-a}</annotation></semantics></math>.
+The dual therefore maximizes
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo>,</mo><mi>ν</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msup><mi>b</mi><mo>⊺</mo></msup><mi>λ</mi><mo>−</mo><mi>ν</mi><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>λ</mi><msub><mo stretchy="false" form="postfix">)</mo><mi>i</mi></msub><mo>−</mo><mi>ν</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+g(\lambda,\nu)=-b^\intercal\lambda-\nu-\sum_i\exp\!\big(-1-(A^\intercal\lambda)_i-\nu\big)
+</annotation></semantics></math> over those multiplier domains. The
+primal is convex. A feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x&gt;0</annotation></semantics></math>
+satisfies refined Slater because the constraints are affine and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+lies in the relative interior of the entropy domain. Such a point
+depends on the data. For any feasible instance the optimal values agree
+even if every feasible point has a zero coordinate. The convex
+perturbation value function is closed at zero because the perturbed sum
+constraint bounds all nearby feasible nonnegative vectors. Boundary-only
+feasibility can prevent attainment of the dual supremum.</p>
+  </div>
+</details>
+<h3 id="a-redundant-quadratic-inequality">4. A redundant quadratic
+inequality</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x\in\mathbb R</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2\ge0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 4</summary>
+  <div class="solution">
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>λ</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L=x-\lambda x^2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">g(\lambda)=-\infty</annotation></semantics></math>
+for every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+so the dual has empty effective domain. The feasible set is all of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℝ</mi><annotation encoding="application/x-tex">\mathbb R</annotation></semantics></math>.
+The displayed constraint function
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">-x^2</annotation></semantics></math>
+is concave, though dropping the redundant constraint gives an equivalent
+convex problem. Any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ne0</annotation></semantics></math>
+is strictly feasible. The primal is unbounded below and both
+extended-real values are
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">-\infty</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h3 id="the-domain-of-a-quotient">5. The domain of a quotient</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mi>x</mi></msup><annotation encoding="application/x-tex">e^x</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup><mi>/</mi><mi>y</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x^4/y\le1</annotation></semantics></math>
+on its written domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow><annotation encoding="application/x-tex">x\in\mathbb R</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y\ne0</annotation></semantics></math>.
+What changes if the intended domain is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math>?</p>
+<details>
+  <summary>Solution to exercise 5</summary>
+  <div class="solution">
+<p>For either domain
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><mi>λ</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mn>4</mn></msup><mi>/</mi><mi>y</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L=e^x+\lambda(x^4/y-1)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>.
+On
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y\ne0</annotation></semantics></math>,
+a fixed nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>→</mo><msup><mn>0</mn><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">y\to0^-</annotation></semantics></math>
+give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>∞</mi></mrow><annotation encoding="application/x-tex">g(\lambda)=-\infty</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda&gt;0</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g(0)=0</annotation></semantics></math>.
+The dual effective domain is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\{0\}</annotation></semantics></math>,
+and both optimal values are 0, since any
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+is feasible with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&lt;0</annotation></semantics></math>.
+The primal domain is disconnected and the feasible set is nonconvex. A
+strictly feasible point exists, such as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>.</p>
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math>,
+the constraint is equivalent to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mi>y</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^4-y\le0</annotation></semantics></math>,
+a convex inequality, and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1)</annotation></semantics></math>
+satisfies Slater. For the original quotient Lagrangian restricted to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y&gt;0</annotation></semantics></math>,
+the dual function is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">-\lambda</annotation></semantics></math>
+because both nonnegative terms
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mi>x</mi></msup><annotation encoding="application/x-tex">e^x</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><msup><mi>x</mi><mn>4</mn></msup><mi>/</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\lambda x^4/y</annotation></semantics></math>
+can approach zero. The dual maximizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">-\lambda</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>
+and again gives the primal infimum 0. Neither primal infimum is
+attained.</p>
+  </div>
+</details>
+<h3 id="minimum-norm-with-a-residual-bound">6. Minimum norm with a
+residual bound</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\tfrac12\|x\|_2^2</annotation></semantics></math>
+over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">x\in\mathbb R^n</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>≤</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\|Ax-b\|_2\le r</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 6</summary>
+  <div class="solution">
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mi>λ</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>−</mo><mi>r</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L=\tfrac12\|x\|_2^2+\lambda(\|Ax-b\|_2-r)</annotation></semantics></math>.
+Use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo stretchy="false" form="postfix">∥</mo><mi>z</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>=</mo><msub><mrow><mi mathvariant="normal">max</mi><mo>&#8289;</mo></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>≤</mo><mi>λ</mi></mrow></msub><msup><mi>v</mi><mo>⊺</mo></msup><mi>z</mi></mrow><annotation encoding="application/x-tex">\lambda\|z\|_2=\max_{\|v\|_2\le\lambda}v^\intercal z</annotation></semantics></math>
+and minimize the resulting quadratic in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><msup><mi>A</mi><mo>⊺</mo></msup><mi>v</mi></mrow><annotation encoding="application/x-tex">-A^\intercal v</annotation></semantics></math>.
+The quadratic-plus-norm minimizer has a norm subgradient giving a
+maximizing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+so
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>λ</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><mi>λ</mi><mi>r</mi><mo>+</mo><munder><mi mathvariant="normal">max</mi><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>≤</mo><mi>λ</mi></mrow></munder><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">{</mo><mo>−</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>v</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>−</mo><msup><mi>b</mi><mo>⊺</mo></msup><mi>v</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">}</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+g(\lambda)=-\lambda r+\max_{\|v\|_2\le\lambda}
+  \big\{-\tfrac12\|A^\intercal v\|_2^2-b^\intercal v\big\}.
+</annotation></semantics></math> The dual can maximize the displayed
+expression jointly subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub><mo>≤</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">\|v\|_2\le\lambda</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r\ge0</annotation></semantics></math>,
+one can eliminate
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+by taking
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>v</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\lambda=\|v\|_2</annotation></semantics></math>.</p>
+<p>The primal is convex. Slater holds exactly when some residual has
+norm less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math>.
+If the instance is feasible, the optimal values also agree at a
+boundary-only radius. The convex perturbation value function is closed
+at zero since the squared norm bounds any sequence of near-minimizers. A
+finite dual multiplier need not exist at that boundary.</p>
+  </div>
+</details>
+<h3 id="entropy-with-equality-constraints">7. Entropy with equality
+constraints</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>x</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n x_i\log x_i</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax=b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">0\log0=0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 7</summary>
+  <div class="solution">
+<p>Keep
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>
+in the entropy domain. With free multiplier
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ν</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">\nu\in\mathbb R^m</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mrow><mi mathvariant="normal">log</mi><mo>&#8289;</mo></mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msup><mi>ν</mi><mo>⊺</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">L=\sum_i x_i\log x_i+\nu^\intercal(Ax-b)</annotation></semantics></math>.
+The dual maximizes
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>ν</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>−</mi><msup><mi>b</mi><mo>⊺</mo></msup><mi>ν</mi><mo>−</mo><munder><mo>∑</mo><mi>i</mi></munder><mrow><mi mathvariant="normal">exp</mi><mo>&#8289;</mo></mrow><mspace width="-0.167em"></mspace><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo>−</mo><mo stretchy="false" form="prefix">(</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>ν</mi><msub><mo stretchy="false" form="postfix">)</mo><mi>i</mi></msub><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+g(\nu)=-b^\intercal\nu-\sum_i\exp\!\big(-1-(A^\intercal\nu)_i\big)
+</annotation></semantics></math> over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ℝ</mi><mi>m</mi></msup><annotation encoding="application/x-tex">\mathbb R^m</annotation></semantics></math>.
+The primal is convex. A feasible
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x&gt;0</annotation></semantics></math>
+satisfies the relative-interior qualification, which depends on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">A,b</annotation></semantics></math>.
+If the instance is feasible, the values agree even without that
+qualification because the entropy objective is continuous and coercive
+on the orthant. Thus bounded near-minimizers of perturbed equality
+problems have a feasible limit. The dual supremum need not be attained
+when the constraints force a zero coordinate.</p>
+  </div>
+</details>
+<h2 id="kkt-conditions-and-constraint-qualification">KKT conditions and
+constraint qualification</h2>
+<p>For each problem, write the first-order KKT conditions and check
+Slater’s condition. Explain what the conditions imply about local or
+global optimality.</p>
+<h3 id="a-quadratic-on-the-simplex">8. A quadratic on the simplex</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="prefix">(</mo><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\tfrac12(x_1^2+x_2^2)</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_1+x_2=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 8</summary>
+  <div class="solution">
+<p>Use free
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ν</mi><annotation encoding="application/x-tex">\nu</annotation></semantics></math>
+for the equality and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>x</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-x\le0</annotation></semantics></math>.
+Stationarity is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>+</mo><mi>ν</mi><mn>𝟏</mn><mo>−</mo><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x+\nu\mathbf 1-\lambda=0</annotation></semantics></math>.
+Include primal feasibility and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda_i x_i=0</annotation></semantics></math>.
+The point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2)</annotation></semantics></math>
+is strictly feasible for the inequalities. Convexity makes KKT
+sufficient for global optimality, and Slater makes the conditions
+necessary. The unique solution is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2)</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h3 id="a-nonconvex-objective-on-the-disk">9. A nonconvex objective on
+the disk</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mn>1</mn><mn>4</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>4</mn></msubsup><mo>−</mo><mn>3</mn><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">x_1^4+x_2^4-3x_1^2</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_1^2+x_2^2\le1</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 9</summary>
+  <div class="solution">
+<p>Use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>.
+The conditions are
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msubsup><mi>x</mi><mn>1</mn><mn>3</mn></msubsup><mo>−</mo><mn>6</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><mi>λ</mi><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><mn>4</mn><msubsup><mi>x</mi><mn>2</mn><mn>3</mn></msubsup><mo>+</mo><mn>2</mn><mi>λ</mi><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>≤</mo><mn>1</mn><mo>,</mo><mspace width="1.0em"></mspace><mi>λ</mi><mo stretchy="false" form="prefix">(</mo><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+4x_1^3-6x_1+2\lambda x_1=0,\quad
+4x_2^3+2\lambda x_2=0,\quad
+\|x\|_2^2\le1,\quad \lambda(\|x\|_2^2-1)=0.
+</annotation></semantics></math> The origin is strictly feasible for the
+disk, but the convex Slater theorem needs a convex objective. The active
+constraint has nonzero gradient on the boundary, so KKT is necessary at
+a local minimizer. The origin satisfies KKT and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>ε</mi><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo><mo>&lt;</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(\varepsilon,0)&lt;f(0,0)</annotation></semantics></math>
+for small nonzero
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ε</mi><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math>,
+demonstrating that KKT alone is insufficient.</p>
+  </div>
+</details>
+<h3 id="a-singleton-feasible-set">10. A singleton feasible set</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2\le0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 10</summary>
+  <div class="solution">
+<p>KKT would require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><mn>2</mn><mi>λ</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1+2\lambda x=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^2\le0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda x^2=0</annotation></semantics></math>.
+The only feasible point is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math>,
+which is globally optimal. There is no strictly feasible point and
+stationarity reads
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1=0</annotation></semantics></math>
+there, so the optimum has no KKT multiplier.</p>
+  </div>
+</details>
+<h3 id="an-affine-objective-and-affine-inequalities">11. An affine
+objective and affine inequalities</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_1+x_2\ge1</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 11</summary>
+  <div class="solution">
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>x</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-x\le0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta\ge0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1-x_1-x_2\le0</annotation></semantics></math>,
+stationarity is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><mo>−</mo><mi>λ</mi><mo>−</mo><mi>θ</mi><mn>𝟏</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e_1-\lambda-\theta\mathbf 1=0</annotation></semantics></math>.
+Include primal feasibility,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda_i x_i=0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta(1-x_1-x_2)=0</annotation></semantics></math>.
+The point
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,1)</annotation></semantics></math>
+is strictly feasible. KKT characterizes global optima, which are all
+points
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,x_2)</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">x_2\ge1</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h3 id="a-nonlinear-equality">12. A nonlinear equality</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>x</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x_1^2+x_2^2=2</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 12</summary>
+  <div class="solution">
+<p>With free
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ν</mi><annotation encoding="application/x-tex">\nu</annotation></semantics></math>,
+KKT is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><mi>ν</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e_1+2\nu x=0</annotation></semantics></math>
+together with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>x</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\|x\|_2^2=2</annotation></semantics></math>.
+The equality is nonlinear, so the convex Slater theorem does not apply.
+Its gradient
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">2x</annotation></semantics></math>
+is nonzero on the circle, making KKT necessary for a local optimum. Both
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msqrt><mn>2</mn></msqrt><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\sqrt2,0)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msqrt><mn>2</mn></msqrt><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(-\sqrt2,0)</annotation></semantics></math>
+satisfy stationarity, and the first maximizes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>1</mn></msub><annotation encoding="application/x-tex">x_1</annotation></semantics></math>
+while the second minimizes it.</p>
+  </div>
+</details>
+<h3 id="a-strictly-convex-constrained-quadratic">13. A strictly convex
+constrained quadratic</h3>
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(x_1-1)^2+(x_2+2)^2</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_1\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_2+3\ge0</annotation></semantics></math>.</p>
+<details>
+  <summary>Solution to exercise 13</summary>
+  <div class="solution">
+<p>With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda\ge0</annotation></semantics></math>
+for the two sign-adjusted inequalities, stationarity is
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>λ</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msub><mi>λ</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+2(x_1-1)-\lambda_1=0,\qquad 2(x_2+2)-\lambda_2=0.
+</annotation></semantics></math> Include primal feasibility and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>λ</mi><mn>1</mn></msub><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><msub><mi>λ</mi><mn>2</mn></msub><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda_1 x_1=\lambda_2(x_2+3)=0</annotation></semantics></math>.
+The unconstrained minimizer
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>−</mi><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1,-2)</annotation></semantics></math>
+is strictly feasible, so Slater holds. It satisfies KKT with zero
+multipliers, giving the unique global optimum.</p>
+  </div>
+</details>

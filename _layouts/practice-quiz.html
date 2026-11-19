@@ -1,0 +1,28 @@
+---
+layout: page
+---
+
+<style>
+.practice-quiz details {
+  margin-bottom: 1.5rem;
+}
+.practice-quiz summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.practice-quiz .solution {
+  border-inline-start: 2px solid #d9d5e3;
+  margin-top: 0.75rem;
+  padding-inline-start: 1rem;
+}
+.practice-quiz math[display="block"] {
+  max-width: 100%;
+  overflow-x: auto;
+}
+</style>
+
+<div class="practice-quiz">
+  <h1>{{ page.title | escape }}</h1>
+  <p><a href="{{ page.quiz_pdf | relative_url }}">Original practice questions (PDF)</a></p>
+  {{ content }}
+</div>

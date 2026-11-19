@@ -1,0 +1,264 @@
+---
+layout: practice-quiz
+title: Preconditioning practice
+nav_exclude: true
+quiz_pdf: /quiz/quiz6-practice.pdf
+permalink: /quiz/quiz6-practice.html
+---
+
+<p>Original questions by Wenzhi Gao.</p>
+<p>For exercises 1–4, let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><msup><mi>x</mi><mo>⊺</mo></msup><mi>A</mi><mi>x</mi><mo>−</mo><msup><mi>b</mi><mo>⊺</mo></msup><mi>x</mi></mrow><annotation encoding="application/x-tex">f(x)=\tfrac12x^\intercal Ax-b^\intercal x</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≺</mo><mi>μ</mi><mi>I</mi><mo>≼</mo><mi>A</mi><mo>≼</mo><mi>L</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">0\prec\mu I\preceq A\preceq LI</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>κ</mi><mo>=</mo><mi>L</mi><mi>/</mi><mi>μ</mi></mrow><annotation encoding="application/x-tex">\kappa=L/\mu</annotation></semantics></math>.
+The matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+approximates
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><annotation encoding="application/x-tex">A^{-1}</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">h=\nabla f(x)</annotation></semantics></math>
+and take the full step
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>+</mo></msup><mo>=</mo><mi>x</mi><mo>−</mo><mi>P</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">x^+=x-Ph</annotation></semantics></math>.
+When
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h\ne0</annotation></semantics></math>,
+define
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>h</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">g=\|\nabla f(x^+)\|_2^2/\|h\|_2^2</annotation></semantics></math>.
+Stop if a gradient is zero.</p>
+<h2 id="a-perfect-preconditioner-and-a-bad-one">1. A perfect
+preconditioner and a bad one</h2>
+<ol type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>I</mi><mo>−</mo><mi>A</mi><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mi>h</mi></mrow><annotation encoding="application/x-tex">\nabla f(x^+)=(I-AP)h</annotation></semantics></math>.
+Why does
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">P=A^{-1}</annotation></semantics></math>
+solve the problem in one step?</li>
+<li>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">A=\operatorname{diag}(1,4)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b=0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x=(1,1)</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">P=I</annotation></semantics></math>,
+compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>x</mi><mo>+</mo></msup><annotation encoding="application/x-tex">x^+</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>.
+Does the gradient norm improve?</li>
+<li>Why might we learn
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+over several inexpensive steps?</li>
+</ol>
+<details>
+  <summary>Solution to exercise 1</summary>
+  <div class="solution">
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mi>x</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">\nabla f(x)=Ax-b</annotation></semantics></math>,
+the new gradient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>−</mo><mi>A</mi><mi>P</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">h-APh</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">P=A^{-1}</annotation></semantics></math>
+it is zero, which certifies the unique minimizer for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>≻</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A\succ0</annotation></semantics></math>.
+In the numerical case,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">h=(1,4)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mo>+</mo></msup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>−</mi><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">x^+=(0,-3)</annotation></semantics></math>,
+and the new gradient is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mi>−</mi><mn>12</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,-12)</annotation></semantics></math>.
+Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>=</mo><mn>144</mn><mi>/</mi><mn>17</mn><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g=144/17&gt;1</annotation></semantics></math>.
+Learning from cheap updates can capture useful curvature without
+explicitly forming or inverting a large Hessian.</p>
+  </div>
+</details>
+<h2 id="repairing-an-unsuccessful-direction">2. Repairing an
+unsuccessful direction</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>I</mi><mo>−</mo><mi>A</mi><mi>P</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mi>F</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">V(P)=\|I-AP\|_F^2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo>=</mo><mi>I</mi><mo>−</mo><mi>A</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">R=I-AP</annotation></semantics></math>.
+For unit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>,
+suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mi>R</mi><mi>v</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r=Rv\ne0</annotation></semantics></math>
+and set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mi>r</mi><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>r</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">u=r/\|r\|_2</annotation></semantics></math>.
+Consider
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>+</mo></msup><mo>=</mo><mi>P</mi><mo>+</mo><mi>η</mi><mi>u</mi><msup><mi>v</mi><mo>⊺</mo></msup></mrow><annotation encoding="application/x-tex">P^+=P+\eta u v^\intercal</annotation></semantics></math>.</p>
+<ol type="1">
+<li>Expand
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>P</mi><mo>+</mo></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">V(P^+)</annotation></semantics></math>
+as a quadratic in
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>,
+and find the minimizing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>η</mi><mo>⋆</mo></msup><annotation encoding="application/x-tex">\eta^\star</annotation></semantics></math>.</li>
+<li>You may use
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>P</mi><mo>+</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>R</mi><mi>v</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>/</mi><mi>κ</mi></mrow><annotation encoding="application/x-tex">V(P^+)\le V(P)-\|Rv\|_2^2/\kappa</annotation></semantics></math>
+at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>η</mi><mo>⋆</mo></msup><annotation encoding="application/x-tex">\eta^\star</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g&gt;0</annotation></semantics></math>,
+choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+so that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>R</mi><mi>v</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">\|Rv\|_2^2=g</annotation></semantics></math>,
+and interpret the decrease.</li>
+</ol>
+<details>
+  <summary>Solution to exercise 2</summary>
+  <div class="solution">
+<p>Expanding the squared Frobenius norm gives
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>P</mi><mo>+</mo></msup><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>P</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mn>2</mn><mi>η</mi><mspace width="0.167em"></mspace><msup><mi>r</mi><mo>⊺</mo></msup><mi>A</mi><mi>u</mi><mo>+</mo><msup><mi>η</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mi>u</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>η</mi><mo>⋆</mo></msup><mo>=</mo><mfrac><mrow><msup><mi>r</mi><mo>⊺</mo></msup><mi>A</mi><mi>u</mi></mrow><mrow><mo stretchy="false" form="postfix">∥</mo><mi>A</mi><mi>u</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+V(P^+)=V(P)-2\eta\, r^\intercal Au+\eta^2\|Au\|_2^2,
+\qquad
+\eta^\star=\frac{r^\intercal Au}{\|Au\|_2^2}.
+</annotation></semantics></math> The denominator is positive because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>≻</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A\succ0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+is a unit vector. Choose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>=</mo><mi>h</mi><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>h</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">v=h/\|h\|_2</annotation></semantics></math>.
+Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>R</mi><mi>v</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>R</mi><mi>h</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>h</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">\|Rv\|_2^2=\|Rh\|_2^2/\|h\|_2^2=g</annotation></semantics></math>.
+A step with larger remaining gradient ratio gives a larger guaranteed
+decrease
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mi>/</mi><mi>κ</mi></mrow><annotation encoding="application/x-tex">g/\kappa</annotation></semantics></math>
+in the potential.</p>
+  </div>
+</details>
+<h2 id="a-finite-budget-for-bad-steps">3. A finite budget for bad
+steps</h2>
+<p>Suppose
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mi>k</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">V_k\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>V</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>≤</mo><msub><mi>V</mi><mi>k</mi></msub><mo>−</mo><msub><mi>g</mi><mi>k</mi></msub><mi>/</mi><mi>κ</mi></mrow><annotation encoding="application/x-tex">V_{k+1}\le V_k-g_k/\kappa</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">g_k=\|\nabla f(x_{k+1})\|_2^2/\|\nabla f(x_k)\|_2^2</annotation></semantics></math>
+before termination.</p>
+<ol type="1">
+<li>Bound
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msub><mi>g</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{k=1}^K g_k</annotation></semantics></math>.
+For fixed
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math>,
+how many indices can satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>≥</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">g_k\ge\varepsilon</annotation></semantics></math>?
+If the method never terminates, what happens to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>g</mi><mi>k</mi></msub><annotation encoding="application/x-tex">g_k</annotation></semantics></math>?</li>
+<li>Use the arithmetic–geometric mean inequality to bound the ratio
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mi>/</mi><mo stretchy="false" form="postfix">∥</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\|\nabla f(x_{K+1})\|_2^2/\|\nabla f(x_1)\|_2^2</annotation></semantics></math>
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>κ</mi><msub><mi>V</mi><mn>1</mn></msub><mi>/</mi><mi>K</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>K</mi></msup></mrow><annotation encoding="application/x-tex">(\kappa V_1/K)^K</annotation></semantics></math>.
+Can an occasional
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g_k&gt;1</annotation></semantics></math>
+prevent that bound?</li>
+</ol>
+<details>
+  <summary>Solution to exercise 3</summary>
+  <div class="solution">
+<p>Summing the potential decreases gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msub><mi>g</mi><mi>k</mi></msub><mo>≤</mo><mi>κ</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>V</mi><mn>1</mn></msub><mo>−</mo><msub><mi>V</mi><mrow><mi>K</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>κ</mi><msub><mi>V</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sum_{k=1}^K g_k\le\kappa(V_1-V_{K+1})\le\kappa V_1</annotation></semantics></math>.
+At most
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⌊</mo><mi>κ</mi><msub><mi>V</mi><mn>1</mn></msub><mi>/</mi><mi>ε</mi><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">\lfloor\kappa V_1/\varepsilon\rfloor</annotation></semantics></math>
+indices can have
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>≥</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">g_k\ge\varepsilon</annotation></semantics></math>,
+so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>g</mi><mi>k</mi></msub><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g_k\to0</annotation></semantics></math>
+in an infinite run. The gradient ratio telescopes to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∏</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msub><mi>g</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\prod_{k=1}^K g_k</annotation></semantics></math>.
+AM–GM bounds this product by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>K</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>K</mi></msubsup><msub><mi>g</mi><mi>k</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mi>K</mi></msup><mo>≤</mo><mo stretchy="false" form="prefix">(</mo><mi>κ</mi><msub><mi>V</mi><mn>1</mn></msub><mi>/</mi><mi>K</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>K</mi></msup></mrow><annotation encoding="application/x-tex">(K^{-1}\sum_{k=1}^K g_k)^K\le(\kappa V_1/K)^K</annotation></semantics></math>.
+Occasional large ratios use part of a finite budget, so the cumulative
+bound still holds.</p>
+  </div>
+</details>
+<h2 id="a-least-change-secant-update">4. A least-change secant
+update</h2>
+<p>For distinct
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>,</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x,z</annotation></semantics></math>,
+let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">s=x-z</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi>∇</mi><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>z</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y=\nabla f(x)-\nabla f(z)</annotation></semantics></math>.</p>
+<ol type="1">
+<li>Show that
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>A</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">y=As</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>y</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">A^{-1}y=s</annotation></semantics></math>.
+How can
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">s,y</annotation></semantics></math>
+be formed without knowing the minimizer?</li>
+<li>Derive
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>+</mo></msup><mo>=</mo><mrow><mi mathvariant="normal">arg</mi><mo>&#8289;</mo></mrow><msub><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mrow><mi>Q</mi><mi>y</mi><mo>=</mo><mi>s</mi></mrow></msub><mstyle displaystyle="false"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo stretchy="false" form="postfix">∥</mo><mi>Q</mi><mo>−</mo><mi>P</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mi>F</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">P^+=\arg\min_{Qy=s}\tfrac12\|Q-P\|_F^2</annotation></semantics></math>
+for unrestricted real
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math>.
+Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>+</mo></msup><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">P^+-P</annotation></semantics></math>
+as an outer product.</li>
+</ol>
+<details>
+  <summary>Solution to exercise 4</summary>
+  <div class="solution">
+<p>Subtracting the two gradients gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>A</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">y=As</annotation></semantics></math>,
+hence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><mi>y</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">A^{-1}y=s</annotation></semantics></math>.
+Both differences use only the observed points and gradients. For the
+correction
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo>=</mo><mi>Q</mi><mo>−</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">U=Q-P</annotation></semantics></math>,
+require
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>y</mi><mo>=</mo><mi>s</mi><mo>−</mo><mi>P</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">Uy=s-Py</annotation></semantics></math>.
+In each row, the least-norm vector with the required inner product with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>y</mi><annotation encoding="application/x-tex">y</annotation></semantics></math>
+is a multiple of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>y</mi><mo>⊺</mo></msup><annotation encoding="application/x-tex">y^\intercal</annotation></semantics></math>.
+Therefore
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>+</mo></msup><mo>=</mo><mi>P</mi><mo>+</mo><mfrac><mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>−</mo><mi>P</mi><mi>y</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>y</mi><mo>⊺</mo></msup></mrow><mrow><msup><mi>y</mi><mo>⊺</mo></msup><mi>y</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">P^+=P+\frac{(s-Py)y^\intercal}{y^\intercal y}.</annotation></semantics></math>
+Here
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">y\ne0</annotation></semantics></math>
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+is invertible and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≠</mo><mi>z</mi></mrow><annotation encoding="application/x-tex">x\ne z</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h2 id="learning-one-direction-at-a-time">5. Learning one direction at a
+time</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y=(1,0)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s=(1/2,0)</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>a</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_a=\operatorname{diag}(1/2,1)</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>b</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P_b=\operatorname{diag}(1/2,2)</annotation></semantics></math>.</p>
+<ol type="1">
+<li>Compute
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>a</mi></msub><mi>y</mi></mrow><annotation encoding="application/x-tex">P_a y</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>b</mi></msub><mi>y</mi></mrow><annotation encoding="application/x-tex">P_b y</annotation></semantics></math>.
+Do both satisfy
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>y</mi><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">Py=s</annotation></semantics></math>?</li>
+<li>Which column of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+does the equation determine?</li>
+<li>A second observation gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̃</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\widetilde y=(0,1)</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>s</mi><mo accent="true">̃</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\widetilde s=(0,1/4)</annotation></semantics></math>.
+Find
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math>
+satisfying both secant equations.</li>
+</ol>
+<details>
+  <summary>Solution to exercise 5</summary>
+  <div class="solution">
+<p>Multiplication by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi>e</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">y=e_1</annotation></semantics></math>
+selects the first column. Both matrices give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(1/2,0)</annotation></semantics></math>,
+and the first equation imposes no condition on the second column.
+Multiplication by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>y</mi><mo accent="true">̃</mo></mover><mo>=</mo><msub><mi>e</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\widetilde y=e_2</annotation></semantics></math>
+selects the second column, giving
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,1/4)</annotation></semantics></math>.
+Thus the two observations together give
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mo>=</mo><mrow><mi mathvariant="normal">diag</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo><mn>1</mn><mi>/</mi><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">P=\operatorname{diag}(1/2,1/4)</annotation></semantics></math>.</p>
+  </div>
+</details>

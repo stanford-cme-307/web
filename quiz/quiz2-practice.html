@@ -1,0 +1,222 @@
+---
+layout: practice-quiz
+title: LP duality practice
+nav_exclude: true
+quiz_pdf: /quiz/quiz2-practice.pdf
+permalink: /quiz/quiz2-practice.html
+---
+
+<p>Formulate the dual of each linear program. Multipliers below are
+named in the order of the displayed constraints.</p>
+<h2 id="three-constraint-senses">1. Three constraint senses</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">maximize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>4</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>5</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>−</mi><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>3</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{maximize}\quad &amp;4x_1+2x_2\\
+\text{subject to}\quad &amp;x_1+x_2\le5,\\
+&amp;-2x_1+x_2\ge1,\\
+&amp;3x_1-x_2=2,\qquad x_1,x_2\ge0.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 1</summary>
+  <div class="solution">
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn><mi>u</mi><mo>+</mo><mi>v</mi><mo>+</mo><mn>2</mn><mi>w</mi></mrow><annotation encoding="application/x-tex">5u+v+2w</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>−</mo><mn>2</mn><mi>v</mi><mo>+</mo><mn>3</mn><mi>w</mi><mo>≥</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">u-2v+3w\ge4</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mi>v</mi><mo>−</mo><mi>w</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">u+v-w\ge2</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v\le0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+free. In this maximization primal, the first two multipliers make the
+corresponding rows upper bounds when combined. The equality multiplier
+is free.</p>
+  </div>
+</details>
+<h2 id="a-free-primal-variable">2. A free primal variable</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">minimize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>3</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub><mo>≥</mo><mn>2</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>3</mn></msub><mo>≤</mo><mn>3</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>3</mn></msub><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="1.0em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> free</mtext></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{minimize}\quad &amp;3x_1+x_2+2x_3\\
+\text{subject to}\quad &amp;x_1+4x_2+2x_3\ge2,\\
+&amp;2x_1-x_2+3x_3\le3,\\
+&amp;x_1-x_2+2x_3=1,\qquad x_1,x_3\ge0,\quad x_2\text{ free}.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 2</summary>
+  <div class="solution">
+<p>Maximize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi><mo>+</mo><mi>w</mi></mrow><annotation encoding="application/x-tex">2u+3v+w</annotation></semantics></math>
+subject to
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mn>2</mn><mi>v</mi><mo>+</mo><mi>w</mi><mo>≤</mo><mn>3</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>4</mn><mi>u</mi><mo>−</mo><mi>v</mi><mo>−</mo><mi>w</mi><mo>=</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi><mo>+</mo><mn>2</mn><mi>w</mi><mo>≤</mo><mn>2</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">u+2v+w\le3,\qquad 4u-v-w=1,\qquad 2u+3v+2w\le2,</annotation></semantics></math>
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">v\le0</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math>
+free. The column of the free variable
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math>
+gives an equality.</p>
+  </div>
+</details>
+<h2 id="upper-bounds-on-variables">3. Upper bounds on variables</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">maximize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>5</mn><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>3</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>8</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>4</mn><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>9</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>0</mn><mo>≤</mo><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>3</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{maximize}\quad &amp;2x_1+5x_2\\
+\text{subject to}\quad &amp;3x_1+x_2\le8,\qquad x_1+4x_2\le9,\\
+&amp;0\le x_1\le 2,\qquad 0\le x_2\le3.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 3</summary>
+  <div class="solution">
+<p>Treat
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">x_1\le2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">x_2\le3</annotation></semantics></math>
+as additional rows. Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn><mi>u</mi><mo>+</mo><mn>9</mn><mi>v</mi><mo>+</mo><mn>2</mn><mi>w</mi><mo>+</mo><mn>3</mn><mi>z</mi></mrow><annotation encoding="application/x-tex">8u+9v+2w+3z</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>u</mi><mo>+</mo><mi>v</mi><mo>+</mo><mi>w</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">3u+v+w\ge2</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mn>4</mn><mi>v</mi><mo>+</mo><mi>z</mi><mo>≥</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">u+4v+z\ge5</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo>,</mo><mi>z</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u,v,w,z\ge0</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h2 id="a-nonpositive-primal-variable">4. A nonpositive primal
+variable</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">maximize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>−</mi><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>−</mi><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{maximize}\quad &amp;-x_1+3x_2\\
+\text{subject to}\quad &amp;-x_1+x_2\le2,\qquad 2x_1+x_2=1,\\
+&amp;x_1\le0,\qquad x_2\ge0.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 4</summary>
+  <div class="solution">
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>u</mi><mo>+</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">2u+v</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>u</mi><mo>+</mo><mn>2</mn><mi>v</mi><mo>≤</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">-u+2v\le-1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mi>v</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">u+v\ge3</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u\ge0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+free. Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_1\le0</annotation></semantics></math>,
+the first column inequality has the opposite direction from the
+second.</p>
+  </div>
+</details>
+<h2 id="matrix-form">5. Matrix form</h2>
+<p>Maximize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>c</mi><mo>⊺</mo></msup><mi>x</mi></mrow><annotation encoding="application/x-tex">c^\intercal x</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">Ax\le b</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\ge0</annotation></semantics></math>,
+where
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mi>−</mi><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>3</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>b</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo>,</mo><mn>5</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="2.0em"></mspace><mi>c</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+A=\begin{bmatrix}1&amp;-1&amp;2\\0&amp;3&amp;1\end{bmatrix},\qquad b=(4,5),\qquad c=(1,0,2).
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 5</summary>
+  <div class="solution">
+<p>The dual is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">min</mi><mo>&#8289;</mo></mrow><mo stretchy="false" form="prefix">{</mo><msup><mi>b</mi><mo>⊺</mo></msup><mi>y</mi><mo>:</mo><msup><mi>A</mi><mo>⊺</mo></msup><mi>y</mi><mo>≥</mo><mi>c</mi><mo>,</mo><mspace width="0.222em"></mspace><mi>y</mi><mo>≥</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\min\{b^\intercal y:A^\intercal y\ge c,\ y\ge0\}</annotation></semantics></math>.
+With
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">y=(u,v)</annotation></semantics></math>,
+minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>u</mi><mo>+</mo><mn>5</mn><mi>v</mi></mrow><annotation encoding="application/x-tex">4u+5v</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u\ge1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-u+3v\ge0</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>u</mi><mo>+</mo><mi>v</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2u+v\ge2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u,v\ge0</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h2 id="three-variable-sign-conventions">6. Three variable sign
+conventions</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">minimize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>5</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mi>−</mi><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>x</mi><mn>3</mn></msub><mo>≥</mo><mn>3</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>4</mn><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub><mo>≥</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mo>≤</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>3</mn></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> free</mtext></mrow><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{minimize}\quad &amp;5x_1-x_2+2x_3\\
+\text{subject to}\quad &amp;-x_1+2x_2+x_3\ge3,\qquad 4x_1+x_2-2x_3\ge1,\\
+&amp;x_1\ge0,\qquad x_2\le0,\qquad x_3\text{ free}.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 6</summary>
+  <div class="solution">
+<p>Maximize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mi>u</mi><mo>+</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">3u+v</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>u</mi><mo>+</mo><mn>4</mn><mi>v</mi><mo>≤</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-u+4v\le5</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>u</mi><mo>+</mo><mi>v</mi><mo>≥</mo><mi>−</mi><mn>1</mn></mrow><annotation encoding="application/x-tex">2u+v\ge-1</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>−</mo><mn>2</mn><mi>v</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">u-2v=2</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u,v\ge0</annotation></semantics></math>.
+The three column relations follow from the nonnegative, nonpositive, and
+free primal variables, respectively.</p>
+  </div>
+</details>
+<h2 id="a-feasibility-problem">7. A feasibility problem</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">minimize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>1</mn><mo>,</mo><mspace width="2.0em"></mspace><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>2</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>≥</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{minimize}\quad &amp;0\\
+\text{subject to}\quad &amp;2x_1-x_2\ge1,\qquad -x_1+3x_2\ge2,\qquad x_1,x_2\ge0.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 7</summary>
+  <div class="solution">
+<p>Maximize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mn>2</mn><mi>v</mi></mrow><annotation encoding="application/x-tex">u+2v</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>u</mi><mo>−</mo><mi>v</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">2u-v\le0</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-u+3v\le0</annotation></semantics></math>,
+with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>,</mo><mi>v</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">u,v\ge0</annotation></semantics></math>.
+In fact, the only feasible dual point is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(0,0)</annotation></semantics></math>,
+because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mo>≥</mo><mn>2</mn><mi>u</mi></mrow><annotation encoding="application/x-tex">v\ge 2u</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≥</mo><mn>3</mn><mi>v</mi></mrow><annotation encoding="application/x-tex">u\ge 3v</annotation></semantics></math>.</p>
+  </div>
+</details>
+<h2 id="equality-constraints-and-variable-signs">8. Equality constraints
+and variable signs</h2>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">maximize</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"><mtext mathvariant="normal">subject to</mtext><mspace width="1.0em"></mspace></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>4</mn><mo>,</mo><mspace width="2.0em"></mspace><mn>2</mn><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right; padding-right: 0"></mtd><mtd columnalign="left" style="text-align: left; padding-left: 0"><msub><mi>x</mi><mn>1</mn></msub><mo>≥</mo><mn>0</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>2</mn></msub><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> free</mtext></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>x</mi><mn>3</mn></msub><mo>≤</mo><mn>0</mn><mi>.</mi></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+\text{maximize}\quad &amp;x_1-2x_2+x_3\\
+\text{subject to}\quad &amp;x_1+x_2+x_3=4,\qquad 2x_1-x_2+3x_3=1,\\
+&amp;x_1\ge0,\qquad x_2\text{ free},\qquad x_3\le0.
+\end{aligned}
+</annotation></semantics></math></p>
+<details>
+  <summary>Solution to exercise 8</summary>
+  <div class="solution">
+<p>Minimize
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>u</mi><mo>+</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">4u+v</annotation></semantics></math>
+subject to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mn>2</mn><mi>v</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u+2v\ge1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>−</mo><mi>v</mi><mo>=</mo><mi>−</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">u-v=-2</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">u+3v\le1</annotation></semantics></math>.
+The two equality rows make
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+free.</p>
+  </div>
+</details>
